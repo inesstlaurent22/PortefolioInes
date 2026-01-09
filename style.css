@@ -14,7 +14,7 @@ html, body {
 
 /* Image plein écran */
 body {
-    background-image: url("Portefolioin.png");
+    background-image: url("images/Portefolioin.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; /* image toujours à la taille de l'écran */
