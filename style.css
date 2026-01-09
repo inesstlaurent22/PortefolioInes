@@ -1,21 +1,20 @@
-/* Reset */
+/* Reset global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Plein écran */
+/* Plein écran garanti */
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden; /* empêche tout scroll */
+    overflow: hidden; /* bloque tout scroll */
 }
 
 /* Image plein écran */
 body {
-    background-image: url("images/Portefolioin.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; /* image toujours à la taille de l'écran */
+    background: url("./images/Portefolioin.png") center center no-repeat;
+    background-size: cover;
+    background-color: #000; /* fallback si image ne charge pas */
 }
