@@ -59,12 +59,12 @@ html, body {
 
 /* ================= DESKTOP ================= */
 @media (min-width: 1025px) {
-  .bleu1   { left:650px;  top:2px;   width:400px; height:327px; }
-  .rose1   { left:1050px; top:0;    width:391px; height:327px; }
-  .violet1 { left:650px;  top:327px; width:401px; height:327px; }
-  .violet2 { left:650px;  top:654px; width:402px; height:328px; }
-  .orange1 { left:1050px; top:327px;width:392px; height:327px; }
-  .jaune1  { left:1050px; top:654px;width:393px; height:328px; }
+  .bleu1   { left:600px;  top:2px;   width:400px; height:327px; }
+  .rose1   { left:1000px; top:0;    width:391px; height:327px; }
+  .violet1 { left:600px;  top:327px; width:401px; height:327px; }
+  .violet2 { left:600px;  top:654px; width:402px; height:328px; }
+  .orange1 { left:1000px; top:327px;width:392px; height:327px; }
+  .jaune1  { left:1000px; top:654px;width:393px; height:328px; }
 }
 
 /* ================= IPAD ================= */
