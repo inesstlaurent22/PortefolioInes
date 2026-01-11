@@ -132,3 +132,28 @@ html, body {
 #overlay.active #colorBox {
   transform: scale(1);
 }
+
+/* ================= TEXTE CENTRÉ DANS LES BOUTONS ================= */
+
+.bloc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* texte */
+.bloc .label {
+  position: absolute;
+  z-index: 3;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+
+  /* lisibilité */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+
+  /* taille responsive */
+  font-size: clamp(14px, 1.4vw, 22px);
+  padding: 0 10px;
+}
