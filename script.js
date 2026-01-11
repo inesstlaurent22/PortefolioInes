@@ -1,21 +1,19 @@
-const const blocs = document.querySelectorAll(".bloc");
+const buttons = document.querySelectorAll(".bloc");
 const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 
-blocs.forEach(bloc => {
-  bloc.addEventListener("click", () => {
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
 
-    blocs.forEach(b => b.classList.remove("active"));
-    bloc.classList.add("active");
+    buttons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
 
-    const color = bloc.dataset.color;
-    colorBox.style.background = color;
-
+    colorBox.style.background = button.dataset.color;
     overlay.classList.add("active");
   });
 });
 
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
-  blocs.forEach(b => b.classList.remove("active"));
+  buttons.forEach(b => b.classList.remove("active"));
 });
