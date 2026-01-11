@@ -19,9 +19,7 @@ html, body {
 /* CONTENEUR PRINCIPAL */
 /* ===================== */
 .FondPortefolio {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -31,9 +29,72 @@ html, body {
 /* IMAGE DE FOND */
 /* ===================== */
 .fondindex {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* remplit l’écran sans déformation */
-  object-position: center;
-  display: block;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* ===================== */
+/* BLOCS IMAGES */
+/* ===================== */
+.bloc {
+  position: absolute;
+  z-index: 2;
+  object-fit: cover;
+}
+
+/* ===================== */
+/* POSITIONS EXACTES */
+/* ===================== */
+
+/* Bleu1 */
+.bleu1 {
+  left: 719px;
+  top: 2px;
+  width: 400px;
+  height: 327px;
+}
+
+/* Rose1 */
+.rose1 {
+  left: 1119px;
+  top: 0px;
+  width: 391px;
+  height: 327px;
+}
+
+/* Violet1 */
+.violet1 {
+  left: 719px;
+  top: 327px;
+  width: 401px;
+  height: 327px;
+}
+
+/* Violet2 */
+.violet2 {
+  left: 717px;
+  top: 654px;
+  width: 402px;
+  height: 328px;
+}
+
+/* Orange1 */
+.orange1 {
+  left: 1119px;
+  top: 327px;
+  width: 392px;
+  height: 327px;
+}
+
+/* Jaune1 */
+.jaune1 {
+  left: 1119px;
+  top: 654px;
+  width: 393px;
+  height: 328px;
 }
