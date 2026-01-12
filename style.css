@@ -216,6 +216,14 @@ html, body {
   object-fit: contain;
 }
 
+.socials a {
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.1);
+}
+
 /* responsive mobile */
 @media (max-width: 767px) {
   .socials img {
