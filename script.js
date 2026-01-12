@@ -37,8 +37,6 @@ const contents = {
 
     <p><strong>
       Mon approche est humaine, stratégique et orientée résultats.
-      Elle repose sur une vision globale mêlant analyse, organisation,
-      exécution opérationnelle et compréhension fine des enjeux business et digitaux.
     </strong></p>
 
     <button class="objectif-btn objectif-btn-large" id="openObjectif">
@@ -56,56 +54,56 @@ const contents = {
       <button class="step-btn" data-step="3">03 — Déploiement & Pilotage</button>
     </div>
 
-    <div class="programme-result text-left" id="programmeResult"></div>
+    <div id="programmeResult" class="text-left"></div>
   `,
 
   /* ================= CV COMPÉTENCES ================= */
   violet1: `
     <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
-    <div class="competences-buttons">
+    <div class="competences-list">
 
       <button class="competence-btn" data-comp="1">
-        <span class="competence-title-big">Consultante en développement d’activité</span>
-        <span class="competence-company"><strong>Gearbooker</strong></span>
-        <span class="competence-sector"><em>Audiovisuel</em></span>
+        <div class="competence-role">Consultante en développement d’activité</div>
+        <div class="competence-meta"><strong>Gearbooker</strong> — <em>Audiovisuel</em></div>
       </button>
-      <div class="competence-detail" data-detail="1"></div>
+      <div class="competence-content" data-content="1"></div>
 
       <button class="competence-btn" data-comp="2">
-        <span class="competence-title-big">Commerciale Marketing</span>
-        <span class="competence-company"><strong>Pachamamaï</strong></span>
-        <span class="competence-sector"><em>Cosmétique solide</em></span>
+        <div class="competence-role">Commerciale Marketing</div>
+        <div class="competence-meta"><strong>Pachamamaï</strong> — <em>Cosmétique solide</em></div>
       </button>
-      <div class="competence-detail" data-detail="2"></div>
+      <div class="competence-content" data-content="2"></div>
 
       <button class="competence-btn" data-comp="3">
-        <span class="competence-title-big">CEO & Community Manager</span>
-        <span class="competence-company"><strong>PUFFRAP</strong></span>
-        <span class="competence-sector"><em>Média musique</em></span>
+        <div class="competence-role">CEO & Community Manager</div>
+        <div class="competence-meta"><strong>PUFFRAP</strong> — <em>Média musique</em></div>
       </button>
-      <div class="competence-detail" data-detail="3"></div>
+      <div class="competence-content" data-content="3"></div>
 
       <button class="competence-btn" data-comp="4">
-        <span class="competence-title-big">CEO & Développeuse Web</span>
-        <span class="competence-company"><strong>KIT IN</strong></span>
-        <span class="competence-sector"><em>Formation à la création d’entreprise pour les jeunes dès 10 ans</em></span>
+        <div class="competence-role">CEO & Développeuse Web</div>
+        <div class="competence-meta">
+          <strong>KIT IN</strong> —
+          <em>Formation à la création d’entreprise pour les jeunes dès 10 ans</em>
+        </div>
       </button>
-      <div class="competence-detail" data-detail="4"></div>
+      <div class="competence-content" data-content="4"></div>
 
       <button class="competence-btn" data-comp="5">
-        <span class="competence-title-big">Stagiaire Comptable</span>
-        <span class="competence-company"><strong>Pages Jaunes</strong></span>
-        <span class="competence-sector"><em>Annuaire en ligne</em></span>
+        <div class="competence-role">Stagiaire Comptable</div>
+        <div class="competence-meta"><strong>Pages Jaunes</strong> — <em>Annuaire en ligne</em></div>
       </button>
-      <div class="competence-detail" data-detail="5"></div>
+      <div class="competence-content" data-content="5"></div>
 
       <button class="competence-btn" data-comp="6">
-        <span class="competence-title-big">Vendeuse & Ambassadrice de marque</span>
-        <span class="competence-company"><strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong></span>
-        <span class="competence-sector"><em>Retail & Restauration</em></span>
+        <div class="competence-role">Vendeuse & Ambassadrice de marque</div>
+        <div class="competence-meta">
+          <strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong> —
+          <em>Retail & Restauration</em>
+        </div>
       </button>
-      <div class="competence-detail" data-detail="6"></div>
+      <div class="competence-content" data-content="6"></div>
 
     </div>
   `,
@@ -124,9 +122,9 @@ const contents = {
   /* ================= RÉSEAUX ================= */
   jaune1: `
     <div class="socials socials-small">
-      <a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram.PNG"></a>
-      <a href="https://www.linkedin.com/" target="_blank"><img src="images/Linkedin.PNG"></a>
-      <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG"></a>
+      <a href="#"><img src="images/Instagram.PNG"></a>
+      <a href="#"><img src="images/Linkedin.PNG"></a>
+      <a href="#"><img src="images/Mail.PNG"></a>
     </div>
   `
 };
@@ -232,34 +230,42 @@ buttons.forEach(button => {
 =========================== */
 contentBox.addEventListener("click", e => {
 
-  /* objectif */
+  /* OBJECTIF */
   if (e.target.id === "openObjectif") {
-    e.stopPropagation();
     objectifOverlay.classList.add("active");
+    return;
   }
 
-  /* programme */
-  if (e.target.classList.contains("step-btn")) {
-    const step = e.target.dataset.step;
-    document.getElementById("programmeResult").innerHTML = programmeTexts[step];
+  /* PROGRAMME */
+  const stepBtn = e.target.closest(".step-btn");
+  if (stepBtn) {
+    document.getElementById("programmeResult").innerHTML =
+      programmeTexts[stepBtn.dataset.step];
+    return;
   }
 
-  /* compétences */
-  if (e.target.closest(".competence-btn")) {
-    const btn = e.target.closest(".competence-btn");
-    const key = btn.dataset.comp;
+  /* COMPÉTENCES — ACCORDÉON */
+  const compBtn = e.target.closest(".competence-btn");
+  if (compBtn) {
+    const key = compBtn.dataset.comp;
 
-    document
-      .querySelectorAll(".competence-detail")
-      .forEach(el => el.innerHTML = "");
+    document.querySelectorAll(".competence-content").forEach(el => {
+      if (el.dataset.content === key && el.innerHTML !== "") {
+        el.innerHTML = "";
+      } else {
+        el.innerHTML = "";
+      }
+    });
 
-    const detail = document.querySelector(`.competence-detail[data-detail="${key}"]`);
-    detail.innerHTML = competencesTexts[key];
+    const target = document.querySelector(
+      `.competence-content[data-content="${key}"]`
+    );
+    target.innerHTML = competencesTexts[key];
   }
 });
 
 /* ===========================
-   FERMETURES
+   FERMETURE
 =========================== */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
@@ -269,7 +275,6 @@ overlay.addEventListener("click", () => {
 
 colorBox.addEventListener("click", e => e.stopPropagation());
 iphoneBox.addEventListener("click", e => e.stopPropagation());
-
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
 });
