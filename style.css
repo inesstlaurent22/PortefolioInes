@@ -29,7 +29,7 @@ html, body {
   z-index: 1;
 }
 
-/* ================= BOUTONS ================= */
+/* ================= BLOCS ================= */
 .bloc {
   position: absolute;
   z-index: 2;
@@ -38,11 +38,10 @@ html, body {
   border: none;
   padding: 0;
 
-  /* centrage parfait du contenu */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: center;     /* centrage vertical */
+  justify-content: flex-start; /* texte à gauche */
+  text-align: left;
 
   transition: transform 0.6s ease;
 }
@@ -65,22 +64,21 @@ html, body {
   z-index: 3;
   color: #ffffff;
   font-weight: bold;
-  text-align: center;
   pointer-events: none;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;     /* centrage vertical */
+  justify-content: flex-start;
 
   width: 100%;
   height: 100%;
 
-  padding: 0 16px;
+  padding-left: 24px;
+  padding-right: 16px;
 
-  /* lisibilité */
+  text-align: left;
+
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-
-  /* taille responsive */
   font-size: clamp(14px, 1.5vw, 22px);
 }
 
@@ -152,13 +150,11 @@ html, body {
   pointer-events: auto;
 }
 
-/* ================= ENCASTREMENT ================= */
+/* ================= ENCASTREMENT (NORMAL) ================= */
 #colorBox {
-  width: 80vw;
-  height: 60vh;
+  background: transparent;
   border-radius: 20px;
   padding: 30px;
-  overflow: hidden;
   transform: scale(0.7);
   transition: transform 0.4s ease;
 }
@@ -169,8 +165,8 @@ html, body {
 
 /* ================= CONTENU ================= */
 #contentBox {
-  width: 100%;
-  height: 100%;
+  width: 80vw;
+  height: 60vh;
   overflow-y: auto;
   color: white;
   font-size: clamp(14px, 1.2vw, 18px);
@@ -182,16 +178,24 @@ html, body {
   margin-bottom: 16px;
 }
 
-/* ================= RÉSEAUX SOCIAUX ================= */
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  width: 100%;
-  height: 100%;
+/* ================= BLOC JAUNE – RÉSEAUX ================= */
+
+/* quand le bloc jaune est actif */
+#colorBox.jaune {
+  width: auto;
+  height: auto;
+  padding: 32px 40px;
 }
 
+/* réseaux */
+.socials {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* icônes */
 .socials img {
   width: 80px;
   height: 80px;
@@ -203,12 +207,8 @@ html, body {
   transform: scale(1.1);
 }
 
-/* ================= MOBILE AJUSTEMENTS ================= */
+/* mobile */
 @media (max-width: 767px) {
-  #colorBox {
-    padding: 20px;
-  }
-
   .socials img {
     width: 56px;
     height: 56px;
