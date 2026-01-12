@@ -9,29 +9,6 @@ const objectifOverlay = document.getElementById("objectifOverlay");
 const iphoneBox = document.querySelector(".iphoneBox");
 
 /* ===========================
-   BULLE FLOTTANTE (SUPERPOSITION)
-=========================== */
-function showFloatingBubble(html, theme = "default") {
-  removeFloatingBubble();
-
-  const bubble = document.createElement("div");
-  bubble.className = `floating-bubble floating-${theme}`;
-  bubble.innerHTML = html;
-
-  bubble.addEventListener("click", e => e.stopPropagation());
-  contentBox.appendChild(bubble);
-
-  requestAnimationFrame(() => {
-    bubble.classList.add("active");
-  });
-}
-
-function removeFloatingBubble() {
-  const bubble = document.querySelector(".floating-bubble");
-  if (bubble) bubble.remove();
-}
-
-/* ===========================
    CONTENU PAR BLOC
 =========================== */
 const contents = {
@@ -78,11 +55,13 @@ const contents = {
       <button class="step-btn" data-step="2">02 — Intelligence marché & Stratégie</button>
       <button class="step-btn" data-step="3">03 — Déploiement & Pilotage</button>
     </div>
+
+    <div class="programme-result text-left" id="programmeResult"></div>
   `,
 
   /* ================= CV COMPÉTENCES ================= */
   violet1: `
-    <h2 class="competences-title"> Parcours professionnel — Timeline</h2>
+    <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
     <div class="competences-buttons">
 
@@ -91,82 +70,72 @@ const contents = {
         <span class="competence-company"><strong>Gearbooker</strong></span>
         <span class="competence-sector"><em>Audiovisuel</em></span>
       </button>
+      <div class="competence-detail" data-detail="1"></div>
 
       <button class="competence-btn" data-comp="2">
         <span class="competence-title-big">Commerciale Marketing</span>
         <span class="competence-company"><strong>Pachamamaï</strong></span>
         <span class="competence-sector"><em>Cosmétique solide</em></span>
       </button>
+      <div class="competence-detail" data-detail="2"></div>
 
       <button class="competence-btn" data-comp="3">
         <span class="competence-title-big">CEO & Community Manager</span>
         <span class="competence-company"><strong>PUFFRAP</strong></span>
         <span class="competence-sector"><em>Média musique</em></span>
       </button>
+      <div class="competence-detail" data-detail="3"></div>
 
       <button class="competence-btn" data-comp="4">
         <span class="competence-title-big">CEO & Développeuse Web</span>
         <span class="competence-company"><strong>KIT IN</strong></span>
         <span class="competence-sector"><em>Formation à la création d’entreprise pour les jeunes dès 10 ans</em></span>
       </button>
+      <div class="competence-detail" data-detail="4"></div>
 
       <button class="competence-btn" data-comp="5">
         <span class="competence-title-big">Stagiaire Comptable</span>
         <span class="competence-company"><strong>Pages Jaunes</strong></span>
         <span class="competence-sector"><em>Annuaire en ligne</em></span>
       </button>
+      <div class="competence-detail" data-detail="5"></div>
 
       <button class="competence-btn" data-comp="6">
         <span class="competence-title-big">Vendeuse & Ambassadrice de marque</span>
         <span class="competence-company"><strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong></span>
         <span class="competence-sector"><em>Retail & Restauration</em></span>
       </button>
+      <div class="competence-detail" data-detail="6"></div>
 
     </div>
   `,
 
   /* ================= CV SCOLAIRE ================= */
   orange1: `
-    <h2 class="scolaire-title animated-title"> Parcours académique</h2>
+    <h2 class="scolaire-title animated-title">✦ Parcours académique</h2>
 
-    <p><strong>Master Import-Export</strong><br>
-    KEDGE Business School — Marseille</p>
-
-    <p><strong>Bachelor International Business</strong><br>
-    INSEEC Paris Business School — Paris</p>
-
-    <p><strong>BTS Commerce International</strong><br>
-    Lycée Jean Lurçat — Paris</p>
-
-    <p><strong>Licence de Gestion</strong><br>
-    Université Paris 1 Panthéon-Sorbonne</p>
-
-    <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-    École Nationale de Commerce — Paris</p>
+    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+    <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
+    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+    <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
+    <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>École Nationale de Commerce — Paris</p>
   `,
 
   /* ================= RÉSEAUX ================= */
   jaune1: `
     <div class="socials socials-small">
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="images/Instagram.PNG" alt="Instagram">
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank">
-        <img src="images/Linkedin.PNG" alt="LinkedIn">
-      </a>
-      <a href="mailto:contact@tonmail.com">
-        <img src="images/Mail.PNG" alt="Email">
-      </a>
+      <a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram.PNG"></a>
+      <a href="https://www.linkedin.com/" target="_blank"><img src="images/Linkedin.PNG"></a>
+      <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG"></a>
     </div>
   `
 };
 
 /* ===========================
-   TEXTES DES BULLES – PROGRAMME
+   TEXTES PROGRAMME
 =========================== */
 const programmeTexts = {
   1: `
-    <h3>Diagnostic & Vision</h3>
     <ul>
       <li>Analyse approfondie de votre vision long terme et de vos ambitions</li>
       <li>Définition précise du marché ou du pays cible</li>
@@ -175,7 +144,6 @@ const programmeTexts = {
     </ul>
   `,
   2: `
-    <h3>Intelligence marché & Stratégie</h3>
     <ul>
       <li>Études de marché approfondies</li>
       <li>Analyse concurrentielle et positionnement stratégique</li>
@@ -185,7 +153,6 @@ const programmeTexts = {
     </ul>
   `,
   3: `
-    <h3>Déploiement & Pilotage stratégique</h3>
     <ul>
       <li>Mise en œuvre opérationnelle de la stratégie</li>
       <li>Suivi des performances et des KPI</li>
@@ -196,55 +163,49 @@ const programmeTexts = {
 };
 
 /* ===========================
-   TEXTES DES BULLES – CV COMPÉTENCES
+   TEXTES CV COMPÉTENCES
 =========================== */
 const competencesTexts = {
   1: `
-    <h3>Consultante en développement d’activité</h3>
     <ul>
-      <li><em>Accompagnement stratégique d’une entreprise audiovisuelle internationale</em></li>
-      <li><em>Développement commercial et prospection BtoB / BtoC</em></li>
-      <li><em>Analyse des performances et pilotage des actions</em></li>
+      <li>Accompagnement stratégique d’une entreprise audiovisuelle internationale</li>
+      <li>Développement commercial et prospection BtoB / BtoC</li>
+      <li>Analyse des performances et pilotage des actions</li>
     </ul>
   `,
   2: `
-    <h3>Commerciale Marketing</h3>
     <ul>
-      <li><em>Lancement et développement de produits cosmétiques solides</em></li>
-      <li><em>Études de marché et expansion internationale</em></li>
-      <li><em>Suivi et fidélisation client</em></li>
+      <li>Lancement et développement de produits cosmétiques solides</li>
+      <li>Études de marché et expansion internationale</li>
+      <li>Suivi et fidélisation client</li>
     </ul>
   `,
   3: `
-    <h3>CEO & Community Manager</h3>
     <ul>
-      <li><em>Création et développement d’un média musical</em></li>
-      <li><em>Gestion et croissance des communautés digitales</em></li>
-      <li><em>Optimisation de la visibilité et partenariats stratégiques</em></li>
+      <li>Création et développement d’un média musical</li>
+      <li>Gestion et croissance des communautés digitales</li>
+      <li>Optimisation de la visibilité et partenariats stratégiques</li>
     </ul>
   `,
   4: `
-    <h3>CEO & Développeuse Web</h3>
     <ul>
-      <li><em>Conception de formations entrepreneuriales pour les jeunes</em></li>
-      <li><em>Développement web (HTML, CSS, JavaScript)</em></li>
-      <li><em>Vision produit, pédagogie et structuration business</em></li>
+      <li>Conception de formations entrepreneuriales pour les jeunes</li>
+      <li>Développement web (HTML, CSS, JavaScript)</li>
+      <li>Vision produit, pédagogie et structuration business</li>
     </ul>
   `,
   5: `
-    <h3>Stagiaire Comptable</h3>
     <ul>
-      <li><em>Gestion de la comptabilité clients et fournisseurs</em></li>
-      <li><em>Analyse des flux financiers</em></li>
-      <li><em>Organisation et rigueur comptable</em></li>
+      <li>Gestion de la comptabilité clients et fournisseurs</li>
+      <li>Analyse des flux financiers</li>
+      <li>Organisation et rigueur comptable</li>
     </ul>
   `,
   6: `
-    <h3>Vendeuse & Ambassadrice de marque</h3>
     <ul>
-      <li><em>Représentation et valorisation de marques en retail et restauration</em></li>
-      <li><em>Relation client premium et expérience terrain</em></li>
-      <li><em>Contribution à la notoriété des enseignes</em></li>
+      <li>Représentation et valorisation de marques</li>
+      <li>Relation client premium et expérience terrain</li>
+      <li>Contribution à la notoriété des enseignes</li>
     </ul>
   `
 };
@@ -261,7 +222,6 @@ buttons.forEach(button => {
     if (!key) return;
 
     contentBox.innerHTML = contents[key];
-    removeFloatingBubble();
     colorBox.style.background = button.dataset.color || "transparent";
     overlay.classList.add("active");
   });
@@ -272,20 +232,29 @@ buttons.forEach(button => {
 =========================== */
 contentBox.addEventListener("click", e => {
 
+  /* objectif */
   if (e.target.id === "openObjectif") {
     e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
 
+  /* programme */
   if (e.target.classList.contains("step-btn")) {
-    e.stopPropagation();
-    showFloatingBubble(programmeTexts[e.target.dataset.step], "rose");
+    const step = e.target.dataset.step;
+    document.getElementById("programmeResult").innerHTML = programmeTexts[step];
   }
 
+  /* compétences */
   if (e.target.closest(".competence-btn")) {
-    e.stopPropagation();
     const btn = e.target.closest(".competence-btn");
-    showFloatingBubble(competencesTexts[btn.dataset.comp], "violet");
+    const key = btn.dataset.comp;
+
+    document
+      .querySelectorAll(".competence-detail")
+      .forEach(el => el.innerHTML = "");
+
+    const detail = document.querySelector(`.competence-detail[data-detail="${key}"]`);
+    detail.innerHTML = competencesTexts[key];
   }
 });
 
@@ -295,7 +264,6 @@ contentBox.addEventListener("click", e => {
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   objectifOverlay.classList.remove("active");
-  removeFloatingBubble();
   contentBox.innerHTML = "";
 });
 
