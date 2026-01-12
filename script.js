@@ -11,7 +11,7 @@ const contentBox = document.getElementById("contentBox");
 =========================== */
 const contents = {
 
-  /* ===== BLEU : MON OFFRE ===== */
+  /* ================= BLEU : MON OFFRE ================= */
   bleu1: `
     <p><strong>Présentation</strong></p>
 
@@ -21,7 +21,7 @@ const contents = {
 
     <p>J’interviens sur des missions stratégiques telles que le <strong>lancement de nouveaux produits</strong>, l’implantation sur de nouveaux marchés, ainsi que le développement de la visibilité et des performances commerciales des marques, notamment via les réseaux sociaux.</p>
 
-    <p>Mon expertise repose sur une connaissance approfondie des <strong>marchés français, européens et asiatiques</strong>, et sur des collaborations dans des secteurs variés : cosmétique, alimentation, musique et audiovisuel.</p>
+    <p>Mon expertise s’appuie sur une connaissance approfondie des <strong>marchés français, européens et asiatiques</strong>, et sur des collaborations dans des secteurs variés tels que le cosmétique, l’alimentation, la musique et l’audiovisuel.</p>
 
     <p>Curieuse et polyvalente, j’ai également développé des compétences en <strong>community management</strong> et en <strong>développement web</strong>, me permettant d’avoir une vision globale, stratégique et opérationnelle des projets que j’accompagne.</p>
 
@@ -30,16 +30,14 @@ const contents = {
     Si vous cherchez une approche humaine, stratégique et orientée résultats, échangeons.</p>
   `,
 
-  /* ===== ROSE : MON PROGRAMME ===== */
+  /* ================= ROSE : MON PROGRAMME ================= */
   rose1: `
     <p><strong>♟️ Processus d’accompagnement stratégique</strong></p>
 
     <p><strong>01 — Diagnostic & Vision</strong></p>
-
     <p>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</p>
 
     <p>Nous y définissons :</p>
-
     <ul>
       <li>votre vision long terme,</li>
       <li>le marché ou pays cible,</li>
@@ -51,8 +49,6 @@ const contents = {
 
     <p><strong>02 — Intelligence marché & Stratégie sur mesure</strong><br>
     <em>(10 à 15 jours après le diagnostic)</em></p>
-
-    <p>Je vous livre une analyse complète et structurée, comprenant :</p>
 
     <ul>
       <li>études de marché approfondies,</li>
@@ -66,8 +62,6 @@ const contents = {
 
     <p><strong>03 — Déploiement & Pilotage stratégique</strong></p>
 
-    <p>Une fois la stratégie validée, l’accompagnement démarre avec une approche agile, mesurable et orientée résultats.</p>
-
     <ul>
       <li>Réunion de pilotage mensuelle</li>
       <li>Analyse des performances et KPI</li>
@@ -76,73 +70,92 @@ const contents = {
     </ul>
 
     <p><strong>📅 Durée & rythme des missions</strong></p>
-
-    <p>Accompagnements sur <strong>3, 6 ou 12 mois</strong>.</p>
+    <p>Accompagnements sur <strong>3 mois, 6 mois ou jusqu’à 12 mois</strong>.</p>
 
     <p><strong>📈 Mon engagement</strong></p>
+    <p>Structurer, accélérer et sécuriser votre développement sur des marchés à fort potentiel.</p>
 
-    <p>Structurer, accélérer et sécuriser votre croissance sur des marchés à fort potentiel.</p>
+    <p><strong>👉 Vous avez une vision.</strong><br>
+    Je vous aide à la transformer en croissance maîtrisée.</p>
   `,
 
-  /* ===== VIOLET : CV COMPÉTENCES ===== */
+  /* ================= VIOLET : PARCOURS PRO ================= */
   violet1: `
     <p><strong>✦ Parcours professionnel — Timeline</strong></p>
 
-    <p><strong>Consultante en développement d’activité</strong> — Gearbooker</p>
+    <p><strong>◉ Consultante en développement d’activité</strong><br>
+    Gearbooker — Audiovisuel & international</p>
     <ul>
-      <li>Implantation marché français</li>
-      <li>Stratégie commerciale</li>
-      <li>Prospection BtoB / BtoC</li>
+      <li>Implantation sur le marché français</li>
+      <li>Stratégies de développement commercial</li>
+      <li>Prospection BtoB & BtoC</li>
+      <li>Analyse des performances & pilotage stratégique</li>
     </ul>
 
-    <p><strong>Commerciale Marketing</strong> — Pachamamai</p>
+    <p><strong>◉ Commerciale Marketing</strong><br>
+    Pachamamai — Cosmétique & marchés internationaux</p>
     <ul>
-      <li>Lancement produits</li>
-      <li>Études de marché Europe & Asie</li>
+      <li>Lancement de nouveaux produits</li>
+      <li>Études de marché (Portugal, Espagne, Asie)</li>
+      <li>Fidélisation & développement clientèle</li>
     </ul>
 
-    <p><strong>CEO & Community Manager</strong> — PUFFRAP</p>
+    <p><strong>◉ CEO & Community Manager</strong><br>
+    PUFFRAP — Média & culture musicale</p>
     <ul>
-      <li>Création média</li>
-      <li>SEO & réseaux sociaux</li>
+      <li>Création et développement du média</li>
+      <li>Gestion Instagram & TikTok</li>
+      <li>SEO & visibilité digitale</li>
     </ul>
 
-    <p><strong>CEO & Développeuse Web</strong> — KIT IN</p>
+    <p><strong>◉ CEO & Développeuse Web</strong><br>
+    KIT IN — Entrepreneuriat & digital</p>
     <ul>
-      <li>Formation entrepreneuriale</li>
-      <li>HTML / CSS / JS</li>
+      <li>Création d’une formation entrepreneuriale</li>
+      <li>Développement HTML, CSS, JavaScript</li>
+      <li>Vision produit, business & pédagogie</li>
     </ul>
 
-    <p><strong>Stagiaire Comptable</strong> — Pages Jaunes</p>
+    <p><strong>◉ Stagiaire Comptable</strong><br>
+    Pages Jaunes — Finance</p>
   `,
 
-  /* ===== ORANGE : CV SCOLAIRE ===== */
+  /* ================= ORANGE : PARCOURS ACADÉMIQUE ================= */
   orange1: `
     <p><strong>✦ Parcours académique</strong></p>
 
-    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
-    <p><strong>Bachelor International Business</strong><br>INSEEC Paris — Paris</p>
-    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
-    <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
-    <p><strong>DCG</strong><br>École Nationale de Commerce — Paris</p>
+    <p><strong>Master Import-Export</strong><br>
+    KEDGE Business School — Marseille</p>
+
+    <p><strong>Bachelor International Business</strong><br>
+    INSEEC Paris Business School — Paris</p>
+
+    <p><strong>BTS Commerce International</strong><br>
+    Lycée Jean Lurçat — Paris</p>
+
+    <p><strong>Licence de Gestion</strong><br>
+    Université Paris 1 Panthéon-Sorbonne</p>
+
+    <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
+    École Nationale de Commerce — Paris</p>
+  `,
+
+  /* ================= JAUNE : RÉSEAUX SOCIAUX ================= */
+  jaune1: `
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+        <img src="images/Instagram.PNG" alt="Instagram">
+      </a>
+
+      <a href="mailto:contact@tonmail.com">
+        <img src="images/Mail.PNG" alt="Email">
+      </a>
+
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <img src="images/Linkedin.PNG" alt="LinkedIn">
+      </a>
+    </div>
   `
-
-   /* ===== JAUNE : RÉSEAUX SOCIAUX ===== */
-jaune1: `
-  <div class="socials">
-    <button aria-label="Instagram">
-      <img src="images/Instagram.PNG" alt="Instagram">
-    </button>
-
-    <button aria-label="Email">
-      <img src="images/Mail.PNG" alt="Email">
-    </button>
-
-    <button aria-label="LinkedIn">
-      <img src="images/Linkedin.PNG" alt="LinkedIn">
-    </button>
-  </div>
-`
 };
 
 /* ===========================
