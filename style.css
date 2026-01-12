@@ -367,3 +367,89 @@ html, body {
     padding: 20px;
   }
 }
+
+/* ================= PROGRAMME ================= */
+
+.programme-title {
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: bold;
+  margin-bottom: 30px;
+  position: relative;
+  animation: slideFade 0.8s ease forwards;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* boutons centrés */
+.programme-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.step-btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ================= BULLE DIALOGUE ================= */
+
+.programme-bubble {
+  position: absolute;
+  right: -420px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  background: rgba(20,20,20,0.95);
+  border-radius: 24px;
+  padding: 24px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.programme-bubble.active {
+  right: -20px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bubble-content {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* mobile : bulle en dessous */
+@media (max-width: 767px) {
+  .programme-bubble {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
