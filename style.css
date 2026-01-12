@@ -185,6 +185,19 @@ html, body {
   margin-bottom: 16px;
 }
 
+/* ================= ALIGNEMENT SPÉCIFIQUE ROSE ================= */
+.text-left {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text-left ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
 /* ================= JAUNE – RÉSEAUX ================= */
 #colorBox.jaune {
   width: auto;
