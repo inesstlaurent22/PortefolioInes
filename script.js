@@ -9,7 +9,31 @@ const objectifOverlay = document.getElementById("objectifOverlay");
 const iphoneBox = document.querySelector(".iphoneBox");
 
 /* ===========================
-   CONTENU PAR BOUTON
+   BULLE FLOTTANTE (SUPERPOSITION)
+=========================== */
+function showFloatingBubble(html, theme = "default") {
+  removeFloatingBubble();
+
+  const bubble = document.createElement("div");
+  bubble.className = `floating-bubble floating-${theme}`;
+  bubble.innerHTML = html;
+
+  bubble.addEventListener("click", e => e.stopPropagation());
+
+  contentBox.appendChild(bubble);
+
+  requestAnimationFrame(() => {
+    bubble.classList.add("active");
+  });
+}
+
+function removeFloatingBubble() {
+  const bubble = document.querySelector(".floating-bubble");
+  if (bubble) bubble.remove();
+}
+
+/* ===========================
+   CONTENU PAR BLOC
 =========================== */
 const contents = {
 
@@ -17,31 +41,29 @@ const contents = {
   bleu1: `
     <h2 class="presentation-title">Présentation</h2>
 
-    <div class="offre-bubble animate-bubble">
-      <p><strong>
-        Je m’appelle Inès Saint Laurent, freelance spécialisée dans le développement
-        d’activités commerciales, aussi bien sur les marchés locaux qu’internationaux.
-      </strong></p>
+    <p><strong>
+      Je m’appelle Inès Saint Laurent, freelance spécialisée dans le développement
+      d’activités commerciales, aussi bien sur les marchés locaux qu’internationaux.
+    </strong></p>
 
-      <p><strong>
-        Forte de plus de cinq années d’expérience en commerce international et marketing,
-        j’accompagne les entreprises — de la startup à la grande structure —
-        dans leurs phases clés de croissance et de structuration.
-      </strong></p>
+    <p><strong>
+      Forte de plus de cinq années d’expérience en commerce international et marketing,
+      j’accompagne les entreprises — de la startup à la grande structure —
+      dans leurs phases clés de croissance, de structuration et de positionnement.
+    </strong></p>
 
-      <p><strong>
-        J’interviens sur des missions stratégiques telles que le lancement de nouveaux produits,
-        l’implantation sur de nouveaux marchés, la structuration de l’offre,
-        ainsi que le développement de la visibilité et des performances commerciales,
-        notamment via les réseaux sociaux.
-      </strong></p>
+    <p><strong>
+      J’interviens sur des missions stratégiques telles que le lancement de nouveaux produits,
+      l’implantation sur de nouveaux marchés, la structuration de l’offre,
+      ainsi que le développement de la visibilité et des performances commerciales,
+      notamment via les réseaux sociaux.
+    </strong></p>
 
-      <p><strong>
-        Mon approche est humaine, stratégique et orientée résultats.
-        Elle repose sur une vision globale mêlant analyse, organisation,
-        exécution opérationnelle et compréhension fine des enjeux business et digitaux.
-      </strong></p>
-    </div>
+    <p><strong>
+      Mon approche est humaine, stratégique et orientée résultats.
+      Elle repose sur une vision globale mêlant analyse, organisation,
+      exécution opérationnelle et compréhension fine des enjeux business et digitaux.
+    </strong></p>
 
     <button class="objectif-btn objectif-btn-large" id="openObjectif">
       Mon objectif
@@ -57,10 +79,6 @@ const contents = {
       <button class="step-btn" data-step="2">02 — Intelligence marché & Stratégie</button>
       <button class="step-btn" data-step="3">03 — Déploiement & Pilotage</button>
     </div>
-
-    <div class="programme-bubble full-visible" id="programmeBubble">
-      <div class="bubble-content text-left" id="bubbleContent"></div>
-    </div>
   `,
 
   /* ================= CV COMPÉTENCES ================= */
@@ -68,39 +86,12 @@ const contents = {
     <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
     <div class="competences-buttons">
-      <button class="competence-btn" data-comp="1">
-        <span class="competence-title-big">Consultante en développement d’activité</span>
-        <span class="competence-sub">Gearbooker — Audiovisuel & international</span>
-      </button>
-
-      <button class="competence-btn" data-comp="2">
-        <span class="competence-title-big">Commerciale Marketing</span>
-        <span class="competence-sub">Pachamamai — Cosmétique & marchés internationaux</span>
-      </button>
-
-      <button class="competence-btn" data-comp="3">
-        <span class="competence-title-big">CEO & Community Manager</span>
-        <span class="competence-sub">PUFFRAP — Média & culture musicale</span>
-      </button>
-
-      <button class="competence-btn" data-comp="4">
-        <span class="competence-title-big">CEO & Développeuse Web</span>
-        <span class="competence-sub">KIT IN — Entrepreneuriat & digital</span>
-      </button>
-
-      <button class="competence-btn" data-comp="5">
-        <span class="competence-title-big">Stagiaire Comptable</span>
-        <span class="competence-sub">Pages Jaunes — Finance</span>
-      </button>
-
-      <button class="competence-btn" data-comp="6">
-        <span class="competence-title-big">Vendeuse & Ambassadrice de marque</span>
-        <span class="competence-sub">Le Perchoir — Galeries Lafayette — Paradis du Fruit</span>
-      </button>
-    </div>
-
-    <div class="competences-bubble white-violet" id="competencesBubble">
-      <div class="bubble-content text-left" id="competencesContent"></div>
+      <button class="competence-btn" data-comp="1">Consultante en développement d’activité</button>
+      <button class="competence-btn" data-comp="2">Commerciale Marketing</button>
+      <button class="competence-btn" data-comp="3">CEO & Community Manager</button>
+      <button class="competence-btn" data-comp="4">CEO & Développeuse Web</button>
+      <button class="competence-btn" data-comp="5">Stagiaire Comptable</button>
+      <button class="competence-btn" data-comp="6">Vendeuse & Ambassadrice de marque</button>
     </div>
   `,
 
@@ -124,7 +115,7 @@ const contents = {
     École Nationale de Commerce — Paris</p>
   `,
 
-  /* ================= RÉSEAUX SOCIAUX ================= */
+  /* ================= RÉSEAUX ================= */
   jaune1: `
     <div class="socials socials-small">
       <a href="https://www.instagram.com/" target="_blank">
@@ -141,41 +132,57 @@ const contents = {
 };
 
 /* ===========================
-   TEXTES – MON PROGRAMME
+   TEXTES DES BULLES – PROGRAMME
 =========================== */
 const programmeTexts = {
   1: `
+    <h3>Diagnostic & Vision</h3>
+    <p>
+      Un premier rendez-vous stratégique permet d’analyser votre situation actuelle,
+      de comprendre votre vision long terme et de clarifier vos ambitions.
+    </p>
     <ul>
-      <li>Analyse approfondie de votre vision long terme et de vos ambitions</li>
-      <li>Définition précise du marché ou du pays cible</li>
-      <li>Clarification des objectifs business prioritaires</li>
-      <li>Mise en place des indicateurs de performance et des délais</li>
+      <li>Analyse de votre vision et de vos objectifs</li>
+      <li>Définition du marché ou du pays cible</li>
+      <li>Identification des priorités business</li>
+      <li>Mise en place des indicateurs de performance</li>
     </ul>
   `,
   2: `
+    <h3>Intelligence marché & Stratégie</h3>
+    <p>
+      Cette phase consiste à construire une stratégie sur mesure,
+      fondée sur une compréhension fine de votre marché et de votre environnement concurrentiel.
+    </p>
     <ul>
-      <li>Études de marché approfondies et ciblées</li>
-      <li>Analyse concurrentielle et positionnement stratégique</li>
-      <li>Identification des opportunités produits et business</li>
-      <li>Construction d’une stratégie commerciale et marketing sur mesure</li>
-      <li>Élaboration d’un plan d’action clair et structuré</li>
+      <li>Études de marché approfondies</li>
+      <li>Analyse concurrentielle et positionnement</li>
+      <li>Identification des opportunités business</li>
+      <li>Construction de la stratégie commerciale et marketing</li>
+      <li>Élaboration d’un plan d’action structuré</li>
     </ul>
   `,
   3: `
+    <h3>Déploiement & Pilotage stratégique</h3>
+    <p>
+      La stratégie est mise en œuvre de manière opérationnelle,
+      avec un suivi régulier afin d’assurer une croissance maîtrisée et durable.
+    </p>
     <ul>
-      <li>Déploiement opérationnel de la stratégie définie</li>
-      <li>Réunions de pilotage mensuelles et suivi des priorités</li>
-      <li>Analyse continue des performances et des KPI</li>
-      <li>Ajustements stratégiques pour une croissance maîtrisée</li>
+      <li>Mise en œuvre des actions définies</li>
+      <li>Réunions de pilotage mensuelles</li>
+      <li>Analyse des performances et des KPI</li>
+      <li>Ajustements stratégiques continus</li>
     </ul>
   `
 };
 
 /* ===========================
-   TEXTES – CV COMPÉTENCES
+   TEXTES DES BULLES – CV COMPÉTENCES
 =========================== */
 const competencesTexts = {
   1: `
+    <h3>Consultante en développement d’activité</h3>
     <ul>
       <li><em>Accompagnement d’une entreprise internationale dans son implantation sur le marché français</em></li>
       <li><em>Élaboration et pilotage de stratégies de développement commercial</em></li>
@@ -184,22 +191,25 @@ const competencesTexts = {
     </ul>
   `,
   2: `
+    <h3>Commerciale Marketing</h3>
     <ul>
       <li><em>Lancement et développement de nouveaux produits</em></li>
-      <li><em>Réalisation d’études de marché (Europe et Asie)</em></li>
+      <li><em>Réalisation d’études de marché internationales</em></li>
       <li><em>Suivi, fidélisation et développement de la clientèle</em></li>
-      <li><em>Participation à des salons professionnels internationaux</em></li>
+      <li><em>Participation à des salons professionnels</em></li>
     </ul>
   `,
   3: `
+    <h3>CEO & Community Manager</h3>
     <ul>
       <li><em>Création, structuration et développement d’un média musical</em></li>
-      <li><em>Gestion et croissance des réseaux sociaux (Instagram, TikTok)</em></li>
+      <li><em>Gestion et croissance des réseaux sociaux</em></li>
       <li><em>Optimisation du SEO et de la visibilité digitale</em></li>
       <li><em>Mise en place de partenariats stratégiques</em></li>
     </ul>
   `,
   4: `
+    <h3>CEO & Développeuse Web</h3>
     <ul>
       <li><em>Conception et développement de projets entrepreneuriaux digitaux</em></li>
       <li><em>Développement web en HTML, CSS et JavaScript</em></li>
@@ -207,6 +217,7 @@ const competencesTexts = {
     </ul>
   `,
   5: `
+    <h3>Stagiaire Comptable</h3>
     <ul>
       <li><em>Gestion de la comptabilité clients et fournisseurs</em></li>
       <li><em>Analyse et compréhension des flux financiers</em></li>
@@ -214,6 +225,7 @@ const competencesTexts = {
     </ul>
   `,
   6: `
+    <h3>Vendeuse & Ambassadrice de marque</h3>
     <ul>
       <li><em>Représentation et valorisation de l’image de marque</em></li>
       <li><em>Relation client premium et expérience terrain</em></li>
@@ -223,7 +235,7 @@ const competencesTexts = {
 };
 
 /* ===========================
-   OUVERTURE OVERLAY
+   OUVERTURE OVERLAY PRINCIPAL
 =========================== */
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -234,21 +246,11 @@ buttons.forEach(button => {
     if (!key) return;
 
     contentBox.innerHTML = contents[key];
+    removeFloatingBubble();
     colorBox.style.background = button.dataset.color || "transparent";
     overlay.classList.add("active");
   });
 });
-
-/* ===========================
-   FERMETURE OVERLAY
-=========================== */
-overlay.addEventListener("click", () => {
-  overlay.classList.remove("active");
-  objectifOverlay.classList.remove("active");
-  contentBox.innerHTML = "";
-});
-
-colorBox.addEventListener("click", e => e.stopPropagation());
 
 /* ===========================
    INTERACTIONS INTERNES
@@ -262,23 +264,27 @@ contentBox.addEventListener("click", e => {
 
   if (e.target.classList.contains("step-btn")) {
     e.stopPropagation();
-    const step = e.target.dataset.step;
-    document.getElementById("bubbleContent").innerHTML = programmeTexts[step];
-    document.getElementById("programmeBubble").classList.add("active");
+    showFloatingBubble(programmeTexts[e.target.dataset.step], "rose");
   }
 
-  if (e.target.closest(".competence-btn")) {
+  if (e.target.classList.contains("competence-btn")) {
     e.stopPropagation();
-    const btn = e.target.closest(".competence-btn");
-    const key = btn.dataset.comp;
-    document.getElementById("competencesContent").innerHTML = competencesTexts[key];
-    document.getElementById("competencesBubble").classList.add("active");
+    showFloatingBubble(competencesTexts[e.target.dataset.comp], "violet");
   }
 });
 
 /* ===========================
-   OBJECTIF OVERLAY
+   FERMETURES
 =========================== */
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  objectifOverlay.classList.remove("active");
+  removeFloatingBubble();
+  contentBox.innerHTML = "";
+});
+
+colorBox.addEventListener("click", e => e.stopPropagation());
+
 iphoneBox.addEventListener("click", e => e.stopPropagation());
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
