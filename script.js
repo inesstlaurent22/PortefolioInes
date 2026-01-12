@@ -31,13 +31,14 @@ const contents = {
   `,
 
   /* ================= ROSE : MON PROGRAMME ================= */
-  rose1: `
-    <p><strong>♟️ Processus d’accompagnement stratégique</strong></p>
+rose1: `
+  <p><strong>♟️ Processus d’accompagnement stratégique</strong></p>
 
-    <p><strong>01 — Diagnostic & Vision</strong></p>
-    <p>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</p>
+  <p><strong>01 — Diagnostic & Vision</strong></p>
+  <p>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</p>
 
-    <p>Nous y définissons :</p>
+  <div class="text-left">
+    <p><strong>Nous y définissons :</strong></p>
     <ul>
       <li>votre vision long terme,</li>
       <li>le marché ou pays cible,</li>
@@ -68,16 +69,14 @@ const contents = {
       <li>Ajustements stratégiques continus</li>
       <li>Suivi des actions et priorités</li>
     </ul>
+  </div>
 
-    <p><strong>📅 Durée & rythme des missions</strong></p>
-    <p>Accompagnements sur <strong>3 mois, 6 mois ou jusqu’à 12 mois</strong>.</p>
+  <p><strong>📅 Durée & rythme des missions</strong></p>
+  <p>Les accompagnements sont proposés sur des formats de <strong>3 mois, 6 mois ou jusqu’à 12 mois</strong>, selon vos ambitions.</p>
 
-    <p><strong>📈 Mon engagement</strong></p>
-    <p>Structurer, accélérer et sécuriser votre développement sur des marchés à fort potentiel.</p>
-
-    <p><strong>👉 Vous avez une vision.</strong><br>
-    Je vous aide à la transformer en croissance maîtrisée.</p>
-  `,
+  <p><strong>👉 Vous avez une vision.</strong><br>
+  Je vous aide à la transformer en croissance maîtrisée.</p>
+`
 
   /* ================= VIOLET : PARCOURS PRO ================= */
   violet1: `
