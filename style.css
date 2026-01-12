@@ -69,6 +69,50 @@ html, body {
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
 }
 
+/* ================= POSITIONS DES BLOCS (DESKTOP) ================= */
+@media (min-width: 1025px) {
+  .bleu1   { left:600px;  top:2px;   width:400px; height:327px; }
+  .rose1   { left:1000px; top:0;     width:391px; height:327px; }
+  .violet1 { left:600px;  top:327px; width:401px; height:327px; }
+  .violet2 { left:600px;  top:654px; width:402px; height:328px; }
+  .orange1 { left:1000px; top:327px; width:392px; height:327px; }
+  .jaune1  { left:1000px; top:654px; width:393px; height:328px; }
+}
+
+/* ================= TABLETTE ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .FondPortefolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .bloc {
+    position: relative;
+    width: 40vw;
+    height: 28vh;
+    margin: 2vh;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 767px) {
+  .FondPortefolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .bloc {
+    position: relative;
+    width: 85vw;
+    height: 18vh;
+  }
+}
+
 /* ================= OVERLAY ================= */
 #overlay {
   position: fixed;
@@ -148,26 +192,20 @@ html, body {
 }
 
 /* ================= CV / COMPÉTENCES ================= */
-
-/* conteneur des cartes */
 .iphone-cards {
   display: flex;
   flex-direction: column;
-  gap: 26px; /* espace global */
+  gap: 26px;
 }
 
-/* carte iPhone */
 .iphone-card {
   background: rgba(255,255,255,0.95);
   border-radius: 20px;
   padding: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-
-  /* IMPORTANT : séparation réelle entre les cartes */
   margin-bottom: 12px;
 }
 
-/* bouton métier */
 .competence-btn {
   width: 100%;
   border: none;
@@ -176,12 +214,10 @@ html, body {
   cursor: pointer;
 }
 
-/* feedback iOS */
 .competence-btn:active {
   transform: scale(0.98);
 }
 
-/* titre métier */
 .competence-role {
   font-size: 17px;
   font-weight: 700;
@@ -189,13 +225,11 @@ html, body {
   margin-bottom: 6px;
 }
 
-/* entreprise + secteur */
 .competence-meta {
   font-size: 14px;
   color: #666;
 }
 
-/* contenu déplié */
 .competence-content {
   margin-top: 16px;
   padding-top: 16px;
@@ -241,7 +275,7 @@ html, body {
   box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE TEXTE ================= */
 @media (max-width: 768px) {
   #colorBox {
     width: 94vw;
