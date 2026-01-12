@@ -47,7 +47,7 @@ html, body {
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
 .bloc:hover {
@@ -238,6 +238,44 @@ html, body {
 
 .programme-result li {
   margin-bottom: 10px;
+}
+
+/* ================= LOGICIELS ACQUIS ================= */
+.logiciels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.logiciel-btn {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.logiciel-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.01);
+}
+
+.logiciel-content {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.logiciel-content.active {
+  display: block;
 }
 
 /* ================= PARCOURS ACADÉMIQUE ================= */
