@@ -147,44 +147,24 @@ html, body {
   height: 42px;
 }
 
-/* ================= PROGRAMME ================= */
-.programme-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-}
-
-.step-btn {
-  padding: 14px 28px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 700;
-  background: #fff;
-  color: #FF4FD8;
-  cursor: pointer;
-}
-
-#programmeResult {
-  margin-top: 18px;
-  text-align: left;
-}
-
 /* ================= CV / COMPÉTENCES ================= */
 
 /* conteneur des cartes */
 .iphone-cards {
   display: flex;
   flex-direction: column;
-  gap: 24px; /* ESPACE CLAIR ENTRE CHAQUE CARTE */
+  gap: 26px; /* espace global */
 }
 
 /* carte iPhone */
 .iphone-card {
-  background: rgba(255,255,255,0.97);
-  border-radius: 22px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
   padding: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+
+  /* IMPORTANT : séparation réelle entre les cartes */
+  margin-bottom: 12px;
 }
 
 /* bouton métier */
@@ -196,12 +176,12 @@ html, body {
   cursor: pointer;
 }
 
-/* effet iOS au clic */
+/* feedback iOS */
 .competence-btn:active {
   transform: scale(0.98);
 }
 
-/* métier */
+/* titre métier */
 .competence-role {
   font-size: 17px;
   font-weight: 700;
@@ -215,7 +195,7 @@ html, body {
   color: #666;
 }
 
-/* texte affiché sous le bouton */
+/* contenu déplié */
 .competence-content {
   margin-top: 16px;
   padding-top: 16px;
