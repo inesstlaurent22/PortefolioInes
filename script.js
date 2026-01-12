@@ -82,7 +82,7 @@ const contents = {
 
   /* ================= CV COMPÉTENCES ================= */
   violet1: `
-    <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
+    <h2 class="competences-title"> Parcours professionnel — Timeline</h2>
 
     <div class="competences-buttons">
 
@@ -127,7 +127,7 @@ const contents = {
 
   /* ================= CV SCOLAIRE ================= */
   orange1: `
-    <h2 class="scolaire-title animated-title">✦ Parcours académique</h2>
+    <h2 class="scolaire-title animated-title"> Parcours académique</h2>
 
     <p><strong>Master Import-Export</strong><br>
     KEDGE Business School — Marseille</p>
