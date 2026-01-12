@@ -47,64 +47,42 @@ const contents = {
 
   /* ================= VIOLET : CV COMPÉTENCES ================= */
   violet1: `
-    <p class="center-title"><strong>✦ Parcours professionnel — Timeline</strong></p>
+    <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
-    <div class="timeline left">
-      <p><strong>◉ Consultante en développement d’activité</strong><br>
-      Gearbooker — Audiovisuel & international</p>
+    <div class="competences-buttons">
+      <button class="competence-btn" data-comp="1">
+        ◉ Consultante en développement d’activité
+        <span>Gearbooker — Audiovisuel & international</span>
+      </button>
 
-      <p>→ Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français<br>
-      → Élaboration de stratégies de développement commercial<br>
-      → Prospection BtoB & BtoC<br>
-      → Analyse des performances et réunions de pilotage avec les associés</p>
+      <button class="competence-btn" data-comp="2">
+        ◉ Commerciale Marketing
+        <span>Pachamamai — Cosmétique & marchés internationaux</span>
+      </button>
+
+      <button class="competence-btn" data-comp="3">
+        ◉ CEO & Community Manager
+        <span>PUFFRAP — Média & culture musicale</span>
+      </button>
+
+      <button class="competence-btn" data-comp="4">
+        ◉ CEO & Développeuse Web
+        <span>KIT IN — Entrepreneuriat & digital</span>
+      </button>
+
+      <button class="competence-btn" data-comp="5">
+        ◉ Stagiaire Comptable
+        <span>Pages Jaunes — Finance</span>
+      </button>
+
+      <button class="competence-btn" data-comp="6">
+        ◉ Vendeuse & Ambassadrice de marque
+        <span>Le Perchoir — Galeries Lafayette — Paradis du Fruit</span>
+      </button>
     </div>
 
-    <div class="timeline right">
-      <p><strong>◉ Commerciale Marketing</strong><br>
-      Pachamamai — Cosmétique & marchés internationaux</p>
-
-      <p>→ Prospection commerciale et lancement de nouveaux produits<br>
-      → Réalisation d’études de marché (Portugal, Espagne, Asie)<br>
-      → Suivi et fidélisation de la clientèle<br>
-      → Participation à des salons internationaux</p>
-    </div>
-
-    <div class="timeline left">
-      <p><strong>◉ CEO & Community Manager</strong><br>
-      PUFFRAP — Média & culture musicale</p>
-
-      <p>→ Création et développement du magazine en ligne<br>
-      → Gestion et croissance des réseaux sociaux (Instagram & TikTok)<br>
-      → Optimisation du SEO et de la visibilité digitale<br>
-      → Mise en place de partenariats stratégiques</p>
-    </div>
-
-    <div class="timeline right">
-      <p><strong>◉ CEO & Développeuse Web</strong><br>
-      KIT IN — Entrepreneuriat & digital</p>
-
-      <p>→ Conception et développement d’une formation en ligne dédiée à la création d’entreprise<br>
-      → Projet éducatif destiné aux jeunes de 10 à 17 ans<br>
-      → Développement technique en HTML, CSS et JavaScript<br>
-      → Vision globale : produit, pédagogie, business et technologie</p>
-    </div>
-
-    <div class="timeline left">
-      <p><strong>◉ Stagiaire Comptable</strong><br>
-      Pages Jaunes — Finance</p>
-
-      <p>→ Comptabilité clients et fournisseurs<br>
-      → Compréhension des flux financiers<br>
-      → Rigueur, organisation et vision analytique</p>
-    </div>
-
-    <div class="timeline right">
-      <p><strong>◉ Vendeuse & Ambassadrice de marque</strong><br>
-      Le Perchoir — Galeries Lafayette — Le Paradis du Fruit</p>
-
-      <p>→ Représentation et valorisation de l’image de marque<br>
-      → Relation client premium et expérience terrain<br>
-      → Contribution directe à la notoriété des enseignes</p>
+    <div class="competences-bubble" id="competencesBubble">
+      <div class="bubble-content" id="competencesContent"></div>
     </div>
   `,
 
@@ -131,13 +109,13 @@ const contents = {
   /* ================= JAUNE : RÉSEAUX ================= */
   jaune1: `
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
       <a href="mailto:contact@tonmail.com">
         <img src="images/Mail.PNG" alt="Email">
       </a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/" target="_blank">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
     </div>
@@ -145,7 +123,7 @@ const contents = {
 };
 
 /* ===========================
-   TEXTES DES ÉTAPES PROGRAMME
+   TEXTES PROGRAMME
 =========================== */
 const programmeTexts = {
   1: `
@@ -159,7 +137,7 @@ const programmeTexts = {
       <li>vos objectifs business prioritaires</li>
       <li>les délais et indicateurs de performance</li>
     </ul>
-    Cette étape garantit un alignement clair et précis avant toute mise en œuvre.
+    Cette étape garantit un alignement clair avant toute mise en œuvre.
   `,
   2: `
     <strong>Intelligence marché & Stratégie sur mesure</strong><br><br>
@@ -188,7 +166,47 @@ const programmeTexts = {
 };
 
 /* ===========================
-   OUVERTURE OVERLAY PRINCIPAL
+   TEXTES CV COMPÉTENCES
+=========================== */
+const competencesTexts = {
+  1: `
+    → Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français<br>
+    → Élaboration de stratégies de développement commercial<br>
+    → Prospection BtoB & BtoC<br>
+    → Analyse des performances et réunions de pilotage avec les associés
+  `,
+  2: `
+    → Prospection commerciale et lancement de nouveaux produits<br>
+    → Réalisation d’études de marché (Portugal, Espagne, Asie)<br>
+    → Suivi et fidélisation de la clientèle<br>
+    → Participation à des salons internationaux
+  `,
+  3: `
+    → Création et développement d’un média musical en ligne<br>
+    → Gestion et croissance des réseaux sociaux (Instagram & TikTok)<br>
+    → Optimisation du SEO et de la visibilité digitale<br>
+    → Mise en place de partenariats stratégiques
+  `,
+  4: `
+    → Conception et développement d’une formation entrepreneuriale<br>
+    → Projet éducatif destiné aux jeunes de 10 à 17 ans<br>
+    → Développement HTML, CSS et JavaScript<br>
+    → Vision globale : produit, pédagogie, business et technologie
+  `,
+  5: `
+    → Comptabilité clients et fournisseurs<br>
+    → Compréhension des flux financiers<br>
+    → Rigueur, organisation et vision analytique
+  `,
+  6: `
+    → Représentation et valorisation de l’image de marque<br>
+    → Relation client premium et expérience terrain<br>
+    → Contribution directe à la notoriété des enseignes
+  `
+};
+
+/* ===========================
+   OUVERTURE OVERLAY
 =========================== */
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -202,16 +220,12 @@ buttons.forEach(button => {
     contentBox.innerHTML = contents[key];
     colorBox.style.background = button.dataset.color || "transparent";
 
-    key === "jaune1"
-      ? colorBox.classList.add("jaune")
-      : colorBox.classList.remove("jaune");
-
     overlay.classList.add("active");
   });
 });
 
 /* ===========================
-   FERMETURE OVERLAY PRINCIPAL
+   FERMETURE OVERLAY
 =========================== */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
@@ -223,26 +237,31 @@ overlay.addEventListener("click", () => {
 colorBox.addEventListener("click", e => e.stopPropagation());
 
 /* ===========================
-   INTERACTIONS DANS CONTENTBOX
+   INTERACTIONS INTERNES
 =========================== */
 contentBox.addEventListener("click", e => {
 
-  /* ouverture objectif */
-  if (e.target && e.target.id === "openObjectif") {
+  /* objectif */
+  if (e.target.id === "openObjectif") {
     e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
 
-  /* étapes programme */
+  /* programme */
   if (e.target.classList.contains("step-btn")) {
     e.stopPropagation();
-
     const step = e.target.dataset.step;
-    const bubble = document.getElementById("programmeBubble");
-    const bubbleContent = document.getElementById("bubbleContent");
+    document.getElementById("bubbleContent").innerHTML = programmeTexts[step];
+    document.getElementById("programmeBubble").classList.add("active");
+  }
 
-    bubbleContent.innerHTML = programmeTexts[step];
-    bubble.classList.add("active");
+  /* compétences */
+  if (e.target.closest(".competence-btn")) {
+    e.stopPropagation();
+    const btn = e.target.closest(".competence-btn");
+    const key = btn.dataset.comp;
+    document.getElementById("competencesContent").innerHTML = competencesTexts[key];
+    document.getElementById("competencesBubble").classList.add("active");
   }
 });
 
@@ -250,7 +269,6 @@ contentBox.addEventListener("click", e => {
    OBJECTIF OVERLAY
 =========================== */
 iphoneBox.addEventListener("click", e => e.stopPropagation());
-
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
 });
