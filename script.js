@@ -126,6 +126,23 @@ const contents = {
     <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
     <p><strong>DCG</strong><br>École Nationale de Commerce — Paris</p>
   `
+
+   /* ===== JAUNE : RÉSEAUX SOCIAUX ===== */
+jaune1: `
+  <div class="socials">
+    <button aria-label="Instagram">
+      <img src="images/Instagram.PNG" alt="Instagram">
+    </button>
+
+    <button aria-label="Email">
+      <img src="images/Mail.PNG" alt="Email">
+    </button>
+
+    <button aria-label="LinkedIn">
+      <img src="images/Linkedin.PNG" alt="LinkedIn">
+    </button>
+  </div>
+`
 };
 
 /* ===========================
