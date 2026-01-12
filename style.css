@@ -190,3 +190,36 @@ html, body {
     padding: 20px;
   }
 }
+
+/* ===========================
+   JAUNE – RÉSEAUX SOCIAUX
+=========================== */
+
+.socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* boutons réseaux */
+.socials button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.socials img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* responsive mobile */
+@media (max-width: 767px) {
+  .socials img {
+    width: 48px;
+    height: 48px;
+  }
+}
