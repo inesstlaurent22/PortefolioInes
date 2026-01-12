@@ -75,134 +75,58 @@ const contents = {
       <li>Suivi des actions et priorités</li>
     </ul>
 
-    <p>Chaque décision est guidée par la performance, la cohérence et la croissance durable.</p>
-
     <p><strong>📅 Durée & rythme des missions</strong></p>
 
-    <p>Les accompagnements sont proposés sur des formats de <strong>3 mois, 6 mois ou jusqu’à 12 mois</strong>, selon vos ambitions.</p>
-
-    <p><strong>Planning type :</strong></p>
-
-    <ul>
-      <li><strong>J +15</strong> après le diagnostic : restitution stratégique, validation du plan d’action et fixation des objectifs.</li>
-      <li><strong>Chaque mois</strong> : comité de pilotage pour suivre l’évolution et affiner la stratégie.</li>
-    </ul>
+    <p>Accompagnements sur <strong>3, 6 ou 12 mois</strong>.</p>
 
     <p><strong>📈 Mon engagement</strong></p>
 
-    <p>Vous bénéficiez d’un accompagnement personnalisé, discret et exigeant, pensé pour structurer, accélérer et sécuriser votre développement sur des marchés à fort potentiel.</p>
-
-    <p><strong>👉 Vous avez une vision.</strong><br>
-    Je vous aide à la transformer en croissance maîtrisée.</p>
+    <p>Structurer, accélérer et sécuriser votre croissance sur des marchés à fort potentiel.</p>
   `,
 
   /* ===== VIOLET : CV COMPÉTENCES ===== */
   violet1: `
     <p><strong>✦ Parcours professionnel — Timeline</strong></p>
 
-    <p><strong>◉ Consultante en développement d’activité</strong><br>
-    Gearbooker — Audiovisuel & international</p>
-
+    <p><strong>Consultante en développement d’activité</strong> — Gearbooker</p>
     <ul>
-      <li>Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français</li>
-      <li>Élaboration de stratégies de développement commercial</li>
-      <li>Prospection BtoB & BtoC</li>
-      <li>Analyse des performances et réunions de pilotage avec les associés</li>
+      <li>Implantation marché français</li>
+      <li>Stratégie commerciale</li>
+      <li>Prospection BtoB / BtoC</li>
     </ul>
 
-    <hr>
-
-    <p><strong>◉ Commerciale Marketing</strong><br>
-    Pachamamai — Cosmétique & marchés internationaux</p>
-
+    <p><strong>Commerciale Marketing</strong> — Pachamamai</p>
     <ul>
-      <li>Prospection commerciale et lancement de nouveaux produits</li>
-      <li>Réalisation d’études de marché (Portugal, Espagne, Asie)</li>
-      <li>Suivi et fidélisation de la clientèle</li>
-      <li>Participation à des salons internationaux</li>
+      <li>Lancement produits</li>
+      <li>Études de marché Europe & Asie</li>
     </ul>
 
-    <hr>
-
-    <p><strong>◉ CEO & Community Manager</strong><br>
-    PUFFRAP — Média & culture musicale</p>
-
+    <p><strong>CEO & Community Manager</strong> — PUFFRAP</p>
     <ul>
-      <li>Création et développement du magazine en ligne</li>
-      <li>Gestion et croissance des réseaux sociaux (Instagram & TikTok)</li>
-      <li>Optimisation du SEO et de la visibilité digitale</li>
-      <li>Mise en place de partenariats stratégiques</li>
+      <li>Création média</li>
+      <li>SEO & réseaux sociaux</li>
     </ul>
 
-    <hr>
-
-    <p><strong>◉ CEO & Développeuse Web</strong><br>
-    KIT IN — Entrepreneuriat & digital</p>
-
+    <p><strong>CEO & Développeuse Web</strong> — KIT IN</p>
     <ul>
-      <li>Conception et développement d’une formation en ligne dédiée à la création d’entreprise</li>
-      <li>Projet éducatif destiné aux jeunes de 10 à 17 ans</li>
-      <li>Développement technique en HTML, CSS et JavaScript</li>
-      <li>Vision globale : produit, pédagogie, business et technologie</li>
+      <li>Formation entrepreneuriale</li>
+      <li>HTML / CSS / JS</li>
     </ul>
 
-    <hr>
+    <p><strong>Stagiaire Comptable</strong> — Pages Jaunes</p>
+  `,
 
-    <p><strong>◉ Stagiaire Comptable</strong><br>
-    Pages Jaunes — Finance & structure d’entreprise</p>
-
-    <ul>
-      <li>Comptabilité clients et fournisseurs</li>
-      <li>Compréhension des flux financiers</li>
-      <li>Rigueur, organisation et vision analytique</li>
-    </ul>
-
-    <hr>
-
-    <p><strong>◉ Vendeuse & Ambassadrice de marque</strong><br>
-    Le Perchoir · Galeries Lafayette · Le Paradis du Fruit</p>
-
-    <ul>
-      <li>Représentation et valorisation de l’image de marque</li>
-      <li>Relation client premium et expérience terrain</li>
-      <li>Contribution directe à la notoriété des enseignes</li>
-    </ul>
-  `
-};
   /* ===== ORANGE : CV SCOLAIRE ===== */
   orange1: `
     <p><strong>✦ Parcours académique</strong></p>
 
-    <p><strong>◉ Master Import-Export</strong><br>
-    KEDGE Business School — Marseille<br>
-    Spécialisation en commerce international, stratégie d’implantation et développement des échanges internationaux.</p>
-
-    <hr>
-
-    <p><strong>◉ Bachelor International Business</strong><br>
-    INSEEC Paris Business School — Paris<br>
-    Formation axée sur le management international, le marketing et le développement commercial.</p>
-
-    <hr>
-
-    <p><strong>◉ BTS Commerce International</strong><br>
-    Lycée Jean Lurçat — Paris<br>
-    Fondamentaux du commerce international, logistique, négociation et opérations import-export.</p>
-
-    <hr>
-
-    <p><strong>◉ Licence de Gestion</strong><br>
-    Université Paris 1 Panthéon-Sorbonne — Paris<br>
-    Approche analytique du management, de la finance et de la gestion d’entreprise.</p>
-
-    <hr>
-
-    <p><strong>◉ Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-    École Nationale de Commerce — Paris<br>
-    Formation en comptabilité, finance d’entreprise et contrôle de gestion.</p>
+    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+    <p><strong>Bachelor International Business</strong><br>INSEEC Paris — Paris</p>
+    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+    <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
+    <p><strong>DCG</strong><br>École Nationale de Commerce — Paris</p>
   `
 };
-
 
 /* ===========================
    OUVERTURE AU CLIC
@@ -231,6 +155,4 @@ overlay.addEventListener("click", () => {
   contentBox.innerHTML = "";
 });
 
-colorBox.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+colorBox.addEventListener("click", e => e.stopPropagation());
