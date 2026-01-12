@@ -1,10 +1,15 @@
 /* =====================================================
+   DEBUG – CONFIRMATION CHARGEMENT
+===================================================== */
+console.log("SCRIPT JS CHARGÉ");
+
+/* =====================================================
    LANGUE
 ===================================================== */
 let currentLang = "fr";
 
 /* =====================================================
-   TRADUCTIONS
+   TEXTES COMPLETS
 ===================================================== */
 const translations = {
   fr: {
@@ -19,11 +24,11 @@ const translations = {
         <p><strong>
           Forte de plus de cinq années d’expérience en commerce international et marketing,
           j’accompagne les entreprises — de la startup à la grande structure —
-          dans leurs phases clés de structuration, de croissance et de positionnement stratégique.
+          dans leurs phases clés de structuration, de croissance et de positionnement.
         </strong></p>
 
         <p><strong>
-          J’interviens sur des missions telles que le lancement de nouveaux produits,
+          J’interviens sur des missions stratégiques telles que le lancement de nouveaux produits,
           l’implantation sur de nouveaux marchés, la structuration d’offres,
           ainsi que le développement de la visibilité et des performances commerciales.
         </strong></p>
@@ -71,7 +76,14 @@ const translations = {
     },
 
     academic: {
-      title: "✦ Parcours académique"
+      title: "✦ Parcours académique",
+      text: `
+        <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+        <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
+        <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+        <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
+        <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>École Nationale de Commerce — Paris</p>
+      `
     }
   },
 
@@ -138,7 +150,14 @@ const translations = {
     },
 
     academic: {
-      title: "✦ Academic Background"
+      title: "✦ Academic Background",
+      text: `
+        <p><strong>Master’s Degree in Import-Export</strong><br>KEDGE Business School — Marseille</p>
+        <p><strong>Bachelor in International Business</strong><br>INSEEC Paris Business School — Paris</p>
+        <p><strong>International Trade Diploma</strong><br>Lycée Jean Lurçat — Paris</p>
+        <p><strong>Bachelor’s Degree in Management</strong><br>Paris 1 Panthéon-Sorbonne University</p>
+        <p><strong>Accounting & Management Diploma (DCG)</strong><br>National School of Commerce — Paris</p>
+      `
     }
   }
 };
@@ -152,7 +171,7 @@ const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
 /* =====================================================
-   GÉNÉRATION DU CONTENU
+   GÉNÉRATION CONTENU
 ===================================================== */
 function getContents() {
   const t = translations[currentLang];
@@ -160,9 +179,7 @@ function getContents() {
   return {
     bleu1: `
       <h2 class="presentation-title animated-title">${t.presentation.title}</h2>
-      <div class="centered-text">
-        ${t.presentation.text}
-      </div>
+      <div class="centered-text">${t.presentation.text}</div>
     `,
 
     rose1: `
@@ -179,13 +196,7 @@ function getContents() {
 
     orange1: `
       <h2 class="scolaire-title animated-title">${t.academic.title}</h2>
-      <div class="centered-text">
-        <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
-        <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
-        <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
-        <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
-        <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>École Nationale de Commerce — Paris</p>
-      </div>
+      <div class="centered-text">${t.academic.text}</div>
     `,
 
     jaune1: `
@@ -199,16 +210,21 @@ function getContents() {
 }
 
 /* =====================================================
-   OUVERTURE DES BLOCS
+   OUVERTURE DES BLOCS (GARANTIE)
 ===================================================== */
 buttons.forEach(button => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", e => {
+    e.stopPropagation();
+
     const key = [...button.classList].find(c => getContents()[c]);
     if (!key) return;
 
     contentBox.innerHTML = getContents()[key];
-    colorBox.style.background = button.dataset.color || "#000";
+    colorBox.style.background = button.dataset.color || "#111";
+
     overlay.classList.add("active");
+    overlay.style.opacity = "1";
+    overlay.style.pointerEvents = "auto";
   });
 });
 
@@ -219,17 +235,18 @@ contentBox.addEventListener("click", e => {
   if (e.target.classList.contains("step-btn")) {
     const step = e.target.dataset.step;
     const result = document.getElementById("programmeResult");
-
     result.innerHTML = translations[currentLang].programme.steps[step];
     result.classList.add("active");
   }
 });
 
 /* =====================================================
-   FERMETURE OVERLAY
+   FERMETURE
 ===================================================== */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
+  overlay.style.opacity = "0";
+  overlay.style.pointerEvents = "none";
   contentBox.innerHTML = "";
 });
 
@@ -247,7 +264,6 @@ langBtn.addEventListener("click", () => {
   currentLang = currentLang === "fr" ? "en" : "fr";
   langBtn.textContent = currentLang === "fr" ? "EN" : "FR";
 
-  // rafraîchit le contenu ouvert si besoin
   if (overlay.classList.contains("active")) {
     contentBox.innerHTML = "";
   }
