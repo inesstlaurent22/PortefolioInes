@@ -226,3 +226,19 @@ overlay.addEventListener("click", () => {
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
+
+/* ===========================
+   OBJECTIF – MODAL IPHONE
+=========================== */
+
+const objectifOverlay = document.getElementById("objectifOverlay");
+
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "openObjectif") {
+    objectifOverlay.classList.add("active");
+  }
+});
+
+objectifOverlay.addEventListener("click", () => {
+  objectifOverlay.classList.remove("active");
+});
