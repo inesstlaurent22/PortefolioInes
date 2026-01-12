@@ -164,14 +164,25 @@ const contents = {
 buttons.forEach(button => {
   button.addEventListener("click", () => {
 
+    /* reset animation */
     buttons.forEach(b => b.classList.remove("active"));
     button.classList.add("active");
 
-    colorBox.style.background = button.dataset.color;
-
+    /* contenu */
     const key = [...button.classList].find(c => contents[c]);
     contentBox.innerHTML = contents[key] || "";
 
+    /* couleur */
+    colorBox.style.background = button.dataset.color || "transparent";
+
+    /* adaptation spéciale bloc jaune */
+    if (key === "jaune1") {
+      colorBox.classList.add("jaune");
+    } else {
+      colorBox.classList.remove("jaune");
+    }
+
+    /* ouverture */
     overlay.classList.add("active");
   });
 });
