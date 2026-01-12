@@ -175,7 +175,7 @@ html, body {
   margin-bottom: 18px;
 }
 
-/* ================= BOUTON MON OBJECTIF ================= */
+/* ================= OBJECTIF ================= */
 .objectif-btn-large {
   margin: 32px auto 0;
   display: inline-block;
@@ -187,60 +187,70 @@ html, body {
   background: #fff;
   color: #3A6EFF;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.objectif-btn-large:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
-/* ================= PROGRAMME ================= */
-.programme-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 26px;
-}
-
-.step-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
+.objectif-bubble {
+  margin-top: 28px;
+  padding: 24px;
   background: #fff;
-  color: #FF4FD8;
+  color: #3A6EFF;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.objectif-bubble a {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 700;
+  color: #3A6EFF;
+  text-decoration: none;
+}
+
+/* ================= CV / COMPÉTENCES ================= */
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job-btn {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 18px;
+  text-align: left;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.step-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+.job-btn small {
+  display: block;
+  margin-top: 6px;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
-.programme-result {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.35s ease;
-  text-align: left;
+.job-content {
+  display: none;
+  padding: 18px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
 }
 
-.programme-result.active {
-  opacity: 1;
-  transform: translateY(0);
+.job-content.active {
+  display: block;
 }
 
-.programme-result ul {
-  padding-left: 20px;
+.job-content ul {
+  padding-left: 18px;
 }
 
-.programme-result li {
+.job-content li {
   margin-bottom: 10px;
 }
 
-/* ================= LOGICIELS ACQUIS ================= */
+/* ================= LOGICIELS ================= */
 .logiciels-list {
   display: flex;
   flex-direction: column;
@@ -248,74 +258,42 @@ html, body {
 }
 
 .logiciel-btn {
-  width: 100%;
   padding: 14px 18px;
   border-radius: 18px;
   border: none;
   background: rgba(255,255,255,0.15);
   color: #fff;
   font-weight: 700;
-  text-align: left;
   cursor: pointer;
-  transition: background 0.25s ease, transform 0.2s ease;
-}
-
-.logiciel-btn:hover {
-  background: rgba(255,255,255,0.25);
-  transform: scale(1.01);
+  text-align: left;
 }
 
 .logiciel-content {
   display: none;
-  padding: 14px 18px;
+  background: #fff;
+  color: #7C4DFF;
+  padding: 16px 18px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.08);
-  font-size: 15px;
-  line-height: 1.6;
 }
 
 .logiciel-content.active {
   display: block;
 }
 
-/* ================= PARCOURS ACADÉMIQUE ================= */
-.scolaire-list p {
-  margin-bottom: 22px;
-}
-
 /* ================= RÉSEAUX SOCIAUX ================= */
-.socials-card.square {
-  width: 240px;
-  height: 240px;
+.socials-card.small {
+  width: 200px;
+  height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 26px;
   background: rgba(255,255,255,0.15);
-  border-radius: 26px;
+  border-radius: 22px;
 }
 
-.socials-card.square img {
-  width: 72px;
-  height: 72px;
+.socials-card.small img {
+  width: 56px;
+  height: 56px;
   object-fit: contain;
-  transition: transform 0.25s ease;
-}
-
-.socials-card.square img:hover {
-  transform: scale(1.12);
-}
-
-/* ================= RESPONSIVE TEXTE ================= */
-@media (max-width: 768px) {
-  #colorBox {
-    width: 94vw;
-    padding: 22px;
-  }
-
-  .presentation-title,
-  .programme-title,
-  .scolaire-title {
-    font-size: 22px;
-  }
 }
