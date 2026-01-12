@@ -38,9 +38,11 @@ html, body {
   border: none;
   padding: 0;
 
+  /* centrage parfait du contenu */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   transition: transform 0.6s ease;
 }
@@ -55,6 +57,31 @@ html, body {
 
 .bloc:focus {
   outline: none;
+}
+
+/* ================= TEXTE DANS LES BLOCS ================= */
+.bloc .label {
+  position: absolute;
+  z-index: 3;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 16px;
+
+  /* lisibilité */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+
+  /* taille responsive */
+  font-size: clamp(14px, 1.5vw, 22px);
 }
 
 /* ================= ANIMATION ================= */
@@ -140,6 +167,7 @@ html, body {
   transform: scale(1);
 }
 
+/* ================= CONTENU ================= */
 #contentBox {
   width: 100%;
   height: 100%;
@@ -154,20 +182,7 @@ html, body {
   margin-bottom: 16px;
 }
 
-/* ================= TEXTE BOUTONS ================= */
-.bloc .label {
-  position: absolute;
-  z-index: 3;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  pointer-events: none;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  font-size: clamp(14px, 1.4vw, 22px);
-  padding: 0 10px;
-}
-
-/* ================= RÉSEAUX ================= */
+/* ================= RÉSEAUX SOCIAUX ================= */
 .socials {
   display: flex;
   justify-content: center;
@@ -178,8 +193,8 @@ html, body {
 }
 
 .socials img {
-  width: 120px;
-  height: auto;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -188,15 +203,14 @@ html, body {
   transform: scale(1.1);
 }
 
+/* ================= MOBILE AJUSTEMENTS ================= */
 @media (max-width: 767px) {
+  #colorBox {
+    padding: 20px;
+  }
+
   .socials img {
     width: 56px;
     height: 56px;
-  }
-}
-
-  .socials img {
-    width: 48px;
-    height: 48px;
   }
 }
