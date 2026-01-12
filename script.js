@@ -94,6 +94,79 @@ const contents = {
 
     <p><strong>👉 Vous avez une vision.</strong><br>
     Je vous aide à la transformer en croissance maîtrisée.</p>
+  `,
+
+  /* ===== VIOLET : CV COMPÉTENCES ===== */
+  violet1: `
+    <p><strong>✦ Parcours professionnel — Timeline</strong></p>
+
+    <p><strong>◉ Consultante en développement d’activité</strong><br>
+    Gearbooker — Audiovisuel & international</p>
+
+    <ul>
+      <li>Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français</li>
+      <li>Élaboration de stratégies de développement commercial</li>
+      <li>Prospection BtoB & BtoC</li>
+      <li>Analyse des performances et réunions de pilotage avec les associés</li>
+    </ul>
+
+    <hr>
+
+    <p><strong>◉ Commerciale Marketing</strong><br>
+    Pachamamai — Cosmétique & marchés internationaux</p>
+
+    <ul>
+      <li>Prospection commerciale et lancement de nouveaux produits</li>
+      <li>Réalisation d’études de marché (Portugal, Espagne, Asie)</li>
+      <li>Suivi et fidélisation de la clientèle</li>
+      <li>Participation à des salons internationaux</li>
+    </ul>
+
+    <hr>
+
+    <p><strong>◉ CEO & Community Manager</strong><br>
+    PUFFRAP — Média & culture musicale</p>
+
+    <ul>
+      <li>Création et développement du magazine en ligne</li>
+      <li>Gestion et croissance des réseaux sociaux (Instagram & TikTok)</li>
+      <li>Optimisation du SEO et de la visibilité digitale</li>
+      <li>Mise en place de partenariats stratégiques</li>
+    </ul>
+
+    <hr>
+
+    <p><strong>◉ CEO & Développeuse Web</strong><br>
+    KIT IN — Entrepreneuriat & digital</p>
+
+    <ul>
+      <li>Conception et développement d’une formation en ligne dédiée à la création d’entreprise</li>
+      <li>Projet éducatif destiné aux jeunes de 10 à 17 ans</li>
+      <li>Développement technique en HTML, CSS et JavaScript</li>
+      <li>Vision globale : produit, pédagogie, business et technologie</li>
+    </ul>
+
+    <hr>
+
+    <p><strong>◉ Stagiaire Comptable</strong><br>
+    Pages Jaunes — Finance & structure d’entreprise</p>
+
+    <ul>
+      <li>Comptabilité clients et fournisseurs</li>
+      <li>Compréhension des flux financiers</li>
+      <li>Rigueur, organisation et vision analytique</li>
+    </ul>
+
+    <hr>
+
+    <p><strong>◉ Vendeuse & Ambassadrice de marque</strong><br>
+    Le Perchoir · Galeries Lafayette · Le Paradis du Fruit</p>
+
+    <ul>
+      <li>Représentation et valorisation de l’image de marque</li>
+      <li>Relation client premium et expérience terrain</li>
+      <li>Contribution directe à la notoriété des enseignes</li>
+    </ul>
   `
 };
 
@@ -103,18 +176,14 @@ const contents = {
 buttons.forEach(button => {
   button.addEventListener("click", () => {
 
-    /* reset animation */
     buttons.forEach(b => b.classList.remove("active"));
     button.classList.add("active");
 
-    /* couleur de fond */
     colorBox.style.background = button.dataset.color;
 
-    /* contenu selon bouton */
     const key = [...button.classList].find(c => contents[c]);
     contentBox.innerHTML = contents[key] || "";
 
-    /* affichage overlay */
     overlay.classList.add("active");
   });
 });
@@ -128,7 +197,6 @@ overlay.addEventListener("click", () => {
   contentBox.innerHTML = "";
 });
 
-/* Empêche la fermeture si clic dans l’encart */
 colorBox.addEventListener("click", (e) => {
   e.stopPropagation();
 });
