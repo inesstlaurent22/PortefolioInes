@@ -40,11 +40,9 @@ html, body {
   border: none;
   cursor: pointer;
   padding: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: transform 0.4s ease;
 }
 
@@ -69,7 +67,7 @@ html, body {
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
 }
 
-/* ================= POSITIONS DES BLOCS (DESKTOP) ================= */
+/* ================= POSITIONS DES BLOCS ================= */
 @media (min-width: 1025px) {
   .bleu1   { left:600px;  top:2px;   width:400px; height:327px; }
   .rose1   { left:1000px; top:0;     width:391px; height:327px; }
@@ -150,10 +148,11 @@ html, body {
   margin: 28px auto 0;
   background: #fff;
   color: #3A6EFF;
-  padding: 24px;
+  padding: 26px;
   border-radius: 24px;
-  max-width: 420px;
+  max-width: 440px;
   text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
   animation: pop 0.4s ease;
 }
 
@@ -186,10 +185,11 @@ html, body {
   display: none;
   background: #fff;
   color: #FF4FD8;
-  padding: 22px;
-  border-radius: 22px;
-  margin-top: 16px;
+  padding: 24px;
+  border-radius: 24px;
+  margin-top: 18px;
   text-align: center;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.3);
 }
 
 .programme-bubble.active {
@@ -200,18 +200,19 @@ html, body {
 .left-points {
   text-align: left;
   padding-left: 20px;
+  margin-top: 10px;
 }
 
 /* ================= CV / COMPÉTENCES ================= */
 .jobs-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .job-btn {
   padding: 18px;
-  border-radius: 20px;
+  border-radius: 22px;
   border: none;
   background: #fff;
   color: #7C4DFF;
@@ -233,8 +234,10 @@ html, body {
   display: none;
   background: #fff;
   color: #7C4DFF;
-  border-radius: 20px;
-  padding: 18px;
+  border-radius: 22px;
+  padding: 20px;
+  margin-top: -6px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.3);
 }
 
 .job-content.active {
@@ -250,12 +253,12 @@ html, body {
 .logiciels-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .logiciel-btn {
   padding: 16px;
-  border-radius: 20px;
+  border-radius: 22px;
   border: none;
   background: #fff;
   color: #7C4DFF;
@@ -268,8 +271,10 @@ html, body {
   display: none;
   background: #fff;
   color: #7C4DFF;
-  border-radius: 20px;
-  padding: 16px;
+  border-radius: 22px;
+  padding: 18px;
+  margin-top: -6px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.3);
 }
 
 .logiciel-content.active {
@@ -281,21 +286,27 @@ html, body {
   color: #fff;
 }
 
+/* ================= CV ACADÉMIQUE ================= */
+.scolaire-list p {
+  margin-bottom: 18px;
+}
+
 /* ================= RÉSEAUX SOCIAUX ================= */
 .socials-outline {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 16px;
-  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 14px;
   border: 2px solid #FFD400;
-  border-radius: 24px;
+  border-radius: 22px;
   width: fit-content;
   margin: 0 auto;
 }
 
 .socials-outline img {
-  width: 72px;
-  height: 72px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 
