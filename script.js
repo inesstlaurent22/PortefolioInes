@@ -1,6 +1,52 @@
 console.log("SCRIPT JS CHARGÉ");
 
 /* =====================================================
+   LANGUES
+===================================================== */
+let currentLang = "fr";
+
+const translations = {
+  fr: {
+    objectif: `
+      Transformer une idée ou une activité existante en un projet structuré,
+      visible et rentable.<br><br>
+      Si vous cherchez une approche humaine, stratégique et orientée résultats,
+      échangeons.
+    `
+  },
+  en: {
+    objectif: `
+      Transform an idea or an existing activity into a structured,
+      visible and profitable project.<br><br>
+      If you are looking for a human, strategic and results-oriented approach,
+      let’s connect.
+    `
+  },
+  es: {
+    objectif: `
+      Transformar una idea o actividad existente en un proyecto estructurado,
+      visible y rentable.<br><br>
+      Si buscas un enfoque humano, estratégico y orientado a resultados,
+      hablemos.
+    `
+  },
+  ru: {
+    objectif: `
+      Превратить идею или существующую деятельность в структурированный,
+      заметный и прибыльный проект.<br><br>
+      Если вы ищете человеческий, стратегический и ориентированный на результат подход,
+      давайте обсудим.
+    `
+  },
+  zh: {
+    objectif: `
+      将一个想法或现有活动转化为结构清晰、可见且有盈利能力的项目。<br><br>
+      如果你正在寻找以人为本、战略性和结果导向的方法，欢迎联系。
+    `
+  }
+};
+
+/* =====================================================
    TEXTES – MON PROGRAMME
 ===================================================== */
 const programmeTexts = {
@@ -13,15 +59,15 @@ const programmeTexts = {
     <ul class="left-points">
       <li>Définition de la vision long terme</li>
       <li>Identification du marché ou pays cible</li>
-      <li>Clarification des objectifs business prioritaires</li>
-      <li>Détermination des indicateurs de performance</li>
+      <li>Objectifs business prioritaires</li>
+      <li>Indicateurs de performance</li>
     </ul>
   `,
   2: `
     <p><strong>Intelligence marché & stratégie sur mesure</strong></p>
     <p>
       Analyse approfondie de votre environnement afin de construire
-      une stratégie claire, cohérente et différenciante.
+      une stratégie claire et différenciante.
     </p>
     <ul class="left-points">
       <li>Études de marché détaillées</li>
@@ -33,14 +79,13 @@ const programmeTexts = {
   3: `
     <p><strong>Déploiement & pilotage stratégique</strong></p>
     <p>
-      Mise en œuvre opérationnelle de la stratégie avec un suivi rigoureux
-      des actions et des performances.
+      Mise en œuvre opérationnelle avec suivi précis des performances.
     </p>
     <ul class="left-points">
       <li>Réunions de pilotage mensuelles</li>
-      <li>Analyse des KPI et résultats</li>
-      <li>Ajustements stratégiques continus</li>
-      <li>Objectif de croissance durable et maîtrisée</li>
+      <li>Analyse des KPI</li>
+      <li>Ajustements continus</li>
+      <li>Croissance durable et maîtrisée</li>
     </ul>
   `
 };
@@ -58,7 +103,7 @@ const contents = {
       <p>
         Je m’appelle Inès Saint Laurent,
         <strong>freelance spécialisée dans le développement d’activités</strong>
-        commerciales, sur les marchés locaux comme internationaux.
+        commerciales sur les marchés locaux et internationaux.
       </p>
 
       <p>
@@ -69,7 +114,7 @@ const contents = {
       </p>
 
       <p>
-        J’interviens notamment sur
+        J’interviens sur
         <strong>le lancement de nouveaux produits</strong>,
         <strong>l’implantation sur de nouveaux marchés</strong>,
         <strong>la structuration d’offres</strong>
@@ -108,9 +153,9 @@ const contents = {
       </button>
       <div class="job-content" id="job1">
         <ul>
-          <li>Accompagnement stratégique d’une entreprise audiovisuelle internationale</li>
-          <li>Développement commercial et prospection BtoB / BtoC</li>
-          <li>Analyse des performances et pilotage des actions</li>
+          <li>Accompagnement stratégique d’entreprises internationales</li>
+          <li>Développement commercial BtoB / BtoC</li>
+          <li>Pilotage des performances</li>
         </ul>
       </div>
 
@@ -121,8 +166,8 @@ const contents = {
       <div class="job-content" id="job2">
         <ul>
           <li>Lancement de nouveaux produits</li>
-          <li>Réalisation d’études de marché</li>
-          <li>Développement et fidélisation clientèle</li>
+          <li>Études de marché</li>
+          <li>Fidélisation clientèle</li>
         </ul>
       </div>
 
@@ -132,33 +177,21 @@ const contents = {
       </button>
       <div class="job-content" id="job3">
         <ul>
-          <li>Création et développement d’un média digital</li>
-          <li>Gestion des réseaux sociaux (Instagram & TikTok)</li>
-          <li>Optimisation SEO et visibilité en ligne</li>
+          <li>Création et développement du média</li>
+          <li>Gestion des réseaux sociaux</li>
+          <li>Optimisation SEO</li>
         </ul>
       </div>
 
       <button class="job-btn" data-job="job4">
         CEO & Développeuse Web
-        <span>KIT IN — Formation à la création d’entreprise (10–17 ans)</span>
+        <span>KIT IN — Formation entrepreneuriat (10–17 ans)</span>
       </button>
       <div class="job-content" id="job4">
         <ul>
-          <li>Conception et développement de plateformes web</li>
+          <li>Développement web</li>
           <li>Création de contenus pédagogiques</li>
-          <li>Vision produit, business et technique</li>
-        </ul>
-      </div>
-
-      <button class="job-btn" data-job="job5">
-        Vendeuse & Ambassadrice de marque
-        <span>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit — Retail & restauration</span>
-      </button>
-      <div class="job-content" id="job5">
-        <ul>
-          <li>Relation client premium</li>
-          <li>Valorisation de l’image de marque</li>
-          <li>Expérience terrain et vente directe</li>
+          <li>Vision produit & business</li>
         </ul>
       </div>
 
@@ -186,42 +219,30 @@ const contents = {
         Mailchimp, Zapier, Make
       </div>
 
-      <button class="logiciel-btn" data-tool="etude">Étude de marché</button>
-      <div class="logiciel-content" id="etude">
-        TradeMap, Kompass, Euromonitor, World Bank Data
-      </div>
-
-      <button class="logiciel-btn" data-tool="analyse">Analyse</button>
-      <div class="logiciel-content" id="analyse">
-        LinkedIn Sales Navigator, Google Analytics, Google Search Console
-      </div>
-
       <button class="logiciel-btn" data-tool="ia">Intelligence artificielle</button>
       <div class="logiciel-content" id="ia">
         ChatGPT, Claude, MidJourney, Perplexity, Manus
       </div>
 
-      <button class="logiciel-btn" data-tool="microsoft">Microsoft</button>
-      <div class="logiciel-content" id="microsoft">
-        Azure, Copilot, OneNote
-      </div>
+    </div>
+  `,
 
-      <button class="logiciel-btn" data-tool="design">Design</button>
-      <div class="logiciel-content" id="design">
-        Canva, Figma, CapCut, Photoshop
-      </div>
+  /* ================= CV ACADÉMIQUE ================= */
+  orange1: `
+    <h2 class="animated-title">CV Académique</h2>
 
-      <button class="logiciel-btn" data-tool="dev">Développement web</button>
-      <div class="logiciel-content" id="dev">
-        GitHub
-      </div>
-
+    <div class="scolaire-list">
+      <p><strong>Master Import–Export</strong><br>KEDGE Business School — Marseille</p>
+      <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
+      <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+      <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne — Paris</p>
+      <p><strong>Diplôme de Comptabilité et de Gestion</strong><br>École Nationale de Commerce — Paris</p>
     </div>
   `,
 
   /* ================= RÉSEAUX SOCIAUX ================= */
   jaune1: `
-    <div class="socials-outline square">
+    <div class="socials-outline">
       <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
       <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
       <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG" alt="Email"></a>
@@ -255,16 +276,7 @@ contentBox.addEventListener("click", e => {
   if (e.target.id === "openObjectif") {
     const bubble = document.createElement("div");
     bubble.className = "objectif-bubble";
-    bubble.innerHTML = `
-      <p>
-        Transformer une idée ou une activité existante en un projet structuré,
-        visible et rentable.
-      </p>
-      <p>
-        Si vous cherchez une approche humaine, stratégique et orientée résultats,
-        échangeons.
-      </p>
-    `;
+    bubble.innerHTML = `<p>${translations[currentLang].objectif}</p>`;
     contentBox.appendChild(bubble);
   }
 
@@ -275,14 +287,14 @@ contentBox.addEventListener("click", e => {
     bubble.classList.add("active");
   }
 
-  /* ===== JOBS : un seul ouvert ===== */
+  /* ===== JOBS (un seul ouvert) ===== */
   if (e.target.classList.contains("job-btn")) {
     document.querySelectorAll(".job-content")
       .forEach(el => el.classList.remove("active"));
     document.getElementById(e.target.dataset.job).classList.add("active");
   }
 
-  /* ===== LOGICIELS : un seul ouvert ===== */
+  /* ===== LOGICIELS (un seul ouvert) ===== */
   if (e.target.classList.contains("logiciel-btn")) {
     document.querySelectorAll(".logiciel-content")
       .forEach(el => el.classList.remove("active"));
@@ -290,6 +302,7 @@ contentBox.addEventListener("click", e => {
   }
 });
 
+/* ================= FERMETURE ================= */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
