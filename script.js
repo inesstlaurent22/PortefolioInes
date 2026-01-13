@@ -183,11 +183,6 @@ const contents = {
         <strong>Licence de Gestion</strong><br>
         Université Paris 1 Panthéon-Sorbonne — Paris
       </p>
-
-      <p>
-        <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-        École Nationale de Commerce — Paris
-      </p>
     </div>
   `,
 
