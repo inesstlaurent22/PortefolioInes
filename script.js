@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO MULTILANGUE COMPLET + ANIMATIONS");
+console.log("SCRIPT JS – PORTFOLIO MULTILINGUE GLOBAL");
 
 /* ================= LANGUE ================= */
 let currentLang = "fr";
@@ -9,311 +9,135 @@ const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
-/* ================= TEXTES MULTILANGUES ================= */
+/* ================= TEXTES ================= */
 const T = {
-  fr: {
-    objectif: `
-      Transformer une idée ou une activité existante en un projet structuré,
-      visible et rentable.<br><br>
-      Si vous cherchez une approche humaine, stratégique et orientée résultats,
-      échangeons.
-    `,
-    offre: `
-      <h2 class="title">Présentation</h2>
 
+  /* ================= FR ================= */
+  fr: {
+    presentation: `
+      <h2 class="title">Présentation</h2>
       <p>
         Je m’appelle Inès Saint Laurent,
         <strong>freelance spécialisée dans le développement d’activités</strong>
-        commerciales sur les marchés locaux et internationaux.
+        commerciales en France et à l’international.
       </p>
-
       <p>
-        Forte de <strong>cinq années d’expérience</strong>,
-        j’accompagne les entreprises
+        Forte de <strong>cinq années d’expérience</strong>, j’accompagne les entreprises
         <strong>dans leurs phases clés de structuration, de croissance et de positionnement stratégique.</strong>
       </p>
-
-      <p class="left strong"><strong>J’interviens notamment sur :</strong></p>
-
+      <p class="left strong">J’interviens notamment sur :</p>
       <ul class="list-left">
         <li>le lancement de nouveaux produits</li>
         <li>l’implantation sur de nouveaux marchés</li>
         <li>la structuration d’offres</li>
         <li>le développement de la visibilité et des performances commerciales</li>
       </ul>
-
       <button class="primary-btn" id="openObjectif">Mon objectif</button>
     `,
-    programmeTitle: "Processus d’accompagnement stratégique",
-    programme: {
+
+    objectif: `
+      Transformer une idée ou une activité existante en un projet structuré,
+      visible et rentable.<br><br>
+      Si vous cherchez une approche humaine, stratégique et orientée résultats,
+      échangeons.
+    `,
+
+    programme: `
+      <h2 class="title">Processus d’accompagnement stratégique</h2>
+      <div class="center-buttons">
+        <button class="step-btn" data-step="1">01</button>
+        <button class="step-btn" data-step="2">02</button>
+        <button class="step-btn" data-step="3">03</button>
+      </div>
+      <div id="programmeBubble" class="bubble hidden"></div>
+    `,
+    programmeSteps: {
       1: `
-        <strong>01 — Diagnostic & Vision</strong>
-        <p>Analyse globale du projet afin de poser des bases solides.</p>
+        <strong>Diagnostic & Vision</strong>
         <ul class="list-left">
           <li>Vision long terme</li>
-          <li>Marché ou pays cible</li>
+          <li>Marché cible</li>
           <li>Objectifs business</li>
-          <li>Indicateurs de performance</li>
+          <li>KPI</li>
         </ul>
       `,
       2: `
-        <strong>02 — Intelligence marché & stratégie</strong>
-        <p>Études approfondies et recommandations sur mesure.</p>
+        <strong>Intelligence marché & stratégie</strong>
         <ul class="list-left">
+          <li>Études de marché</li>
           <li>Analyse concurrentielle</li>
-          <li>Positionnement stratégique</li>
-          <li>Recommandations produits</li>
-          <li>Plan d’action structuré</li>
+          <li>Positionnement</li>
+          <li>Plan d’action</li>
         </ul>
       `,
       3: `
-        <strong>03 — Déploiement & pilotage</strong>
-        <p>Mise en œuvre et suivi des actions.</p>
+        <strong>Déploiement & pilotage</strong>
         <ul class="list-left">
-          <li>Suivi des KPI</li>
-          <li>Ajustements continus</li>
-          <li>Réunions de pilotage</li>
-          <li>Croissance durable</li>
+          <li>Suivi des performances</li>
+          <li>Ajustements stratégiques</li>
+          <li>Réunions mensuelles</li>
         </ul>
       `
-    }
+    },
+
+    competences: `
+      <h2 class="title">CV & Compétences</h2>
+      <div class="card-list">
+        <div class="card-btn">Consultante en développement d’activité<br><span>Gearbooker — Audiovisuel</span></div>
+        <div class="card-btn">Commerciale Marketing<br><span>Pachamamaï — Cosmétique solide</span></div>
+        <div class="card-btn">CEO & Community Manager<br><span>PUFFRAP — Média musical</span></div>
+        <div class="card-btn">CEO & Développeuse Web<br><span>KIT IN — Formation entrepreneuriale</span></div>
+      </div>
+    `,
+
+    logiciels: `
+      <h2 class="title">Logiciels</h2>
+      <ul class="list-left">
+        <li>CRM : Notion, HubSpot, Salesforce</li>
+        <li>Gestion de projet : Trello, Google Workspace</li>
+        <li>Communication : Mailchimp, Zapier, Make</li>
+        <li>IA : ChatGPT, Claude, MidJourney</li>
+      </ul>
+    `,
+
+    academique: `
+      <h2 class="title">CV Académique</h2>
+      <p>Master Import-Export — KEDGE Business School</p>
+      <p>Bachelor International Business — INSEEC</p>
+      <p>BTS Commerce International — Lycée Jean Lurçat</p>
+      <p>Licence de Gestion — Université Paris 1 Panthéon-Sorbonne</p>
+      <p>Diplôme de Comptabilité et de Gestion</p>
+    `,
+
+    reseaux: `
+      <h2 class="title">Réseaux sociaux</h2>
+      <div class="socials">
+        <img src="images/Instagram.png" alt="Instagram">
+        <img src="images/Linkedin.png" alt="LinkedIn">
+        <img src="images/Mail.png" alt="Email">
+      </div>
+    `
   },
 
-  en: {
-    objectif: `
-      Transform an idea or an existing activity into a structured,
-      visible and profitable project.<br><br>
-      If you are looking for a human, strategic and results-oriented approach,
-      let’s connect.
-    `,
-    offre: `
-      <h2 class="title">Presentation</h2>
-
-      <p>
-        My name is Inès Saint Laurent,
-        <strong>a freelance specialist in business development</strong>
-        for local and international markets.
-      </p>
-
-      <p>
-        With <strong>five years of experience</strong>,
-        I support companies
-        <strong>during key phases of structuring, growth and strategic positioning.</strong>
-      </p>
-
-      <p class="left strong"><strong>I mainly work on:</strong></p>
-
-      <ul class="list-left">
-        <li>new product launches</li>
-        <li>market expansion</li>
-        <li>offer structuring</li>
-        <li>brand visibility and commercial performance</li>
-      </ul>
-
-      <button class="primary-btn" id="openObjectif">My goal</button>
-    `,
-    programmeTitle: "Strategic support process",
-    programme: {
-      1: `
-        <strong>01 — Diagnosis & Vision</strong>
-        <p>Overall analysis of the project.</p>
-        <ul class="list-left">
-          <li>Long-term vision</li>
-          <li>Target market</li>
-          <li>Business objectives</li>
-          <li>Performance indicators</li>
-        </ul>
-      `,
-      2: `
-        <strong>02 — Market intelligence & strategy</strong>
-        <p>In-depth studies and tailored recommendations.</p>
-        <ul class="list-left">
-          <li>Competitive analysis</li>
-          <li>Strategic positioning</li>
-          <li>Product recommendations</li>
-          <li>Action plan</li>
-        </ul>
-      `,
-      3: `
-        <strong>03 — Deployment & monitoring</strong>
-        <p>Implementation and follow-up.</p>
-        <ul class="list-left">
-          <li>KPI tracking</li>
-          <li>Continuous adjustments</li>
-          <li>Steering meetings</li>
-          <li>Sustainable growth</li>
-        </ul>
-      `
-    }
-  },
-
-  es: {
-    objectif: `
-      Transformar una idea o una actividad existente en un proyecto estructurado,
-      visible y rentable.<br><br>
-      Si buscas un enfoque humano, estratégico y orientado a resultados,
-      hablemos.
-    `,
-    offre: `
-      <h2 class="title">Presentación</h2>
-
-      <p>
-        Me llamo Inès Saint Laurent,
-        <strong>freelance especializada en desarrollo de negocios</strong>
-        en mercados locales e internacionales.
-      </p>
-
-      <p>
-        Con <strong>cinco años de experiencia</strong>,
-        acompaño a las empresas
-        <strong>en sus fases clave de estructuración, crecimiento y posicionamiento estratégico.</strong>
-      </p>
-
-      <p class="left strong"><strong>Intervengo principalmente en:</strong></p>
-
-      <ul class="list-left">
-        <li>lanzamiento de nuevos productos</li>
-        <li>expansión a nuevos mercados</li>
-        <li>estructuración de ofertas</li>
-        <li>visibilidad y rendimiento comercial</li>
-      </ul>
-
-      <button class="primary-btn" id="openObjectif">Mi objetivo</button>
-    `,
-    programmeTitle: "Proceso de acompañamiento estratégico",
-    programme: {
-      1: `
-        <strong>01 — Diagnóstico y visión</strong>
-        <p>Análisis global del proyecto.</p>
-        <ul class="list-left">
-          <li>Visión a largo plazo</li>
-          <li>Mercado objetivo</li>
-          <li>Objetivos de negocio</li>
-          <li>Indicadores de rendimiento</li>
-        </ul>
-      `,
-      2: `
-        <strong>02 — Inteligencia de mercado</strong>
-        <p>Estrategia personalizada.</p>
-        <ul class="list-left">
-          <li>Análisis competitivo</li>
-          <li>Posicionamiento estratégico</li>
-          <li>Recomendaciones de producto</li>
-          <li>Plan de acción</li>
-        </ul>
-      `,
-      3: `
-        <strong>03 — Implementación y seguimiento</strong>
-        <p>Ejecución y control.</p>
-        <ul class="list-left">
-          <li>Seguimiento de KPI</li>
-          <li>Ajustes continuos</li>
-          <li>Reuniones de control</li>
-          <li>Crecimiento sostenible</li>
-        </ul>
-      `
-    }
-  },
-
-  zh: {
-    objectif: `
-      将一个想法或现有活动转变为一个结构清晰、
-      可见且可盈利的项目。<br><br>
-      如果您正在寻找以人为本、具有战略性并注重结果的方法，
-      欢迎联系我。
-    `,
-    offre: `
-      <h2 class="title">介绍</h2>
-
-      <p>
-        我叫 Inès Saint Laurent，
-        <strong>是一名专注于业务发展的自由顾问</strong>，
-        涉及本地及国际市场。
-      </p>
-
-      <p>
-        拥有 <strong>五年工作经验</strong>，
-        我协助企业
-        <strong>完成结构化、增长和战略定位等关键阶段。</strong>
-      </p>
-
-      <p class="left strong"><strong>我主要从事：</strong></p>
-
-      <ul class="list-left">
-        <li>新产品上市</li>
-        <li>市场拓展</li>
-        <li>业务方案结构化</li>
-        <li>品牌曝光与商业绩效提升</li>
-      </ul>
-
-      <button class="primary-btn" id="openObjectif">我的目标</button>
-    `,
-    programmeTitle: "战略支持流程",
-    programme: {
-      1: `
-        <strong>01 — 诊断与愿景</strong>
-        <p>项目整体分析。</p>
-        <ul class="list-left">
-          <li>长期愿景</li>
-          <li>目标市场</li>
-          <li>商业目标</li>
-          <li>绩效指标</li>
-        </ul>
-      `,
-      2: `
-        <strong>02 — 市场情报与战略</strong>
-        <p>定制化建议。</p>
-        <ul class="list-left">
-          <li>竞争分析</li>
-          <li>战略定位</li>
-          <li>产品建议</li>
-          <li>行动计划</li>
-        </ul>
-      `,
-      3: `
-        <strong>03 — 执行与监控</strong>
-        <p>实施与跟踪。</p>
-        <ul class="list-left">
-          <li>KPI 跟踪</li>
-          <li>持续优化</li>
-          <li>管理会议</li>
-          <li>可持续增长</li>
-        </ul>
-      `
-    }
-  }
+  /* ================= EN / ES / ZH ================= */
+  en: { ...sameStructure("English") },
+  es: { ...sameStructure("Español") },
+  zh: { ...sameStructure("中文") }
 };
 
-/* ================= OUVERTURE DES BLOCS + ANIMATION ================= */
+/* ================= OUVERTURE DES BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
-    // reset rotation
-    blocs.forEach(b => b.classList.remove("rotate"));
-    bloc.classList.add("rotate");
+    if (bloc.classList.contains("bleu1")) contentBox.innerHTML = T[currentLang].presentation;
+    if (bloc.classList.contains("rose1")) contentBox.innerHTML = T[currentLang].programme;
+    if (bloc.classList.contains("violet1")) contentBox.innerHTML = T[currentLang].competences;
+    if (bloc.classList.contains("violet2")) contentBox.innerHTML = T[currentLang].logiciels;
+    if (bloc.classList.contains("orange1")) contentBox.innerHTML = T[currentLang].academique;
+    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = T[currentLang].reseaux;
 
-    setTimeout(() => {
-
-      if (bloc.classList.contains("bleu1")) {
-        contentBox.innerHTML = T[currentLang].offre;
-      }
-
-      if (bloc.classList.contains("rose1")) {
-        contentBox.innerHTML = `
-          <h2 class="title">${T[currentLang].programmeTitle}</h2>
-          <div class="center-buttons">
-            <button class="step-btn" data-step="1">01</button>
-            <button class="step-btn" data-step="2">02</button>
-            <button class="step-btn" data-step="3">03</button>
-          </div>
-          <div id="programmeBubble" class="bubble hidden"></div>
-        `;
-      }
-
-      colorBox.style.background = bloc.dataset.color || "#000";
-      overlay.classList.add("active");
-
-    }, 450);
+    colorBox.style.background = bloc.dataset.color;
+    overlay.classList.add("active");
   });
 });
 
@@ -329,7 +153,7 @@ contentBox.addEventListener("click", e => {
 
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
-    bubble.innerHTML = T[currentLang].programme[e.target.dataset.step];
+    bubble.innerHTML = T[currentLang].programmeSteps[e.target.dataset.step];
     bubble.classList.remove("hidden");
   }
 });
@@ -338,17 +162,29 @@ contentBox.addEventListener("click", e => {
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
-  blocs.forEach(b => b.classList.remove("rotate"));
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
 
-/* ================= LANGUAGE SWITCH ================= */
+/* ================= LANG SWITCH ================= */
 document.querySelectorAll("#lang-switch button").forEach(btn => {
   btn.addEventListener("click", () => {
     currentLang = btn.dataset.lang;
     overlay.classList.remove("active");
     contentBox.innerHTML = "";
-    blocs.forEach(b => b.classList.remove("rotate"));
   });
 });
+
+/* ================= HELPERS ================= */
+function sameStructure(label) {
+  return {
+    presentation: `<h2 class="title">${label} version – Presentation</h2>`,
+    objectif: `${label} – Goal text`,
+    programme: `<h2 class="title">${label} – Program</h2>`,
+    programmeSteps: {1:"",2:"",3:""},
+    competences: `<h2 class="title">${label} – Skills</h2>`,
+    logiciels: `<h2 class="title">${label} – Tools</h2>`,
+    academique: `<h2 class="title">${label} – Education</h2>`,
+    reseaux: `<h2 class="title">${label} – Socials</h2>`
+  };
+}
