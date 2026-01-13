@@ -15,6 +15,102 @@ html, body {
   overflow: hidden;
 }
 
+/* ================= CONTENEUR ================= */
+.FondPortefolio {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ================= FOND ================= */
+.fondindex {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* ================= BLOCS PRINCIPAUX ================= */
+.bloc {
+  position: absolute;
+  z-index: 2;
+  width: 528px;
+  height: 333px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.35s ease;
+}
+
+.bloc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.bloc:hover {
+  transform: scale(1.03);
+}
+
+/* ================= LABEL ================= */
+.label {
+  position: absolute;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(18px, 1.8vw, 26px);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+
+/* ================================================= */
+/* ========== POSITIONS DES BLOCS (DESKTOP) ========= */
+/* ================================================= */
+
+@media (min-width: 1200px) {
+
+  /* COLONNE GAUCHE */
+  .bleu1 {
+    left: -10px;
+    top: 0px;
+  }
+
+  .violet1 {
+    left: -30px;
+    top: 333px;
+  }
+
+  .violet2 {
+    left: -20px;
+    top: 666px;
+  }
+
+  /* COLONNE DROITE */
+  .rose1 {
+    left: 964px;
+    top: 0px;
+  }
+
+  .orange1 {
+    left: 954px;
+    top: 333px;
+  }
+
+  .jaune1 {
+    left: 944px;
+    top: 666px;
+  }
+}
+
 /* ================= OVERLAY ================= */
 #overlay {
   position: fixed;
@@ -132,18 +228,13 @@ html, body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-/* ================= CARTES (COMMUN) ================= */
+/* ================= CARTES ================= */
 .card-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.card {
-  text-align: left;
-}
-
-/* ================= BOUTONS CARTE ================= */
 .card-btn {
   width: 100%;
   padding: 18px 20px;
@@ -154,126 +245,34 @@ html, body {
   font-weight: 700;
   font-size: 16px;
   text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.card-btn span {
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-  margin-top: 6px;
-  color: #555;
-}
-
-/* ================= BOUTONS VIOLET1 ================= */
-.violet1-btn {
-  color: #7C4DFF;
-}
-
-/* ================= BOUTONS VIOLET2 ================= */
-.violet2-btn {
-  color: #9C6BFF;
-}
-
-/* ================= BULLES (COMMUN) ================= */
+/* ================= BULLES ================= */
 .bubble {
   margin-top: 14px;
   padding: 20px 22px;
   border-radius: 22px;
-  font-size: 15px;
-  line-height: 1.6;
-  animation: slideDown 0.3s ease forwards;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= BULLE OBJECTIF ================= */
-.bubble.objective {
-  background: #fff;
-  color: #3A6EFF;
-  text-align: center;
-  font-weight: 500;
-  margin-top: 26px;
-}
-
-/* ================= BULLES VIOLET1 ================= */
-.violet1-bubble {
-  background: #7C4DFF;
-  color: #fff;
-  box-shadow: 0 15px 35px rgba(124,77,255,0.45);
-}
-
-/* ================= BULLES VIOLET2 ================= */
-.violet2-bubble {
-  background: #9C6BFF;
-  color: #fff;
-  box-shadow: 0 15px 35px rgba(156,107,255,0.45);
-}
-
-/* ================= MASQUÉ ================= */
 .hidden {
   display: none;
 }
 
-/* ================= CV ACADÉMIQUE ================= */
-.academic-list p {
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-/* ================= RÉSEAUX SOCIAUX ================= */
-.socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-}
-
-.socials img {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.socials img:hover {
-  transform: scale(1.12);
-}
-
 /* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-
-  #colorBox {
-    width: 92vw;
-    padding: 24px;
+@media (max-width: 1199px) {
+  .FondPortefolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 24px;
   }
 
-  .title {
-    font-size: 24px;
-  }
-
-  .step-btn {
-    width: 48px;
-    height: 48px;
-  }
-
-  .socials img {
-    width: 60px;
-    height: 60px;
+  .bloc {
+    position: relative;
+    width: 90vw;
+    max-width: 528px;
+    height: auto;
+    aspect-ratio: 528 / 333;
   }
 }
