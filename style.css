@@ -40,9 +40,14 @@ html, body {
   border: none;
   cursor: pointer;
   padding: 0;
+
+  width: 528px;
+  height: 333px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transition: transform 0.4s ease;
 }
 
@@ -54,7 +59,7 @@ html, body {
 }
 
 .bloc.active {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 /* ================= LABEL ================= */
@@ -63,18 +68,47 @@ html, body {
   color: #fff;
   font-weight: 700;
   text-align: center;
-  font-size: clamp(16px, 1.6vw, 24px);
+  font-size: clamp(18px, 1.8vw, 26px);
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  pointer-events: none;
 }
 
-/* ================= POSITIONS DES BLOCS ================= */
-@media (min-width: 1025px) {
-  .bleu1   { left:600px;  top:2px;   width:400px; height:327px; }
-  .rose1   { left:1000px; top:0;     width:391px; height:327px; }
-  .violet1 { left:600px;  top:327px; width:401px; height:327px; }
-  .violet2 { left:600px;  top:654px; width:402px; height:328px; }
-  .orange1 { left:1000px; top:327px; width:392px; height:327px; }
-  .jaune1  { left:1000px; top:654px; width:393px; height:328px; }
+/* ================= POSITIONS DES BLOCS (DESKTOP EXACTES) ================= */
+/* Dimensions bloc : 528 x 333 */
+
+@media (min-width: 1200px) {
+
+  /* COLONNE GAUCHE */
+  .bleu1 {
+    left: 0px;
+    top: 0px;
+  }
+
+  .violet1 {
+    left: 0px;
+    top: 333px;
+  }
+
+  .violet2 {
+    left: 0px;
+    top: 666px;
+  }
+
+  /* COLONNE DROITE */
+  .rose1 {
+    left: 984px;
+    top: 0px;
+  }
+
+  .orange1 {
+    left: 984px;
+    top: 333px;
+  }
+
+  .jaune1 {
+    left: 984px;
+    top: 666px;
+  }
 }
 
 /* ================= OVERLAY ================= */
@@ -119,215 +153,41 @@ html, body {
   text-align: center;
 }
 
-/* ================= TITRES ================= */
-.animated-title {
-  font-size: 26px;
-  margin-bottom: 24px;
-  font-weight: 700;
-  animation: fadeUp 0.6s ease both;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ================= OBJECTIF ================= */
-.objectif-btn-large {
-  margin: 32px auto 0;
-  padding: 16px 36px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 700;
-  background: #fff;
-  color: #3A6EFF;
-  cursor: pointer;
-}
-
-.objectif-bubble {
-  margin: 28px auto 0;
-  background: #fff;
-  color: #3A6EFF;
-  padding: 26px;
-  border-radius: 24px;
-  max-width: 460px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-  animation: pop 0.35s ease;
-}
-
-@keyframes pop {
-  from { opacity: 0; transform: scale(0.92); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-/* ================= MON PROGRAMME ================= */
-.programme-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 24px;
-}
-
-.step-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  font-size: 18px;
-  font-weight: 700;
-  background: #fff;
-  color: #FF4FD8;
-  cursor: pointer;
-}
-
-.programme-bubble {
-  display: none;
-  background: #fff;
-  color: #FF4FD8;
-  padding: 24px;
-  border-radius: 24px;
-  margin-top: 18px;
-  box-shadow: 0 14px 35px rgba(0,0,0,0.3);
-}
-
-.programme-bubble.active {
-  display: block;
-}
-
-.left-points {
-  text-align: left;
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-/* ================= CV & COMPÉTENCES ================= */
-.jobs-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.job-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.job-btn {
-  background: #fff;
-  color: #7C4DFF;
-  padding: 18px;
-  border-radius: 22px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.job-title {
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.job-meta {
-  font-size: 14px;
-  opacity: 0.85;
-  margin-top: 6px;
-}
-
-/* === BULLE CV (VIOLET 1) === */
-.job-bubble,
-.cv-bubble {
-  display: none;
-  background: #7C4DFF;        /* violet1 */
-  color: #ffffff;
-  margin-top: 10px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-}
-
-.job-wrapper.open .job-bubble {
-  display: block;
-}
-
-.job-bubble ul {
-  padding-left: 18px;
-  text-align: left;
-}
-
-/* ================= LOGICIELS ================= */
-.logiciels-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.logiciel-btn {
-  background: #fff;
-  color: #7C4DFF;
-  padding: 16px;
-  border-radius: 22px;
-  font-weight: 700;
-  text-align: left;
-  cursor: pointer;
-}
-
-/* === BULLE LOGICIELS (VIOLET 2) === */
-.logiciel-bubble,
-.logiciel-bubble-violet {
-  display: none;
-  background: #9C6BFF;        /* violet2 */
-  color: #ffffff;
-  margin-top: 10px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-}
-
-.tool-wrapper.open .logiciel-bubble {
-  display: block;
-}
-
-/* ================= TITRE LOGICIELS ================= */
-.violet2 .animated-title {
-  color: #ffffff;
-}
-
-/* ================= CV ACADÉMIQUE ================= */
-.scolaire-list p {
-  margin-bottom: 18px;
-}
-
-/* ================= RÉSEAUX SOCIAUX ================= */
-.socials-square {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  padding: 16px;
-  border: 2px solid #FFD400;
-  border-radius: 22px;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-.socials-square img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-}
-
 /* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  #colorBox {
-    width: 94vw;
-    padding: 22px;
+
+/* TABLETTE */
+@media (max-width: 1199px) {
+  .FondPortefolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 24px;
   }
 
-  .animated-title {
-    font-size: 22px;
+  .bloc {
+    position: relative;
+    width: 90vw;
+    max-width: 528px;
+    height: auto;
+    aspect-ratio: 528 / 333;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .FondPortefolio {
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .job-title {
-    font-size: 16px;
+  .bloc {
+    width: 92vw;
+    height: auto;
+    aspect-ratio: 528 / 333;
+  }
+
+  .label {
+    font-size: 18px;
   }
 }
