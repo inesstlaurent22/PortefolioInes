@@ -67,7 +67,7 @@ html, body {
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
 }
 
-/* ================= POSITIONS DES BLOCS (DESKTOP) ================= */
+/* ================= POSITIONS DES BLOCS ================= */
 @media (min-width: 1025px) {
   .bleu1   { left:600px;  top:2px;   width:400px; height:327px; }
   .rose1   { left:1000px; top:0;     width:391px; height:327px; }
@@ -132,7 +132,7 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ================= MON OBJECTIF ================= */
+/* ================= OBJECTIF ================= */
 .objectif-btn-large {
   margin: 32px auto 0;
   padding: 16px 36px;
@@ -233,15 +233,16 @@ html, body {
   margin-top: 6px;
 }
 
-.job-bubble {
+/* === BULLE CV (VIOLET 1) === */
+.job-bubble,
+.cv-bubble {
   display: none;
-  background: #f4f0ff;
-  color: #7C4DFF;
-  border-left: 4px solid #7C4DFF;
-  margin-top: 8px;
-  padding: 18px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #7C4DFF;        /* violet1 */
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 }
 
 .job-wrapper.open .job-bubble {
@@ -270,23 +271,25 @@ html, body {
   cursor: pointer;
 }
 
-.logiciel-bubble {
+/* === BULLE LOGICIELS (VIOLET 2) === */
+.logiciel-bubble,
+.logiciel-bubble-violet {
   display: none;
-  background: #f4f0ff;
-  color: #7C4DFF;
-  margin-top: 8px;
-  padding: 18px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #9C6BFF;        /* violet2 */
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
 }
 
 .tool-wrapper.open .logiciel-bubble {
   display: block;
 }
 
-/* ================= TITRE LOGICIELS BLANC ================= */
+/* ================= TITRE LOGICIELS ================= */
 .violet2 .animated-title {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* ================= CV ACADÉMIQUE ================= */
