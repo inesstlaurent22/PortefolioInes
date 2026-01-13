@@ -1,57 +1,92 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8">
 
+  <!-- ===== SEO PRINCIPAL ===== -->
   <title>KIT IN – Portfolio | Stratégie, Business & Digital</title>
-
-  <meta name="description" content="Consultante en développement d’activité, stratégie commerciale et marketing international. Portfolio de Inès Saint Laurent.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Consultante en développement d’activité, stratégie commerciale et marketing international. Portfolio de Inès Saint Laurent.">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Inès Saint Laurent">
 
-  <!-- CSS -->
+  <!-- ===== RESPONSIVE ===== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== MULTILINGUE (SEO) ===== -->
+  <link rel="alternate" hreflang="fr" href="#" />
+  <link rel="alternate" hreflang="en" href="#" />
+  <link rel="alternate" hreflang="es" href="#" />
+  <link rel="alternate" hreflang="zh" href="#" />
+  <link rel="alternate" hreflang="x-default" href="#" />
+
+  <!-- ===== PERFORMANCE ===== -->
+  <link rel="preload" as="image" href="images/Portefolioin.png">
+
+  <!-- ===== CSS ===== -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- ================= CONTENEUR PRINCIPAL ================= -->
-  <main class="FondPortefolio">
+  <main class="FondPortefolio" role="main">
 
     <!-- Image de fond -->
-    <img src="images/Portefolioin.png"
-         class="fondindex"
-         alt="Portfolio Inès Saint Laurent"
-         loading="eager">
+    <img
+      src="images/Portefolioin.png"
+      class="fondindex"
+      alt="Portfolio de Inès Saint Laurent – stratégie et développement d’activité"
+      loading="eager"
+      decoding="async"
+    >
 
-    <!-- ================= BLOCS ================= -->
+    <!-- ================= BLOCS INTERACTIFS ================= -->
 
-    <button class="bloc bleu1" data-color="#3A6EFF" aria-label="Présentation">
+    <button class="bloc bleu1"
+            data-color="#3A6EFF"
+            aria-label="Présentation professionnelle"
+            type="button">
       <img src="images/Bleu1.png" alt="" loading="lazy">
       <span class="label">PRÉSENTATION</span>
     </button>
 
-    <button class="bloc rose1" data-color="#FF4FD8" aria-label="Mon programme">
+    <button class="bloc rose1"
+            data-color="#FF4FD8"
+            aria-label="Programme d’accompagnement"
+            type="button">
       <img src="images/Rose1.png" alt="" loading="lazy">
       <span class="label">MON PROGRAMME</span>
     </button>
 
-    <button class="bloc violet1" data-color="#7C4DFF" aria-label="CV compétences">
+    <button class="bloc violet1"
+            data-color="#7C4DFF"
+            aria-label="CV et compétences professionnelles"
+            type="button">
       <img src="images/Violet1.png" alt="" loading="lazy">
       <span class="label">CV COMPÉTENCES</span>
     </button>
 
-    <button class="bloc violet2" data-color="#9C6BFF" aria-label="Logiciels">
+    <button class="bloc violet2"
+            data-color="#9C6BFF"
+            aria-label="Logiciels et outils maîtrisés"
+            type="button">
       <img src="images/Violet2.png" alt="" loading="lazy">
       <span class="label">LOGICIELS</span>
     </button>
 
-    <button class="bloc orange1" data-color="#FF8A00" aria-label="CV académique">
+    <button class="bloc orange1"
+            data-color="#FF8A00"
+            aria-label="Parcours académique"
+            type="button">
       <img src="images/Orange1.png" alt="" loading="lazy">
       <span class="label">CV ACADÉMIQUE</span>
     </button>
 
-    <button class="bloc jaune1" data-color="#FFD400" aria-label="Réseaux sociaux">
+    <button class="bloc jaune1"
+            data-color="#FFD400"
+            aria-label="Réseaux sociaux"
+            type="button">
       <img src="images/Jaune1.png" alt="" loading="lazy">
       <span class="label">RÉSEAUX SOCIAUX</span>
     </button>
@@ -59,19 +94,30 @@
   </main>
 
   <!-- ================= OVERLAY ================= -->
-  <div id="overlay" aria-hidden="true">
+  <div id="overlay"
+       aria-hidden="true"
+       role="dialog"
+       aria-modal="true">
     <div id="colorBox">
-      <div id="contentBox"></div>
+      <div id="contentBox" role="document"></div>
     </div>
   </div>
 
   <!-- ================= LANGUAGE SWITCH ================= -->
-  <div id="lang-switch" aria-label="Language switch">
-    <button data-lang="fr">FR</button>
-    <button data-lang="en">EN</button>
-    <button data-lang="es">ES</button>
-    <button data-lang="zh">中文</button>
-  </div>
+  <nav id="lang-switch"
+       aria-label="Sélecteur de langue">
+    <button data-lang="fr" aria-label="Français">FR</button>
+    <button data-lang="en" aria-label="English">EN</button>
+    <button data-lang="es" aria-label="Español">ES</button>
+    <button data-lang="zh" aria-label="中文">中文</button>
+  </nav>
+
+  <!-- ================= FALLBACK ================= -->
+  <noscript>
+    <p style="color:white; text-align:center; padding:20px;">
+      Ce portfolio interactif nécessite JavaScript pour fonctionner correctement.
+    </p>
+  </noscript>
 
   <!-- ================= JS ================= -->
   <script src="script.js" defer></script>
