@@ -12,8 +12,7 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                "Segoe UI", Arial, sans-serif;
   background: #000;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* ================= CONTENEUR ================= */
@@ -31,7 +30,6 @@ html, body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  pointer-events: none;
 }
 
 /* ================= BLOCS ================= */
@@ -47,11 +45,7 @@ html, body {
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.35s ease;
-}
-
-.bloc:hover {
-  transform: scale(1.04);
+  transition: transform 0.4s ease;
 }
 
 .bloc img {
@@ -59,6 +53,10 @@ html, body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+}
+
+.bloc.active {
+  transform: scale(1.08);
 }
 
 /* ================= LABEL ================= */
@@ -81,32 +79,14 @@ html, body {
   .jaune1  { left:1000px; top:654px; width:393px; height:328px; }
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 1024px) {
-  .FondPortefolio {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .bloc {
-    position: relative;
-    width: 85vw;
-    height: 18vh;
-  }
-}
-
 /* ================= OVERLAY ================= */
 #overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.6);
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -122,11 +102,11 @@ html, body {
 #colorBox {
   width: 88vw;
   max-height: 85vh;
-  padding: 30px;
+  padding: 28px;
   border-radius: 28px;
   overflow-y: auto;
   transform: scale(0.92);
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
 #overlay.active #colorBox {
@@ -137,28 +117,22 @@ html, body {
 #contentBox {
   color: #fff;
   font-size: 16px;
-  line-height: 1.7;
-}
-
-/* ================= TITRES ================= */
-.presentation-title,
-.programme-title,
-.scolaire-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 26px;
+  line-height: 1.6;
   text-align: center;
 }
 
-/* ================= TITRES ANIMÉS ================= */
+/* ================= TITRES ================= */
 .animated-title {
-  animation: fadeSlide 0.7s ease forwards;
+  font-size: 26px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  animation: fadeUp 0.6s ease both;
 }
 
-@keyframes fadeSlide {
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -166,44 +140,65 @@ html, body {
   }
 }
 
-/* ================= TEXTE ================= */
-.centered-text {
-  text-align: center;
-}
-
+/* ================= TEXTE CENTRÉ ================= */
 .centered-text p {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-/* ================= OBJECTIF ================= */
+/* ================= BOUTON OBJECTIF ================= */
 .objectif-btn-large {
   margin: 32px auto 0;
   display: inline-block;
-  padding: 16px 38px;
+  padding: 16px 36px;
   border-radius: 999px;
   border: none;
-  font-size: 16px;
   font-weight: 700;
+  font-size: 16px;
   background: #fff;
-  color: #3A6EFF;
+  color: #ff4fd8;
   cursor: pointer;
 }
 
+/* ================= BULLE OBJECTIF ================= */
 .objectif-bubble {
-  margin-top: 28px;
-  padding: 24px;
+  margin: 28px auto 0;
   background: #fff;
-  color: #3A6EFF;
-  border-radius: 22px;
+  color: #ff4fd8;
+  padding: 24px;
+  border-radius: 24px;
+  max-width: 420px;
   text-align: center;
+  animation: pop 0.4s ease;
 }
 
-.objectif-bubble a {
-  display: inline-block;
-  margin-top: 16px;
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= MON PROGRAMME ================= */
+.programme-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.step-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
   font-weight: 700;
-  color: #3A6EFF;
-  text-decoration: none;
+  background: #fff;
+  color: #ff4fd8;
+  cursor: pointer;
 }
 
 /* ================= CV / COMPÉTENCES ================= */
@@ -214,28 +209,21 @@ html, body {
 }
 
 .job-btn {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  border: none;
+  padding: 16px;
   border-radius: 18px;
-  padding: 16px 18px;
-  text-align: left;
+  border: none;
+  font-size: 17px;
   font-weight: 700;
+  background: rgba(255,255,255,0.95);
   cursor: pointer;
-}
-
-.job-btn small {
-  display: block;
-  margin-top: 6px;
-  font-weight: 400;
-  opacity: 0.9;
 }
 
 .job-content {
   display: none;
+  background: #fff;
+  color: #7c4dff;
+  border-radius: 18px;
   padding: 18px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
 }
 
 .job-content.active {
@@ -244,10 +232,7 @@ html, body {
 
 .job-content ul {
   padding-left: 18px;
-}
-
-.job-content li {
-  margin-bottom: 10px;
+  text-align: left;
 }
 
 /* ================= LOGICIELS ================= */
@@ -258,42 +243,56 @@ html, body {
 }
 
 .logiciel-btn {
-  padding: 14px 18px;
+  padding: 14px;
   border-radius: 18px;
   border: none;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
   font-weight: 700;
+  background: rgba(255,255,255,0.95);
   cursor: pointer;
-  text-align: left;
 }
 
 .logiciel-content {
   display: none;
   background: #fff;
-  color: #7C4DFF;
-  padding: 16px 18px;
-  border-radius: 16px;
+  color: #7c4dff;
+  border-radius: 18px;
+  padding: 16px;
 }
 
 .logiciel-content.active {
   display: block;
 }
 
-/* ================= RÉSEAUX SOCIAUX ================= */
-.socials-card.small {
-  width: 200px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 22px;
+/* ================= CV ACADÉMIQUE ================= */
+.scolaire-list p {
+  margin-bottom: 18px;
 }
 
-.socials-card.small img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
+/* ================= RÉSEAUX SOCIAUX ================= */
+.socials-card {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  background: rgba(255,255,255,0.95);
+  padding: 20px;
+  border-radius: 24px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.socials-card img {
+  width: 48px;
+  height: 48px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  #colorBox {
+    width: 94vw;
+    padding: 22px;
+  }
+
+  .animated-title {
+    font-size: 22px;
+  }
 }
