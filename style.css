@@ -80,33 +80,33 @@ html, body {
 
   /* COLONNE GAUCHE */
   .bleu1 {
-    left: 0px;
+    left: -50px;
     top: 0px;
   }
 
   .violet1 {
-    left: 0px;
+    left: -70px;
     top: 333px;
   }
 
   .violet2 {
-    left: 0px;
+    left: -30px;
     top: 666px;
   }
 
   /* COLONNE DROITE */
   .rose1 {
-    left: 984px;
+    left: 944px;
     top: 0px;
   }
 
   .orange1 {
-    left: 984px;
+    left: 954px;
     top: 333px;
   }
 
   .jaune1 {
-    left: 984px;
+    left: 934px;
     top: 666px;
   }
 }
