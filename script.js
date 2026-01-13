@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – BULLES DIFFÉRENCIÉES OK");
+console.log("SCRIPT JS FINAL – OK");
 
 /* =====================================================
    SÉLECTEURS PRINCIPAUX
@@ -42,7 +42,20 @@ const contents = {
     </button>
   `,
 
-  /* ================= CV / COMPÉTENCES ================= */
+  /* ================= MON PROGRAMME ================= */
+  rose1: `
+    <h2 class="animated-title">Processus d’accompagnement stratégique</h2>
+
+    <div class="programme-buttons">
+      <button class="step-btn" data-step="1">1</button>
+      <button class="step-btn" data-step="2">2</button>
+      <button class="step-btn" data-step="3">3</button>
+    </div>
+
+    <div id="programmeBubble" class="programme-bubble"></div>
+  `,
+
+  /* ================= CV & COMPÉTENCES ================= */
   violet1: `
     <h2 class="animated-title">CV & Compétences</h2>
 
@@ -106,7 +119,7 @@ const contents = {
     </div>
   `,
 
-  /* ================= TARIFS / LOGICIELS ================= */
+  /* ================= LOGICIELS ================= */
   violet2: `
     <h2 class="animated-title">Logiciels</h2>
 
@@ -124,6 +137,64 @@ const contents = {
       ${tool("dev", "Développement web", "GitHub")}
 
     </div>
+  `,
+
+  /* ================= CV ACADÉMIQUE ================= */
+  orange1: `
+    <h2 class="animated-title">CV Académique</h2>
+
+    <div class="scolaire-list">
+      <p><strong>Master Import–Export</strong><br>KEDGE Business School — Marseille</p>
+      <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
+      <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+      <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne — Paris</p>
+      <p><strong>Diplôme de Comptabilité et de Gestion</strong><br>École Nationale de Commerce — Paris</p>
+    </div>
+  `,
+
+  /* ================= RÉSEAUX SOCIAUX ================= */
+  jaune1: `
+    <div class="socials-square">
+      <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
+      <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
+      <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG" alt="Email"></a>
+    </div>
+  `
+};
+
+/* =====================================================
+   TEXTES – MON PROGRAMME
+===================================================== */
+const programmeTexts = {
+  1: `
+    <p><strong>Diagnostic & Vision</strong></p>
+    <p>Un rendez-vous stratégique pour poser les bases du projet.</p>
+    <ul class="left-points">
+      <li>Vision long terme</li>
+      <li>Marché ou pays cible</li>
+      <li>Objectifs business</li>
+      <li>Indicateurs de performance</li>
+    </ul>
+  `,
+  2: `
+    <p><strong>Intelligence marché & stratégie</strong></p>
+    <p>Analyse approfondie et recommandations sur mesure.</p>
+    <ul class="left-points">
+      <li>Études de marché</li>
+      <li>Analyse concurrentielle</li>
+      <li>Positionnement stratégique</li>
+      <li>Plan d’action</li>
+    </ul>
+  `,
+  3: `
+    <p><strong>Déploiement & pilotage</strong></p>
+    <p>Mise en œuvre et suivi de la stratégie.</p>
+    <ul class="left-points">
+      <li>Réunions de pilotage</li>
+      <li>Analyse des KPI</li>
+      <li>Ajustements continus</li>
+      <li>Croissance durable</li>
+    </ul>
   `
 };
 
@@ -137,7 +208,7 @@ function job(id, title, meta, items) {
         <div class="job-title">${title}</div>
         <div class="job-meta">${meta}</div>
       </div>
-      <div class="job-bubble cv-bubble">
+      <div class="job-bubble">
         <ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>
       </div>
     </div>
@@ -148,9 +219,7 @@ function tool(id, title, text) {
   return `
     <div class="tool-wrapper" data-id="${id}">
       <div class="logiciel-btn">${title}</div>
-      <div class="logiciel-bubble logiciel-bubble-violet">
-        ${text}
-      </div>
+      <div class="logiciel-bubble">${text}</div>
     </div>
   `;
 }
@@ -189,20 +258,29 @@ contentBox.addEventListener("click", e => {
     }
   }
 
-  /* JOBS – TOGGLE (CV COMPÉTENCES) */
+  /* PROGRAMME */
+  if (e.target.classList.contains("step-btn")) {
+    const bubble = document.getElementById("programmeBubble");
+    bubble.innerHTML = programmeTexts[e.target.dataset.step];
+    bubble.classList.add("active");
+  }
+
+  /* JOBS – TOGGLE */
   const job = e.target.closest(".job-wrapper");
   if (job) {
-    const isOpen = job.classList.contains("open");
-    document.querySelectorAll(".job-wrapper").forEach(j => j.classList.remove("open"));
-    if (!isOpen) job.classList.add("open");
+    job.classList.toggle("open");
+    document.querySelectorAll(".job-wrapper").forEach(j => {
+      if (j !== job) j.classList.remove("open");
+    });
   }
 
   /* LOGICIELS – TOGGLE */
   const tool = e.target.closest(".tool-wrapper");
   if (tool) {
-    const isOpen = tool.classList.contains("open");
-    document.querySelectorAll(".tool-wrapper").forEach(t => t.classList.remove("open"));
-    if (!isOpen) tool.classList.add("open");
+    tool.classList.toggle("open");
+    document.querySelectorAll(".tool-wrapper").forEach(t => {
+      if (t !== tool) t.classList.remove("open");
+    });
   }
 });
 
