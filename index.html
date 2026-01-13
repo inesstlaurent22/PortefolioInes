@@ -19,40 +19,40 @@
 
     <!-- ================= BLOCS INTERACTIFS ================= -->
 
-    <button class="bloc bleu1" data-color="#3A6EFF">
-      <img src="images/Bleu1.png" alt="Mon offre">
+    <button class="bloc bleu1" data-color="#3A6EFF" aria-label="Présentation">
+      <img src="images/Bleu1.png" alt="">
       <span class="label">PRÉSENTATION</span>
     </button>
 
-    <button class="bloc rose1" data-color="#FF4FD8">
-      <img src="images/Rose1.png" alt="Mon programme">
+    <button class="bloc rose1" data-color="#FF4FD8" aria-label="Mon offre">
+      <img src="images/Rose1.png" alt="">
       <span class="label">MON OFFRE</span>
     </button>
 
-    <button class="bloc violet1" data-color="#7C4DFF">
-      <img src="images/Violet1.png" alt="CV compétences">
+    <button class="bloc violet1" data-color="#7C4DFF" aria-label="CV compétences">
+      <img src="images/Violet1.png" alt="">
       <span class="label">CV COMPÉTENCES</span>
     </button>
 
-    <button class="bloc violet2" data-color="#9C6BFF">
-      <img src="images/Violet2.png" alt="Tarifs">
+    <button class="bloc violet2" data-color="#9C6BFF" aria-label="Logiciels">
+      <img src="images/Violet2.png" alt="">
       <span class="label">LOGICIELS</span>
     </button>
 
-    <button class="bloc orange1" data-color="#FF8A00">
-      <img src="images/Orange1.png" alt="CV scolaire">
+    <button class="bloc orange1" data-color="#FF8A00" aria-label="CV académique">
+      <img src="images/Orange1.png" alt="">
       <span class="label">CV ACADÉMIQUE</span>
     </button>
 
-    <button class="bloc jaune1" data-color="#FFD400">
-      <img src="images/Jaune1.png" alt="Réseaux sociaux">
+    <button class="bloc jaune1" data-color="#FFD400" aria-label="Réseaux sociaux">
+      <img src="images/Jaune1.png" alt="">
       <span class="label">RÉSEAUX SOCIAUX</span>
     </button>
 
   </div>
 
   <!-- ================= OVERLAY PRINCIPAL ================= -->
-  <div id="overlay">
+  <div id="overlay" aria-hidden="true">
     <div id="colorBox">
       <div id="contentBox">
         <!-- Contenu injecté dynamiquement par script.js -->
@@ -60,25 +60,13 @@
     </div>
   </div>
 
-  <!-- ================= OVERLAY OBJECTIF ================= -->
-  <div id="objectifOverlay">
-    <div class="iphoneBox">
-      <p>
-        Transformer une idée ou une activité existante en un projet structuré,
-        visible et rentable.<br><br>
-        Si vous cherchez une approche humaine, stratégique et orientée résultats,
-        échangeons.
-      </p>
-    </div>
+  <!-- ================= LANGUAGE SWITCH ================= -->
+  <div id="lang-switch">
+    <button data-lang="fr">FR</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="es">ES</button>
+    <button data-lang="zh">中文</button>
   </div>
-
-  <!-- ===== LANGUAGE SWITCH ===== -->
-<div id="lang-switch">
-  <button data-lang="fr">FR</button>
-  <button data-lang="en">EN</button>
-  <button data-lang="es">ES</button>
-  <button data-lang="zh">中文</button>
-</div>
 
   <!-- ================= JS ================= -->
   <script src="script.js"></script>
