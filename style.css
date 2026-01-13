@@ -20,7 +20,7 @@ html, body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  perspective: 1200px; /* nécessaire pour rotation 3D */
+  perspective: 1200px;
 }
 
 /* ================= FOND ================= */
@@ -36,22 +36,19 @@ html, body {
 /* ================= BLOCS ================= */
 .bloc {
   position: absolute;
-  z-index: 2;
   width: 528px;
   height: 333px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  z-index: 2;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   transform-style: preserve-3d;
-  transition:
-    transform 0.6s cubic-bezier(.4,0,.2,1),
-    box-shadow 0.35s ease;
+  transition: transform 0.6s cubic-bezier(.4,0,.2,1);
 }
 
 .bloc img {
@@ -62,12 +59,10 @@ html, body {
   backface-visibility: hidden;
 }
 
-/* Hover léger */
 .bloc:hover {
   transform: scale(1.03);
 }
 
-/* ================= ROTATION AU CLIC ================= */
 .bloc.rotate {
   transform: rotateY(360deg) scale(1.03);
 }
@@ -77,49 +72,21 @@ html, body {
   position: absolute;
   color: #fff;
   font-weight: 700;
-  text-align: center;
   font-size: clamp(18px, 1.8vw, 26px);
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
   pointer-events: none;
 }
 
-/* ================================================= */
-/* ========== POSITIONS DES BLOCS (DESKTOP) ========= */
-/* ================================================= */
-
+/* ================= POSITIONS DES BLOCS ================= */
 @media (min-width: 1200px) {
 
-  /* COLONNE GAUCHE */
-  .bleu1 {
-    left: -10px;
-    top: 0px;
-  }
+  .bleu1    { left: -10px; top: 0; }
+  .violet1 { left: -30px; top: 333px; }
+  .violet2 { left: -20px; top: 666px; }
 
-  .violet1 {
-    left: -30px;
-    top: 333px;
-  }
-
-  .violet2 {
-    left: -20px;
-    top: 666px;
-  }
-
-  /* COLONNE DROITE */
-  .rose1 {
-    left: 964px;
-    top: 0px;
-  }
-
-  .orange1 {
-    left: 954px;
-    top: 333px;
-  }
-
-  .jaune1 {
-    left: 944px;
-    top: 666px;
-  }
+  .rose1   { left: 964px; top: 0; }
+  .orange1 { left: 954px; top: 333px; }
+  .jaune1  { left: 944px; top: 666px; }
 }
 
 /* ================= OVERLAY ================= */
@@ -149,14 +116,8 @@ html, body {
 }
 
 @keyframes pop {
-  from {
-    transform: scale(0.94);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 /* ================= CONTENU ================= */
@@ -167,21 +128,14 @@ html, body {
   line-height: 1.65;
 }
 
-/* ================= TITRES ================= */
 .title {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 26px;
 }
 
-/* ================= TEXTE ================= */
-.left {
-  text-align: left;
-}
-
-.strong {
-  font-weight: 700;
-}
+.left { text-align: left; }
+.strong { font-weight: 700; }
 
 /* ================= LISTES ================= */
 .list-left {
@@ -194,27 +148,18 @@ html, body {
   margin-bottom: 8px;
 }
 
-/* ================= BOUTON OBJECTIF ================= */
+/* ================= BOUTONS ================= */
 .primary-btn {
   margin: 28px auto 0;
-  display: block;
   padding: 14px 34px;
   border-radius: 999px;
   border: none;
-  font-size: 16px;
   font-weight: 700;
   background: #fff;
   color: #3A6EFF;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.primary-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
-/* ================= PROGRAMME ================= */
 .center-buttons {
   display: flex;
   justify-content: center;
@@ -227,108 +172,41 @@ html, body {
   height: 56px;
   border-radius: 50%;
   border: none;
+  font-weight: 700;
   background: #fff;
-  color: #000;
-  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.step-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-}
-
-/* ================= CARTES ================= */
-.card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.card-btn {
-  width: 100%;
-  padding: 18px 20px;
-  border-radius: 22px;
-  border: none;
-  background: rgba(255,255,255,0.95);
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 16px;
-  text-align: left;
 }
 
 /* ================= BULLES ================= */
 .bubble {
-  margin-top: 14px;
+  margin-top: 16px;
   padding: 20px 22px;
   border-radius: 22px;
   animation: slideDown 0.3s ease forwards;
 }
 
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.hidden {
-  display: none;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1199px) {
-  .FondPortefolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 24px;
-    perspective: none;
-  }
-
-  .bloc {
-    position: relative;
-    width: 90vw;
-    max-width: 528px;
-    height: auto;
-    aspect-ratio: 528 / 333;
-  }
-
-  /* Rotation plus douce sur mobile */
-  .bloc.rotate {
-    transform: rotateZ(6deg) scale(1.03);
-  }
-}
+.hidden { display: none; }
 
 /* ================= LANGUAGE SWITCH ================= */
 #lang-switch {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 200;
   display: flex;
   gap: 10px;
+  z-index: 200;
 }
 
 #lang-switch button {
   padding: 8px 14px;
   border-radius: 12px;
   border: none;
-  background: rgba(255,255,255,0.9);
-  color: #000;
   font-weight: 700;
-  font-size: 14px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#lang-switch button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.9);
 }
