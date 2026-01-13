@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO MULTILANGUE COMPLET");
+console.log("SCRIPT JS – PORTFOLIO MULTILANGUE COMPLET + ANIMATIONS");
 
 /* ================= LANGUE ================= */
 let currentLang = "fr";
@@ -284,27 +284,36 @@ const T = {
   }
 };
 
-/* ================= OUVERTURE DES BLOCS ================= */
+/* ================= OUVERTURE DES BLOCS + ANIMATION ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
-    if (bloc.classList.contains("bleu1")) {
-      contentBox.innerHTML = T[currentLang].offre;
-    }
 
-    if (bloc.classList.contains("rose1")) {
-      contentBox.innerHTML = `
-        <h2 class="title">${T[currentLang].programmeTitle}</h2>
-        <div class="center-buttons">
-          <button class="step-btn" data-step="1">01</button>
-          <button class="step-btn" data-step="2">02</button>
-          <button class="step-btn" data-step="3">03</button>
-        </div>
-        <div id="programmeBubble" class="bubble hidden"></div>
-      `;
-    }
+    // reset rotation
+    blocs.forEach(b => b.classList.remove("rotate"));
+    bloc.classList.add("rotate");
 
-    colorBox.style.background = bloc.dataset.color || "#000";
-    overlay.classList.add("active");
+    setTimeout(() => {
+
+      if (bloc.classList.contains("bleu1")) {
+        contentBox.innerHTML = T[currentLang].offre;
+      }
+
+      if (bloc.classList.contains("rose1")) {
+        contentBox.innerHTML = `
+          <h2 class="title">${T[currentLang].programmeTitle}</h2>
+          <div class="center-buttons">
+            <button class="step-btn" data-step="1">01</button>
+            <button class="step-btn" data-step="2">02</button>
+            <button class="step-btn" data-step="3">03</button>
+          </div>
+          <div id="programmeBubble" class="bubble hidden"></div>
+        `;
+      }
+
+      colorBox.style.background = bloc.dataset.color || "#000";
+      overlay.classList.add("active");
+
+    }, 450);
   });
 });
 
@@ -329,6 +338,7 @@ contentBox.addEventListener("click", e => {
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
+  blocs.forEach(b => b.classList.remove("rotate"));
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
@@ -339,5 +349,6 @@ document.querySelectorAll("#lang-switch button").forEach(btn => {
     currentLang = btn.dataset.lang;
     overlay.classList.remove("active");
     contentBox.innerHTML = "";
+    blocs.forEach(b => b.classList.remove("rotate"));
   });
 });
