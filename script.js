@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO MULTILINGUE GLOBAL");
+console.log("SCRIPT JS – PORTFOLIO MULTILANGUE FINAL");
 
 /* ================= LANGUE ================= */
 let currentLang = "fr";
@@ -9,152 +9,277 @@ const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
-/* ================= TEXTES ================= */
+/* ================= TEXTES MULTILANGUES ================= */
 const T = {
-
-  /* ================= FR ================= */
   fr: {
+
+    /* ===== OBJECTIF ===== */
+    objectif: `
+      <p>
+        Transformer une idée ou une activité existante en un projet structuré,
+        visible et rentable.<br><br>
+        Si vous cherchez une approche humaine, stratégique et orientée résultats,
+        échangeons.
+      </p>
+    `,
+
+    /* ===== PRÉSENTATION (BLEU) ===== */
     presentation: `
-      <h2 class="title">Présentation</h2>
+      <h2 class="title animate-title">Présentation</h2>
+
       <p>
         Je m’appelle Inès Saint Laurent,
         <strong>freelance spécialisée dans le développement d’activités</strong>
-        commerciales en France et à l’international.
+        commerciales sur les marchés locaux et internationaux.
       </p>
+
       <p>
-        Forte de <strong>cinq années d’expérience</strong>, j’accompagne les entreprises
+        Forte de <strong>cinq années d’expérience</strong>,
+        j’accompagne les entreprises
         <strong>dans leurs phases clés de structuration, de croissance et de positionnement stratégique.</strong>
       </p>
-      <p class="left strong">J’interviens notamment sur :</p>
+
+      <p class="left strong"><strong>J’interviens notamment sur :</strong></p>
+
       <ul class="list-left">
         <li>le lancement de nouveaux produits</li>
         <li>l’implantation sur de nouveaux marchés</li>
         <li>la structuration d’offres</li>
         <li>le développement de la visibilité et des performances commerciales</li>
       </ul>
+
       <button class="primary-btn" id="openObjectif">Mon objectif</button>
     `,
 
-    objectif: `
-      Transformer une idée ou une activité existante en un projet structuré,
-      visible et rentable.<br><br>
-      Si vous cherchez une approche humaine, stratégique et orientée résultats,
-      échangeons.
-    `,
-
-    programme: `
-      <h2 class="title">Processus d’accompagnement stratégique</h2>
-      <div class="center-buttons">
-        <button class="step-btn" data-step="1">01</button>
-        <button class="step-btn" data-step="2">02</button>
-        <button class="step-btn" data-step="3">03</button>
-      </div>
-      <div id="programmeBubble" class="bubble hidden"></div>
-    `,
-    programmeSteps: {
+    /* ===== MON OFFRE (ROSE) ===== */
+    offreTitle: "Processus d’accompagnement stratégique",
+    offre: {
       1: `
-        <strong>Diagnostic & Vision</strong>
+        <strong>01 — Diagnostic & Vision</strong>
+        <p>
+          Analyse globale du projet afin de poser des bases solides et cohérentes.
+        </p>
         <ul class="list-left">
           <li>Vision long terme</li>
-          <li>Marché cible</li>
-          <li>Objectifs business</li>
-          <li>KPI</li>
+          <li>Marché ou pays cible</li>
+          <li>Objectifs business prioritaires</li>
+          <li>Indicateurs de performance</li>
         </ul>
       `,
       2: `
-        <strong>Intelligence marché & stratégie</strong>
+        <strong>02 — Intelligence marché & stratégie</strong>
+        <p>
+          Études approfondies et recommandations stratégiques sur mesure.
+        </p>
         <ul class="list-left">
-          <li>Études de marché</li>
           <li>Analyse concurrentielle</li>
-          <li>Positionnement</li>
-          <li>Plan d’action</li>
+          <li>Positionnement stratégique</li>
+          <li>Recommandations produits</li>
+          <li>Plan d’action structuré</li>
         </ul>
       `,
       3: `
-        <strong>Déploiement & pilotage</strong>
+        <strong>03 — Déploiement & pilotage</strong>
+        <p>
+          Mise en œuvre opérationnelle et suivi continu des actions.
+        </p>
         <ul class="list-left">
-          <li>Suivi des performances</li>
-          <li>Ajustements stratégiques</li>
-          <li>Réunions mensuelles</li>
+          <li>Suivi des KPI</li>
+          <li>Ajustements continus</li>
+          <li>Réunions de pilotage</li>
+          <li>Croissance durable</li>
         </ul>
       `
     },
 
+    /* ===== CV COMPÉTENCES (VIOLET 1) ===== */
+    competencesTitle: "CV & Compétences",
     competences: `
-      <h2 class="title">CV & Compétences</h2>
+      <h2 class="title animate-title">CV & Compétences</h2>
+
       <div class="card-list">
-        <div class="card-btn">Consultante en développement d’activité<br><span>Gearbooker — Audiovisuel</span></div>
-        <div class="card-btn">Commerciale Marketing<br><span>Pachamamaï — Cosmétique solide</span></div>
-        <div class="card-btn">CEO & Community Manager<br><span>PUFFRAP — Média musical</span></div>
-        <div class="card-btn">CEO & Développeuse Web<br><span>KIT IN — Formation entrepreneuriale</span></div>
+
+        <button class="card-btn">
+          <strong>Consultante en développement d’activité</strong><br>
+          Gearbooker — Audiovisuel
+          <div class="bubble hidden">
+            • Accompagnement stratégique international<br>
+            • Développement commercial BtoB / BtoC<br>
+            • Pilotage de la performance
+          </div>
+        </button>
+
+        <button class="card-btn">
+          <strong>Commerciale Marketing</strong><br>
+          Pachamamaï — Cosmétique solide
+          <div class="bubble hidden">
+            • Études de marché internationales<br>
+            • Lancement de produits<br>
+            • Prospection et fidélisation
+          </div>
+        </button>
+
+        <button class="card-btn">
+          <strong>CEO & Community Manager</strong><br>
+          PUFFRAP — Média musical
+          <div class="bubble hidden">
+            • Création de média digital<br>
+            • Gestion Instagram & TikTok<br>
+            • Optimisation SEO
+          </div>
+        </button>
+
+        <button class="card-btn">
+          <strong>CEO & Développeuse Web</strong><br>
+          KIT IN — Formation entrepreneuriale
+          <div class="bubble hidden">
+            • Conception de plateforme éducative<br>
+            • HTML / CSS / JavaScript<br>
+            • Vision produit & business
+          </div>
+        </button>
+
       </div>
     `,
 
-    logiciels: `
-      <h2 class="title">Logiciels</h2>
-      <ul class="list-left">
-        <li>CRM : Notion, HubSpot, Salesforce</li>
-        <li>Gestion de projet : Trello, Google Workspace</li>
-        <li>Communication : Mailchimp, Zapier, Make</li>
-        <li>IA : ChatGPT, Claude, MidJourney</li>
-      </ul>
+    /* ===== COMPÉTENCES (VIOLET 2) ===== */
+    skillsTitle: "Compétences",
+    skills: `
+      <h2 class="title animate-title">Compétences</h2>
+
+      <div class="card-list">
+
+        <button class="card-btn skill-btn">
+          CRM
+          <div class="bubble hidden">Notion, HubSpot, Salesforce</div>
+        </button>
+
+        <button class="card-btn skill-btn">
+          Gestion de projet
+          <div class="bubble hidden">Trello, Google Workspace</div>
+        </button>
+
+        <button class="card-btn skill-btn">
+          Communication
+          <div class="bubble hidden">Mailchimp, Zapier, Make</div>
+        </button>
+
+        <button class="card-btn skill-btn">
+          Analyse & data
+          <div class="bubble hidden">Google Analytics, Search Console</div>
+        </button>
+
+        <button class="card-btn skill-btn">
+          Intelligence artificielle
+          <div class="bubble hidden">ChatGPT, Claude, Midjourney</div>
+        </button>
+
+      </div>
     `,
 
-    academique: `
-      <h2 class="title">CV Académique</h2>
-      <p>Master Import-Export — KEDGE Business School</p>
-      <p>Bachelor International Business — INSEEC</p>
-      <p>BTS Commerce International — Lycée Jean Lurçat</p>
-      <p>Licence de Gestion — Université Paris 1 Panthéon-Sorbonne</p>
-      <p>Diplôme de Comptabilité et de Gestion</p>
+    /* ===== PARCOURS ACADÉMIQUE (ORANGE) ===== */
+    academic: `
+      <h2 class="title animate-title">Parcours Académique</h2>
+
+      <p><strong>Master Import-Export</strong> — KEDGE Business School</p>
+      <p><strong>Bachelor International Business</strong> — INSEEC Paris</p>
+      <p><strong>BTS Commerce International</strong> — Lycée Jean Lurçat</p>
+      <p><strong>Licence de Gestion</strong> — Université Paris 1 Panthéon-Sorbonne</p>
+      <p><strong>Diplôme de Comptabilité et de Gestion</strong></p>
     `,
 
-    reseaux: `
+    /* ===== RÉSEAUX ===== */
+    socials: `
       <h2 class="title">Réseaux sociaux</h2>
-      <div class="socials">
-        <img src="images/Instagram.png" alt="Instagram">
-        <img src="images/Linkedin.png" alt="LinkedIn">
-        <img src="images/Mail.png" alt="Email">
-      </div>
+      <p>Instagram · LinkedIn · Email</p>
     `
-  },
-
-  /* ================= EN / ES / ZH ================= */
-  en: { ...sameStructure("English") },
-  es: { ...sameStructure("Español") },
-  zh: { ...sameStructure("中文") }
+  }
 };
 
 /* ================= OUVERTURE DES BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
-    if (bloc.classList.contains("bleu1")) contentBox.innerHTML = T[currentLang].presentation;
-    if (bloc.classList.contains("rose1")) contentBox.innerHTML = T[currentLang].programme;
-    if (bloc.classList.contains("violet1")) contentBox.innerHTML = T[currentLang].competences;
-    if (bloc.classList.contains("violet2")) contentBox.innerHTML = T[currentLang].logiciels;
-    if (bloc.classList.contains("orange1")) contentBox.innerHTML = T[currentLang].academique;
-    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = T[currentLang].reseaux;
+    blocs.forEach(b => b.classList.remove("rotate"));
+    bloc.classList.add("rotate");
 
-    colorBox.style.background = bloc.dataset.color;
-    overlay.classList.add("active");
+    setTimeout(() => {
+
+      /* BLEU */
+      if (bloc.classList.contains("bleu1")) {
+        contentBox.innerHTML = T[currentLang].presentation;
+      }
+
+      /* ROSE */
+      if (bloc.classList.contains("rose1")) {
+        contentBox.innerHTML = `
+          <h2 class="title animate-title">${T[currentLang].offreTitle}</h2>
+
+          <div class="center-buttons">
+            <button class="step-btn" data-step="1">01</button>
+            <button class="step-btn" data-step="2">02</button>
+            <button class="step-btn" data-step="3">03</button>
+          </div>
+
+          <div id="programmeBubble" class="bubble hidden" style="color:#FF4FD8"></div>
+        `;
+      }
+
+      /* VIOLET 1 */
+      if (bloc.classList.contains("violet1")) {
+        contentBox.innerHTML = T[currentLang].competences;
+      }
+
+      /* VIOLET 2 */
+      if (bloc.classList.contains("violet2")) {
+        contentBox.innerHTML = T[currentLang].skills;
+      }
+
+      /* ORANGE */
+      if (bloc.classList.contains("orange1")) {
+        contentBox.innerHTML = T[currentLang].academic;
+      }
+
+      /* JAUNE */
+      if (bloc.classList.contains("jaune1")) {
+        contentBox.innerHTML = T[currentLang].socials;
+      }
+
+      colorBox.style.background = bloc.dataset.color;
+      overlay.classList.add("active");
+
+    }, 450);
   });
 });
 
-/* ================= INTERACTIONS ================= */
+/* ================= INTERACTIONS INTERNES ================= */
 contentBox.addEventListener("click", e => {
 
+  /* OBJECTIF */
   if (e.target.id === "openObjectif") {
     contentBox.insertAdjacentHTML(
       "beforeend",
-      `<div class="bubble objective">${T[currentLang].objectif}</div>`
+      `<div class="bubble" style="color:#3A6EFF">${T[currentLang].objectif}</div>`
     );
   }
 
+  /* BULLES PROGRAMME */
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
-    bubble.innerHTML = T[currentLang].programmeSteps[e.target.dataset.step];
+    bubble.innerHTML = T[currentLang].offre[e.target.dataset.step];
     bubble.classList.remove("hidden");
+  }
+
+  /* CARTES (CV & COMPÉTENCES + SKILLS) */
+  if (e.target.closest(".card-btn")) {
+    const btn = e.target.closest(".card-btn");
+    const bubble = btn.querySelector(".bubble");
+
+    document.querySelectorAll(".card-btn .bubble").forEach(b => {
+      if (b !== bubble) b.classList.add("hidden");
+    });
+
+    bubble.classList.toggle("hidden");
   }
 });
 
@@ -162,29 +287,17 @@ contentBox.addEventListener("click", e => {
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
+  blocs.forEach(b => b.classList.remove("rotate"));
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
 
-/* ================= LANG SWITCH ================= */
+/* ================= LANGUAGE SWITCH ================= */
 document.querySelectorAll("#lang-switch button").forEach(btn => {
   btn.addEventListener("click", () => {
     currentLang = btn.dataset.lang;
     overlay.classList.remove("active");
     contentBox.innerHTML = "";
+    blocs.forEach(b => b.classList.remove("rotate"));
   });
 });
-
-/* ================= HELPERS ================= */
-function sameStructure(label) {
-  return {
-    presentation: `<h2 class="title">${label} version – Presentation</h2>`,
-    objectif: `${label} – Goal text`,
-    programme: `<h2 class="title">${label} – Program</h2>`,
-    programmeSteps: {1:"",2:"",3:""},
-    competences: `<h2 class="title">${label} – Skills</h2>`,
-    logiciels: `<h2 class="title">${label} – Tools</h2>`,
-    academique: `<h2 class="title">${label} – Education</h2>`,
-    reseaux: `<h2 class="title">${label} – Socials</h2>`
-  };
-}
