@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL CORRIGÉ & STABLE");
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (VIOLET2 + ORANGE1 FIX)");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -61,7 +61,7 @@ const CONTENT = {
     <div style="margin-top:36px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
       <p class="center-text">Formats de 3 mois, 6 mois ou jusqu’à 12 mois.</p>
-      <p class="center-text">J +15 : restitution stratégique & plan d’action.</p>
+      <p class="center-text">J +15 : restitution stratégique & validation du plan d’action.</p>
       <p class="center-text">Suivi mensuel et ajustements continus.</p>
     </div>
   `,
@@ -146,27 +146,27 @@ const CONTENT = {
     <h2 class="title animate-title">🎓 Parcours Académique</h2>
 
     <div class="academic-item">
-      <strong>Master Import-Export</strong><br>
+      <strong>Master Import-Export</strong><br><br>
       KEDGE Business School — Marseille
     </div>
 
     <div class="academic-item">
-      <strong>Bachelor International Business</strong><br>
+      <strong>Bachelor International Business</strong><br><br>
       INSEEC Paris Business School
     </div>
 
     <div class="academic-item">
-      <strong>BTS Commerce International</strong><br>
+      <strong>BTS Commerce International</strong><br><br>
       Lycée Jean Lurçat — Paris
     </div>
 
     <div class="academic-item">
-      <strong>Licence de Gestion</strong><br>
+      <strong>Licence de Gestion</strong><br><br>
       Université Paris 1 Panthéon-Sorbonne
     </div>
 
     <div class="academic-item">
-      <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
+      <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br><br>
       École Nationale de Commerce — Paris
     </div>
   `,
@@ -176,15 +176,17 @@ const CONTENT = {
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
     <div class="card-list">
+
       ${toolCard("CRM", "Notion · HubSpot · Salesforce")}
       ${toolCard("Gestion de projet", "Trello · Google Workspace")}
-      ${toolCard("Analyse", "GA · GSC · LinkedIn Sales Navigator · Meta")}
+      ${toolCard("Analyse", "Google Analytics · Search Console · LinkedIn Sales Navigator · Meta")}
       ${toolCard("Microsoft", "Azure · Copilot · Microsoft 360")}
-      ${toolCard("Étude de marché", "TradeMap · Kompass · Euromonitor · Statista")}
+      ${toolCard("Étude de marché", "TradeMap · Kompass · Euromonitor · Statista · World Bank Data")}
       ${toolCard("Communication", "Mailchimp · Zapier · Make")}
       ${toolCard("Design", "Canva · Figma · CapCut · Photoshop")}
       ${toolCard("IA", "ChatGPT · Claude · MidJourney · Gemini")}
       ${toolCard("Développement Web", "GitHub")}
+
     </div>
   `,
 
@@ -222,7 +224,7 @@ function experienceCard(role, company, sector, tasks) {
 
 function toolCard(title, items) {
   return `
-    <button class="card-btn">
+    <button class="card-btn" style="color:#9C6BFF">
       <strong>${title}</strong>
       <div class="bubble hidden bubble-violet2">${items}</div>
     </button>
