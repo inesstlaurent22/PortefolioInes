@@ -29,7 +29,7 @@
     <img
       src="images/Portefolioin.png"
       class="fondindex"
-      alt="Portfolio Inès Saint Laurent – Stratégie, business et digital"
+      alt="Portfolio de Inès Saint Laurent – Stratégie, business et digital"
       loading="eager"
       decoding="async"
     >
@@ -56,7 +56,7 @@
       <span class="label">MON OFFRE</span>
     </button>
 
-    <!-- CV / EXPÉRIENCE -->
+    <!-- PARCOURS PROFESSIONNEL -->
     <button
       class="bloc violet1"
       data-color="#7C4DFF"
@@ -66,7 +66,7 @@
       <span class="label">PARCOURS PROFESSIONNEL</span>
     </button>
 
-    <!-- LOGICIELS -->
+    <!-- LOGICIELS & COMPÉTENCES -->
     <button
       class="bloc violet2"
       data-color="#9C6BFF"
@@ -105,7 +105,26 @@
     role="dialog"
     aria-modal="true">
     <div id="colorBox">
-      <div id="contentBox"></div>
+      <div id="contentBox" role="document"></div>
+    </div>
+  </div>
+
+  <!-- ================= LANGUAGE SWITCH ================= -->
+  <div id="lang-switch" aria-label="Sélecteur de langue">
+    <button
+      id="lang-current"
+      type="button"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="Changer la langue">
+      🌍
+    </button>
+
+    <div id="lang-menu" class="hidden" role="menu">
+      <button role="menuitem" data-lang="fr">🇫🇷 Français</button>
+      <button role="menuitem" data-lang="en">🇬🇧 English</button>
+      <button role="menuitem" data-lang="es">🇪🇸 Español</button>
+      <button role="menuitem" data-lang="zh">🇨🇳 中文</button>
     </div>
   </div>
 
@@ -115,20 +134,6 @@
       Ce portfolio interactif nécessite JavaScript pour fonctionner correctement.
     </p>
   </noscript>
-
-  <!-- ================= LANGUAGE SWITCH ================= -->
-<div id="lang-switch">
-  <button id="lang-current" aria-label="Changer la langue">
-    🌍
-  </button>
-
-  <div id="lang-menu" class="hidden">
-    <button data-lang="fr">🇫🇷 Français</button>
-    <button data-lang="en">🇬🇧 English</button>
-    <button data-lang="es">🇪🇸 Español</button>
-    <button data-lang="zh">🇨🇳 中文</button>
-  </div>
-</div>
 
   <!-- ================= JS ================= -->
   <script src="script.js" defer></script>
