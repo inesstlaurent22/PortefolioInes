@@ -291,6 +291,36 @@ contentBox.addEventListener("click", e => {
   }
 });
 
+/* ================= LANGUAGE SWITCH ================= */
+let currentLang = "fr";
+
+const langBtn = document.getElementById("lang-current");
+const langMenu = document.getElementById("lang-menu");
+
+langBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  langMenu.classList.toggle("hidden");
+});
+
+document.addEventListener("click", () => {
+  langMenu.classList.add("hidden");
+});
+
+langMenu.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentLang = btn.dataset.lang;
+
+    // fermeture menu
+    langMenu.classList.add("hidden");
+
+    // reset overlay
+    overlay.classList.remove("active");
+    contentBox.innerHTML = "";
+
+    console.log("Langue sélectionnée :", currentLang);
+  });
+});
+
 /* ================= FERMETURE ================= */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
