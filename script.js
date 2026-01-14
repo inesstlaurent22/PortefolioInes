@@ -34,6 +34,7 @@ function toolCard(title, tools) {
 /* ================= CONTENUS ================= */
 const CONTENT = {
 
+  /* ===== PRÉSENTATION ===== */
   presentation: `
     <h2 class="title animate-title">Présentation</h2>
 
@@ -65,6 +66,7 @@ const CONTENT = {
     </p>
   `,
 
+  /* ===== MON OFFRE ===== */
   offre: `
     <h2 class="title animate-title">🤝 Processus d’accompagnement stratégique</h2>
 
@@ -76,11 +78,11 @@ const CONTENT = {
 
     <div id="programmeBubble" class="bubble hidden center-text"></div>
 
-    <div style="margin-top:32px">
+    <div style="margin-top:40px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
-      <p class="center-text">3 à 12 mois selon vos ambitions</p>
-      <p class="center-text">J +15 restitution stratégique</p>
-      <p class="center-text">Pilotage mensuel & ajustements</p>
+      <p class="center-text">Accompagnements de 3 à 12 mois selon vos ambitions</p>
+      <p class="center-text">J +15 : restitution stratégique et validation du plan d’action</p>
+      <p class="center-text">Pilotage mensuel & ajustements continus</p>
     </div>
   `,
 
@@ -108,10 +110,12 @@ const CONTENT = {
     `
   },
 
+  /* ===== PARCOURS PROFESSIONNEL ===== */
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
     <div class="card-list">
+
       ${experienceCard(
         "Consultante en développement d’activité",
         "Gearbooker",
@@ -166,9 +170,11 @@ const CONTENT = {
           "Notoriété de marque"
         ]
       )}
+
     </div>
   `,
 
+  /* ===== LOGICIELS ===== */
   tools: `
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
@@ -183,21 +189,49 @@ const CONTENT = {
     </div>
   `,
 
+  /* ===== PARCOURS ACADÉMIQUE (CORRIGÉ) ===== */
   academic: `
     <h2 class="title animate-title">🎓 Parcours Académique</h2>
-    <p><strong>Master Import-Export</strong> — KEDGE Marseille</p>
-    <p><strong>Bachelor International Business</strong> — INSEEC Paris</p>
-    <p><strong>BTS Commerce International</strong> — Lycée Jean Lurçat</p>
-    <p><strong>Licence de Gestion</strong> — Paris 1 Panthéon-Sorbonne</p>
-    <p><strong>DCG</strong> — École Nationale de Commerce</p>
+
+    <p style="margin-bottom:20px;">
+      <strong>Master Import-Export</strong><br>
+      KEDGE Business School — Marseille
+    </p>
+
+    <p style="margin-bottom:20px;">
+      <strong>Bachelor International Business</strong><br>
+      INSEEC Paris Business School
+    </p>
+
+    <p style="margin-bottom:20px;">
+      <strong>BTS Commerce International</strong><br>
+      Lycée Jean Lurçat — Paris
+    </p>
+
+    <p style="margin-bottom:20px;">
+      <strong>Licence de Gestion</strong><br>
+      Université Paris 1 Panthéon-Sorbonne
+    </p>
+
+    <p style="margin-bottom:10px;">
+      <strong>Diplôme de Comptabilité et de Gestion</strong><br>
+      École Nationale de Commerce — Paris
+    </p>
   `,
 
+  /* ===== RÉSEAUX SOCIAUX ===== */
   socials: `
     <h2 class="title animate-title">Réseaux sociaux</h2>
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram.PNG"></a>
-      <a href="https://www.linkedin.com/" target="_blank"><img src="images/Linkedin.PNG"></a>
-      <a href="mailto:contact@email.com"><img src="images/Mail.PNG"></a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="images/Instagram.PNG">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="images/Linkedin.PNG">
+      </a>
+      <a href="mailto:contact@email.com">
+        <img src="images/Mail.PNG">
+      </a>
     </div>
   `
 };
