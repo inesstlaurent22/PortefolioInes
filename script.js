@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (CORRIGÉ)");
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -9,7 +9,7 @@ const contentBox = document.getElementById("contentBox");
 /* ================= CONTENUS ================= */
 const CONTENT = {
 
-  /* ================= PRÉSENTATION ================= */
+  /* ===== PRÉSENTATION ===== */
   presentation: `
     <h2 class="title animate-title">Présentation</h2>
 
@@ -46,7 +46,7 @@ const CONTENT = {
     </p>
   `,
 
-  /* ================= MON OFFRE ================= */
+  /* ===== MON OFFRE ===== */
   offre: `
     <h2 class="title animate-title">🤝 Processus d’accompagnement stratégique</h2>
 
@@ -58,17 +58,11 @@ const CONTENT = {
 
     <div id="programmeBubble" class="bubble hidden center-text"></div>
 
-    <div style="margin-top:40px">
+    <div style="margin-top:36px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
-      <p class="center-text">
-        Formats de 3 mois, 6 mois ou jusqu’à 12 mois selon vos ambitions.
-      </p>
-      <p class="center-text">
-        J +15 : restitution stratégique et validation du plan d’action.
-      </p>
-      <p class="center-text">
-        Chaque mois : suivi et ajustements continus.
-      </p>
+      <p class="center-text">Formats de 3, 6 ou 12 mois selon vos ambitions.</p>
+      <p class="center-text">J +15 : restitution stratégique & plan d’action.</p>
+      <p class="center-text">Suivi mensuel et ajustements continus.</p>
     </div>
   `,
 
@@ -76,16 +70,16 @@ const CONTENT = {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
       Vision long terme<br>
-      Marché ou pays cible<br>
-      Objectifs business prioritaires<br>
+      Marché cible<br>
+      Objectifs business<br>
       Indicateurs de performance
     `,
     2: `
       <strong>Intelligence marché & Stratégie</strong><br><br>
-      Études de marché approfondies<br>
+      Études de marché<br>
       Analyse concurrentielle<br>
       Recommandations produits<br>
-      Plan d’action structuré
+      Plan d’action
     `,
     3: `
       <strong>Déploiement & Pilotage</strong><br><br>
@@ -96,16 +90,16 @@ const CONTENT = {
     `
   },
 
-  /* ================= PARCOURS PRO ================= */
+  /* ===== PARCOURS PROFESSIONNEL ===== */
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
     <div class="card-list">
 
-      <button class="card-btn" style="color:#7C4DFF">
+      <button class="card-btn">
         Consultante en développement d’activité<br>
         <strong>Gearbooker</strong><br>
-        <em style="font-size:13px">Audiovisuel & international</em>
+        <em>Audiovisuel & international</em>
         <div class="bubble hidden bubble-violet">
           Accompagnement stratégique international<br>
           Développement commercial BtoB / BtoC<br>
@@ -113,89 +107,132 @@ const CONTENT = {
         </div>
       </button>
 
-      <button class="card-btn" style="color:#7C4DFF">
+      <button class="card-btn">
         Commerciale Marketing<br>
         <strong>Pachamamaï</strong><br>
-        <em style="font-size:13px">Cosmétique & marchés internationaux</em>
+        <em>Cosmétique & marchés internationaux</em>
         <div class="bubble hidden bubble-violet">
-          Prospection et lancement de produits<br>
-          Études de marché internationales<br>
-          Fidélisation clientèle
+          Prospection & lancements produits<br>
+          Études de marché Europe & Asie<br>
+          Fidélisation client
+        </div>
+      </button>
+
+      <button class="card-btn">
+        CEO & Community Manager<br>
+        <strong>PUFFRAP</strong><br>
+        <em>Média & culture musicale</em>
+        <div class="bubble hidden bubble-violet">
+          Création de média digital<br>
+          Gestion Instagram & TikTok<br>
+          SEO & visibilité
+        </div>
+      </button>
+
+      <button class="card-btn">
+        CEO & Développeuse Web<br>
+        <strong>KIT IN</strong><br>
+        <em>Entrepreneuriat & digital</em>
+        <div class="bubble hidden bubble-violet">
+          Plateforme éducative<br>
+          HTML / CSS / JavaScript<br>
+          Vision produit & business
+        </div>
+      </button>
+
+      <button class="card-btn">
+        Stagiaire Comptable<br>
+        <strong>Pages Jaunes</strong><br>
+        <em>Finance & structure d’entreprise</em>
+        <div class="bubble hidden bubble-violet">
+          Comptabilité clients & fournisseurs<br>
+          Analyse des flux<br>
+          Organisation financière
+        </div>
+      </button>
+
+      <button class="card-btn">
+        Vendeuse & Ambassadrice de marque<br>
+        <strong>Le Perchoir</strong><br>
+        <em>Restauration & événementiel</em>
+        <div class="bubble hidden bubble-violet">
+          Image de marque<br>
+          Relation client terrain<br>
+          Notoriété de l’enseigne
         </div>
       </button>
 
     </div>
   `,
 
-  /* ================= PARCOURS ACADÉMIQUE ================= */
-  academic: `
-    <h2 class="title animate-title">🎓 Parcours Académique</h2>
-
-    <div style="margin-bottom:26px">
-      <strong>Master Import-Export</strong><br>
-      KEDGE Business School — Marseille
-    </div>
-
-    <div style="margin-bottom:26px">
-      <strong>Bachelor International Business</strong><br>
-      INSEEC Paris Business School
-    </div>
-
-    <div style="margin-bottom:26px">
-      <strong>BTS Commerce International</strong><br>
-      Lycée Jean Lurçat — Paris
-    </div>
-
-    <div style="margin-bottom:26px">
-      <strong>Licence de Gestion</strong><br>
-      Université Paris 1 Panthéon-Sorbonne
-    </div>
-
-    <div>
-      <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-      École Nationale de Commerce — Paris
-    </div>
-  `,
-
-  /* ================= LOGICIELS ================= */
+  /* ===== LOGICIELS ===== */
   tools: `
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
     <div class="card-list">
 
-      <button class="card-btn" style="color:#9C6BFF">
-        <strong>CRM</strong>
+      <button class="card-btn"><strong>CRM</strong>
+        <div class="bubble hidden bubble-violet2">Notion, HubSpot, Salesforce</div>
+      </button>
+
+      <button class="card-btn"><strong>Gestion de projet</strong>
+        <div class="bubble hidden bubble-violet2">Trello, Google Workspace</div>
+      </button>
+
+      <button class="card-btn"><strong>Communication</strong>
+        <div class="bubble hidden bubble-violet2">Mailchimp, Zapier, Make</div>
+      </button>
+
+      <button class="card-btn"><strong>Design</strong>
+        <div class="bubble hidden bubble-violet2">Canva, Figma, CapCut, Photoshop</div>
+      </button>
+
+      <button class="card-btn"><strong>IA</strong>
+        <div class="bubble hidden bubble-violet2">ChatGPT, Claude, MidJourney, Gemini</div>
+      </button>
+
+      <button class="card-btn"><strong>Développement Web</strong>
+        <div class="bubble hidden bubble-violet2">GitHub</div>
+      </button>
+
+      <button class="card-btn"><strong>Sites en ligne</strong>
+        <div class="bubble hidden bubble-violet2">Webflow, WordPress, Shopify, Wix</div>
+      </button>
+
+      <button class="card-btn"><strong>Analyse</strong>
         <div class="bubble hidden bubble-violet2">
-          Notion · HubSpot · Salesforce
+          Google Analytics, Search Console, Meta Business Suite, LinkedIn Navigator
         </div>
       </button>
 
-      <button class="card-btn" style="color:#9C6BFF">
-        <strong>Gestion de projet</strong>
+      <button class="card-btn"><strong>Études de marché</strong>
         <div class="bubble hidden bubble-violet2">
-          Trello · Google Workspace
-        </div>
-      </button>
-
-      <button class="card-btn" style="color:#9C6BFF">
-        <strong>Analyse</strong>
-        <div class="bubble hidden bubble-violet2">
-          Google Analytics · Search Console · LinkedIn Sales Navigator · Meta Business Suite
-        </div>
-      </button>
-
-      <button class="card-btn" style="color:#9C6BFF">
-        <strong>IA</strong>
-        <div class="bubble hidden bubble-violet2">
-          ChatGPT · Claude · MidJourney · Gemini
+          TradeMap, Kompass, Euromonitor, Statista, World Bank Data
         </div>
       </button>
 
     </div>
+  `,
+
+  /* ===== RÉSEAUX ===== */
+  socials: `
+    <h2 class="title animate-title">Réseaux sociaux</h2>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="images/Instagram.PNG" alt="Instagram">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="images/Linkedin.PNG" alt="LinkedIn">
+      </a>
+      <a href="mailto:contact@email.com">
+        <img src="images/Mail.PNG" alt="Email">
+      </a>
+    </div>
   `
 };
 
-/* ================= OUVERTURE DES BLOCS ================= */
+/* ================= OUVERTURE BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
@@ -204,6 +241,7 @@ blocs.forEach(bloc => {
     if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
     if (bloc.classList.contains("violet2")) contentBox.innerHTML = CONTENT.tools;
     if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
+    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
