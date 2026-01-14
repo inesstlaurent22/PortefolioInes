@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL STABLE");
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (CORRIGÉ)");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -6,10 +6,34 @@ const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
+/* ================= HELPERS ================= */
+function experienceCard(role, company, sector, tasks) {
+  return `
+    <button class="card-btn" style="color:#7C4DFF">
+      ${role}<br>
+      <strong>${company}</strong><br>
+      <em style="font-size:13px;">${sector}</em>
+      <div class="bubble hidden bubble-violet">
+        ${tasks.join("<br>")}
+      </div>
+    </button>
+  `;
+}
+
+function toolCard(title, tools) {
+  return `
+    <button class="card-btn" style="color:#9C6BFF;font-weight:700">
+      <strong>${title}</strong>
+      <div class="bubble hidden bubble-violet2" style="font-weight:400">
+        ${tools}
+      </div>
+    </button>
+  `;
+}
+
 /* ================= CONTENUS ================= */
 const CONTENT = {
 
-  /* ===== PRÉSENTATION ===== */
   presentation: `
     <h2 class="title animate-title">Présentation</h2>
 
@@ -41,7 +65,6 @@ const CONTENT = {
     </p>
   `,
 
-  /* ===== MON OFFRE ===== */
   offre: `
     <h2 class="title animate-title">🤝 Processus d’accompagnement stratégique</h2>
 
@@ -55,15 +78,9 @@ const CONTENT = {
 
     <div style="margin-top:32px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
-      <p class="center-text">
-        Accompagnements de 3 mois, 6 mois ou jusqu’à 12 mois selon vos ambitions.
-      </p>
-      <p class="center-text">
-        J +15 : restitution stratégique, validation du plan d’action.
-      </p>
-      <p class="center-text">
-        Suivi mensuel, ajustements continus et pilotage de la performance.
-      </p>
+      <p class="center-text">3 à 12 mois selon vos ambitions</p>
+      <p class="center-text">J +15 restitution stratégique</p>
+      <p class="center-text">Pilotage mensuel & ajustements</p>
     </div>
   `,
 
@@ -71,32 +88,30 @@ const CONTENT = {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
       Vision long terme<br>
-      Marché ou pays cible<br>
-      Objectifs business prioritaires<br>
-      Indicateurs de performance
+      Marché cible<br>
+      Objectifs business<br>
+      Indicateurs clés
     `,
     2: `
       <strong>Intelligence marché & Stratégie</strong><br><br>
-      Études de marché approfondies<br>
+      Études de marché<br>
       Analyse concurrentielle<br>
-      Recommandations produits<br>
-      Plan d’action structuré
+      Recommandations<br>
+      Plan d’action
     `,
     3: `
       <strong>Déploiement & Pilotage</strong><br><br>
       Réunions mensuelles<br>
-      Analyse KPI<br>
-      Ajustements continus<br>
+      KPI & performance<br>
+      Ajustements<br>
       Croissance durable
     `
   },
 
-  /* ===== PARCOURS PROFESSIONNEL ===== */
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
     <div class="card-list">
-
       ${experienceCard(
         "Consultante en développement d’activité",
         "Gearbooker",
@@ -113,7 +128,7 @@ const CONTENT = {
         "Pachamamaï",
         "Cosmétique & marchés internationaux",
         [
-          "Prospection commerciale et lancements produits",
+          "Prospection commerciale",
           "Études de marché Europe & Asie",
           "Fidélisation client"
         ]
@@ -122,11 +137,11 @@ const CONTENT = {
       ${experienceCard(
         "CEO & Community Manager",
         "PUFFRAP",
-        "Média & culture musicale",
+        "Média musical",
         [
-          "Création de média digital",
-          "Gestion Instagram & TikTok",
-          "SEO & visibilité"
+          "Création de média",
+          "Gestion réseaux sociaux",
+          "SEO & partenariats"
         ]
       )}
 
@@ -137,18 +152,7 @@ const CONTENT = {
         [
           "Plateforme éducative",
           "HTML / CSS / JavaScript",
-          "Vision produit & business"
-        ]
-      )}
-
-      ${experienceCard(
-        "Stagiaire Comptable",
-        "Pages Jaunes",
-        "Finance & structure d’entreprise",
-        [
-          "Comptabilité clients & fournisseurs",
-          "Analyse des flux financiers",
-          "Organisation & rigueur"
+          "Vision produit"
         ]
       )}
 
@@ -157,16 +161,14 @@ const CONTENT = {
         "Le Perchoir",
         "Restauration & événementiel",
         [
-          "Valorisation de l’image de marque",
-          "Relation client terrain",
-          "Développement de la notoriété"
+          "Relation client",
+          "Valorisation de l’image",
+          "Notoriété de marque"
         ]
       )}
-
     </div>
   `,
 
-  /* ===== LOGICIELS ===== */
   tools: `
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
@@ -177,72 +179,28 @@ const CONTENT = {
       ${toolCard("Design", "Canva, Figma, CapCut, Photoshop")}
       ${toolCard("IA", "ChatGPT, Claude, MidJourney, Gemini")}
       ${toolCard("Développement Web", "GitHub")}
-      ${toolCard("Sites en ligne", "Webflow, WordPress, Shopify, Wix")}
-      ${toolCard(
-        "Analyse",
-        "Google Analytics, Search Console, Meta Business Suite, LinkedIn Navigator"
-      )}
-      ${toolCard(
-        "Études de marché",
-        "TradeMap, Kompass, Euromonitor, Statista, World Bank Data"
-      )}
+      ${toolCard("Analyse", "Google Analytics, Search Console, LinkedIn Navigator")}
     </div>
   `,
 
-  /* ===== PARCOURS ACADÉMIQUE ===== */
   academic: `
     <h2 class="title animate-title">🎓 Parcours Académique</h2>
-
-    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
-    <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School</p>
-    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
-    <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
-    <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-       École Nationale de Commerce — Paris</p>
+    <p><strong>Master Import-Export</strong> — KEDGE Marseille</p>
+    <p><strong>Bachelor International Business</strong> — INSEEC Paris</p>
+    <p><strong>BTS Commerce International</strong> — Lycée Jean Lurçat</p>
+    <p><strong>Licence de Gestion</strong> — Paris 1 Panthéon-Sorbonne</p>
+    <p><strong>DCG</strong> — École Nationale de Commerce</p>
   `,
 
-  /* ===== RÉSEAUX SOCIAUX ===== */
   socials: `
     <h2 class="title animate-title">Réseaux sociaux</h2>
-
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="images/Instagram.PNG" alt="Instagram">
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank">
-        <img src="images/Linkedin.PNG" alt="LinkedIn">
-      </a>
-      <a href="mailto:contact@email.com">
-        <img src="images/Mail.PNG" alt="Email">
-      </a>
+      <a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram.PNG"></a>
+      <a href="https://www.linkedin.com/" target="_blank"><img src="images/Linkedin.PNG"></a>
+      <a href="mailto:contact@email.com"><img src="images/Mail.PNG"></a>
     </div>
   `
 };
-
-/* ================= HELPERS ================= */
-function experienceCard(role, company, sector, tasks) {
-  return `
-    <button class="card-btn" style="color:#7C4DFF">
-      ${role}<br>
-      <strong>${company}</strong><br>
-      <em>${sector}</em>
-      <div class="bubble hidden bubble-violet">
-        ${tasks.join("<br>")}
-      </div>
-    </button>
-  `;
-}
-
-function toolCard(title, tools) {
-  return `
-    <button class="card-btn" style="color:#9C6BFF;font-weight:700">
-      <strong>${title}</strong>
-      <div class="bubble hidden bubble-violet2" style="font-weight:400">
-        ${tools}
-      </div>
-    </button>
-  `;
-}
 
 /* ================= OUVERTURE BLOCS ================= */
 blocs.forEach(bloc => {
@@ -275,6 +233,7 @@ contentBox.addEventListener("click", e => {
 
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
+    if (!bubble) return;
     bubble.innerHTML = CONTENT.offreSteps[e.target.dataset.step];
     bubble.style.background = "#fff";
     bubble.style.color = "#FF4FD8";
@@ -284,43 +243,12 @@ contentBox.addEventListener("click", e => {
   const card = e.target.closest(".card-btn");
   if (card) {
     const bubble = card.querySelector(".bubble");
+    if (!bubble) return;
     document.querySelectorAll(".card-btn .bubble").forEach(b => {
       if (b !== bubble) b.classList.add("hidden");
     });
-    if (bubble) bubble.classList.toggle("hidden");
+    bubble.classList.toggle("hidden");
   }
-});
-
-/* ================= LANGUAGE SWITCH ================= */
-let currentLang = "fr";
-
-const langBtn = document.getElementById("lang-current");
-const langMenu = document.getElementById("lang-menu");
-
-/* ouverture / fermeture */
-langBtn.addEventListener("click", e => {
-  e.stopPropagation();
-  langMenu.classList.toggle("active");
-});
-
-/* clic extérieur = fermeture */
-document.addEventListener("click", () => {
-  langMenu.classList.remove("active");
-});
-
-/* sélection langue */
-langMenu.querySelectorAll("button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    currentLang = btn.dataset.lang;
-
-    console.log("Langue active :", currentLang);
-
-    langMenu.classList.remove("active");
-
-    // reset overlay
-    overlay.classList.remove("active");
-    contentBox.innerHTML = "";
-  });
 });
 
 /* ================= FERMETURE ================= */
