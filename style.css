@@ -296,7 +296,7 @@ html, body {
 #lang-switch {
   position: fixed;
   top: 22px;
-  right: 22px;
+  right: 44px;
   z-index: 500;
 }
 
