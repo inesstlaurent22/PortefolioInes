@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL STABLE");
+console.log("SCRIPT JS – PORTFOLIO CORRIGÉ");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -28,11 +28,6 @@ const CONTENT = {
       et le développement de la visibilité et des performances commerciales.
     </p>
 
-    <p>
-      Mon expertise couvre les marchés français, européens et asiatiques,
-      avec des expériences dans le cosmétique, l’alimentation, la musique et l’audiovisuel.
-    </p>
-
     <button class="primary-btn" id="openEngagement">👉 Mon engagement</button>
   `,
 
@@ -57,13 +52,6 @@ const CONTENT = {
     </div>
 
     <div id="programmeBubble" class="bubble hidden center-text"></div>
-
-    <div style="margin-top:36px">
-      <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
-      <p class="center-text">Formats de 3, 6 ou 12 mois selon vos ambitions.</p>
-      <p class="center-text">J +15 : restitution stratégique & plan d’action.</p>
-      <p class="center-text">Suivi mensuel et ajustements continus.</p>
-    </div>
   `,
 
   offreSteps: {
@@ -146,8 +134,8 @@ const CONTENT = {
         <em>Finance & structure d’entreprise</em>
         <div class="bubble hidden bubble-violet">
           Comptabilité clients & fournisseurs<br>
-          Analyse des flux<br>
-          Organisation financière
+          Analyse des flux financiers<br>
+          Organisation & rigueur
         </div>
       </button>
 
@@ -156,9 +144,9 @@ const CONTENT = {
         <strong>Le Perchoir</strong><br>
         <em>Restauration & événementiel</em>
         <div class="bubble hidden bubble-violet">
-          Image de marque<br>
+          Valorisation de l’image de marque<br>
           Relation client terrain<br>
-          Notoriété de l’enseigne
+          Développement de la notoriété
         </div>
       </button>
 
@@ -214,7 +202,7 @@ const CONTENT = {
     </div>
   `,
 
-  /* ===== RÉSEAUX ===== */
+  /* ===== RÉSEAUX SOCIAUX ===== */
   socials: `
     <h2 class="title animate-title">Réseaux sociaux</h2>
 
@@ -240,7 +228,6 @@ blocs.forEach(bloc => {
     if (bloc.classList.contains("rose1")) contentBox.innerHTML = CONTENT.offre;
     if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
     if (bloc.classList.contains("violet2")) contentBox.innerHTML = CONTENT.tools;
-    if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
     if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
