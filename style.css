@@ -295,26 +295,26 @@ html, body {
 /* ================= LANGUAGE SWITCH ================= */
 #lang-switch {
   position: fixed;
-  top: 22px;
-  right: 0px;
+  top: 20px;
+  right: 20px;
   z-index: 500;
 }
 
-/* bouton globe */
-#lang-current {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+#lang-switch button {
+  background: transparent;
+  color: white;
+  font-weight: 700;
   border: none;
-  background: rgba(255,255,255,0.95);
-  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-  transition: transform 0.25s ease;
+  font-size: 14px;
+  padding: 6px 10px;
+  opacity: 0.7;
 }
 
-#lang-current:hover {
-  transform: scale(1.1);
+#lang-switch button:hover,
+#lang-switch button.active {
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 /* menu langues (MASQUÉ PAR DÉFAUT) */
