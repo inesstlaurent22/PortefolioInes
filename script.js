@@ -1,6 +1,6 @@
 console.log("SCRIPT JS – PORTFOLIO MULTILANGUE FINAL");
 
-/* ================= LANGUE ================= */
+/* ================= LANGUE COURANTE ================= */
 let currentLang = "fr";
 
 /* ================= SÉLECTEURS ================= */
@@ -12,6 +12,7 @@ const contentBox = document.getElementById("contentBox");
 /* ================= TEXTES MULTILANGUES ================= */
 const T = {
   fr: {
+    /* ========= OBJECTIF ========= */
     objectif: `
       <p>
         Transformer une idée ou une activité existante en un projet structuré,
@@ -21,6 +22,7 @@ const T = {
       </p>
     `,
 
+    /* ========= PRÉSENTATION ========= */
     presentation: `
       <h2 class="title animate-title">Présentation</h2>
 
@@ -48,13 +50,14 @@ const T = {
       <button class="primary-btn" id="openObjectif">Mon objectif</button>
     `,
 
+    /* ========= MON OFFRE ========= */
     offreTitle: "Processus d’accompagnement stratégique",
-
     offre: {
       1: `
         <strong>01 — Diagnostic & Vision</strong>
         <p>
-          Analyse globale du projet afin de poser des bases solides, cohérentes et réalistes.
+          Analyse globale du projet afin de poser des bases solides, réalistes
+          et alignées avec vos ambitions.
         </p>
         <ul class="list-left">
           <li>Vision long terme</li>
@@ -66,7 +69,8 @@ const T = {
       2: `
         <strong>02 — Intelligence marché & stratégie</strong>
         <p>
-          Études de marché approfondies et recommandations stratégiques sur mesure.
+          Études approfondies et recommandations stratégiques sur mesure,
+          adaptées à votre positionnement.
         </p>
         <ul class="list-left">
           <li>Analyse concurrentielle</li>
@@ -78,17 +82,19 @@ const T = {
       3: `
         <strong>03 — Déploiement & pilotage</strong>
         <p>
-          Mise en œuvre opérationnelle et suivi continu des actions.
+          Mise en œuvre opérationnelle et suivi continu des actions
+          afin de garantir des résultats concrets et mesurables.
         </p>
         <ul class="list-left">
           <li>Suivi des KPI</li>
-          <li>Ajustements stratégiques</li>
+          <li>Ajustements continus</li>
           <li>Réunions de pilotage</li>
           <li>Croissance durable</li>
         </ul>
       `
     },
 
+    /* ========= CV & COMPÉTENCES ========= */
     competences: `
       <h2 class="title animate-title">CV & Compétences</h2>
 
@@ -100,7 +106,7 @@ const T = {
           <div class="bubble hidden">
             • Accompagnement stratégique international<br>
             • Développement commercial BtoB / BtoC<br>
-            • Pilotage des performances
+            • Analyse des performances et pilotage
           </div>
         </button>
 
@@ -109,7 +115,7 @@ const T = {
           Pachamamaï — Cosmétique solide
           <div class="bubble hidden">
             • Études de marché internationales<br>
-            • Lancement de nouveaux produits<br>
+            • Lancement de produits<br>
             • Prospection et fidélisation clients
           </div>
         </button>
@@ -120,7 +126,7 @@ const T = {
           <div class="bubble hidden">
             • Création et développement de média digital<br>
             • Gestion Instagram & TikTok<br>
-            • Optimisation SEO et partenariats
+            • Optimisation SEO et visibilité
           </div>
         </button>
 
@@ -129,7 +135,7 @@ const T = {
           KIT IN — Formation entrepreneuriale
           <div class="bubble hidden">
             • Conception de plateformes éducatives<br>
-            • HTML / CSS / JavaScript<br>
+            • HTML, CSS, JavaScript<br>
             • Vision produit, business et pédagogique
           </div>
         </button>
@@ -137,6 +143,7 @@ const T = {
       </div>
     `,
 
+    /* ========= COMPÉTENCES (OUTILS) ========= */
     skills: `
       <h2 class="title animate-title">Compétences</h2>
 
@@ -144,23 +151,17 @@ const T = {
 
         <button class="card-btn">
           CRM
-          <div class="bubble hidden">
-            Notion, HubSpot, Salesforce
-          </div>
+          <div class="bubble hidden">Notion, HubSpot, Salesforce</div>
         </button>
 
         <button class="card-btn">
           Gestion de projet
-          <div class="bubble hidden">
-            Trello, Google Workspace
-          </div>
+          <div class="bubble hidden">Trello, Google Workspace</div>
         </button>
 
         <button class="card-btn">
           Communication
-          <div class="bubble hidden">
-            Mailchimp, Zapier, Make
-          </div>
+          <div class="bubble hidden">Mailchimp, Zapier, Make</div>
         </button>
 
         <button class="card-btn">
@@ -180,6 +181,7 @@ const T = {
       </div>
     `,
 
+    /* ========= PARCOURS ACADÉMIQUE ========= */
     academic: `
       <h2 class="title animate-title">Parcours Académique</h2>
 
@@ -190,6 +192,7 @@ const T = {
       <p><strong>Diplôme de Comptabilité et de Gestion</strong></p>
     `,
 
+    /* ========= RÉSEAUX SOCIAUX ========= */
     socials: `
       <h2 class="title animate-title">Réseaux sociaux</h2>
       <p>Instagram · LinkedIn · Email</p>
@@ -248,9 +251,10 @@ blocs.forEach(bloc => {
   });
 });
 
-/* ================= INTERACTIONS ================= */
+/* ================= INTERACTIONS INTERNES ================= */
 contentBox.addEventListener("click", e => {
 
+  /* OBJECTIF */
   if (e.target.id === "openObjectif") {
     contentBox.insertAdjacentHTML(
       "beforeend",
@@ -258,23 +262,25 @@ contentBox.addEventListener("click", e => {
     );
   }
 
+  /* OFFRE 01 / 02 / 03 */
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
     bubble.innerHTML = T[currentLang].offre[e.target.dataset.step];
     bubble.classList.remove("hidden");
   }
 
+  /* CARTES CV / SKILLS */
   const card = e.target.closest(".card-btn");
   if (card) {
     const bubble = card.querySelector(".bubble");
     document.querySelectorAll(".card-btn .bubble").forEach(b => {
       if (b !== bubble) b.classList.add("hidden");
     });
-    bubble.classList.toggle("hidden");
+    if (bubble) bubble.classList.toggle("hidden");
   }
 });
 
-/* ================= FERMETURE ================= */
+/* ================= FERMETURE OVERLAY ================= */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
