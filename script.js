@@ -72,18 +72,28 @@ const CONTENT = {
     <h2 class="title animate-title">Présentation</h2>
 
     <p>
-      Je m’appelle Inès Saint Laurent, freelance spécialisée dans le développement
-      d’activités commerciales sur les marchés locaux et internationaux.
+      Je m’appelle Inès Saint Laurent, freelance spécialisée dans <strong>le développement
+      d’activités commerciales</strong> sur les marchés locaux et internationaux.
     </p>
 
     <p>
-      Forte de 5 années d’expérience en commerce international et marketing,
-      j’accompagne les entreprises dans leurs phases clés de croissance.
+      Suite à <strong>5 années d’expérience</strong> en commerce <strong>international et marketing</strong>,
+      j’accompagne les entreprises - de la startup à la grande structure - dans leurs phases clés de croissance.
     </p>
 
     <p>
-      J’interviens sur le lancement de nouveaux produits, l’implantation sur de nouveaux marchés
-      et le développement de la visibilité et des performances commerciales.
+      J’interviens sur <strong>le lancement de nouveaux produits, l’implantation sur de nouveaux marchés
+      et le développement de la visibilité et des performances commerciales</strong>.
+    </p>
+
+    <p>
+      Mon expertise s’appuie sur une connaissance approfondie des marchés <strong>français, européens et asiatiques,</strong>
+      et sur des <strong>collaborations</strong> dans des <strong>secteurs variés</strong> tels que le cosmétique, l’alimentation, la musique et l’audiovisuel.
+    </p>
+
+      <p>
+      <strong>Curieuse et polyvalente,</strong> j’ai également développé des compétences en <strong>community management</strong> et <strong>en développement web,</strong> 
+      me permettant d’avoir <strong>une vision globale, stratégique et opérationnelle</strong> des projets que j’accompagne.
     </p>
 
     <button class="primary-btn" id="openEngagement">👉 Mon engagement</button>
@@ -91,11 +101,11 @@ const CONTENT = {
 
   engagement: `
     <p>
-      Vous bénéficiez d’un accompagnement personnalisé, discret et exigeant,
+      Vous bénéficiez d’un accompagnement personnalisé et exigeant,
       pensé pour structurer, accélérer et sécuriser votre développement.
     </p>
     <p>
-      ✨ Vous avez une vision. Je vous aide à la transformer en croissance maîtrisée.
+      <strong>✨ Vous avez une vision. Je vous aide à la transformer en croissance maîtrisée.</strong>
     </p>
   `,
 
