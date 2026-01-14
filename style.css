@@ -81,9 +81,9 @@ html, body {
 
 /* ================= POSITIONS ================= */
 @media (min-width: 1200px) {
-  .bleu1    { left: -70px; top: 0; }
+  .bleu1    { left: -80px; top: 0; }
   .violet1 { left: -80px; top: 333px; }
-  .violet2 { left: -90px; top: 666px; }
+  .violet2 { left: -80px; top: 666px; }
 
   .rose1   { left: 918px; top: 0; }
   .orange1 { left: 916px; top: 333px; }
