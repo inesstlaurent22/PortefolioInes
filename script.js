@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (VIOLET2 + ORANGE1 FIX)");
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (CORRIGÉ)");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -9,7 +9,7 @@ const contentBox = document.getElementById("contentBox");
 /* ================= CONTENUS ================= */
 const CONTENT = {
 
-  /* ========= PRÉSENTATION ========= */
+  /* ================= PRÉSENTATION ================= */
   presentation: `
     <h2 class="title animate-title">Présentation</h2>
 
@@ -19,7 +19,7 @@ const CONTENT = {
     </p>
 
     <p>
-      Suite à mes 5 années d’expérience en commerce international et marketing,
+      Forte de 5 années d’expérience en commerce international et marketing,
       j’accompagne les entreprises dans leurs phases clés de croissance.
     </p>
 
@@ -46,7 +46,7 @@ const CONTENT = {
     </p>
   `,
 
-  /* ========= MON OFFRE ========= */
+  /* ================= MON OFFRE ================= */
   offre: `
     <h2 class="title animate-title">🤝 Processus d’accompagnement stratégique</h2>
 
@@ -58,11 +58,17 @@ const CONTENT = {
 
     <div id="programmeBubble" class="bubble hidden center-text"></div>
 
-    <div style="margin-top:36px">
+    <div style="margin-top:40px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
-      <p class="center-text">Formats de 3 mois, 6 mois ou jusqu’à 12 mois.</p>
-      <p class="center-text">J +15 : restitution stratégique & validation du plan d’action.</p>
-      <p class="center-text">Suivi mensuel et ajustements continus.</p>
+      <p class="center-text">
+        Formats de 3 mois, 6 mois ou jusqu’à 12 mois selon vos ambitions.
+      </p>
+      <p class="center-text">
+        J +15 : restitution stratégique et validation du plan d’action.
+      </p>
+      <p class="center-text">
+        Chaque mois : suivi et ajustements continus.
+      </p>
     </div>
   `,
 
@@ -90,148 +96,106 @@ const CONTENT = {
     `
   },
 
-  /* ========= CV EXPÉRIENCE ========= */
+  /* ================= PARCOURS PRO ================= */
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
     <div class="card-list">
 
-      ${experienceCard(
-        "Consultante en développement d’activité",
-        "Gearbooker",
-        "Audiovisuel & international",
-        ["Accompagnement stratégique international", "Développement commercial BtoB & BtoC", "Pilotage de la performance"]
-      )}
+      <button class="card-btn" style="color:#7C4DFF">
+        Consultante en développement d’activité<br>
+        <strong>Gearbooker</strong><br>
+        <em style="font-size:13px">Audiovisuel & international</em>
+        <div class="bubble hidden bubble-violet">
+          Accompagnement stratégique international<br>
+          Développement commercial BtoB / BtoC<br>
+          Pilotage de la performance
+        </div>
+      </button>
 
-      ${experienceCard(
-        "Commerciale Marketing",
-        "Pachamamaï",
-        "Cosmétique & marchés internationaux",
-        ["Prospection commerciale", "Études de marché Europe & Asie", "Lancement de produits"]
-      )}
-
-      ${experienceCard(
-        "CEO & Community Manager",
-        "PUFFRAP",
-        "Média & culture musicale",
-        ["Création de média digital", "Gestion Instagram & TikTok", "SEO & partenariats"]
-      )}
-
-      ${experienceCard(
-        "CEO & Développeuse Web",
-        "KIT IN",
-        "Entrepreneuriat & digital",
-        ["Plateforme éducative", "HTML / CSS / JavaScript", "Vision produit & business"]
-      )}
-
-      ${experienceCard(
-        "Stagiaire Comptable",
-        "Pages Jaunes",
-        "Finance & structure d’entreprise",
-        ["Comptabilité clients/fournisseurs", "Analyse des flux financiers"]
-      )}
-
-      ${experienceCard(
-        "Vendeuse & Ambassadrice",
-        "Le Perchoir",
-        "Restauration & événementiel",
-        ["Valorisation de l’image de marque", "Relation client terrain"]
-      )}
+      <button class="card-btn" style="color:#7C4DFF">
+        Commerciale Marketing<br>
+        <strong>Pachamamaï</strong><br>
+        <em style="font-size:13px">Cosmétique & marchés internationaux</em>
+        <div class="bubble hidden bubble-violet">
+          Prospection et lancement de produits<br>
+          Études de marché internationales<br>
+          Fidélisation clientèle
+        </div>
+      </button>
 
     </div>
   `,
 
-  /* ========= PARCOURS ACADÉMIQUE ========= */
+  /* ================= PARCOURS ACADÉMIQUE ================= */
   academic: `
     <h2 class="title animate-title">🎓 Parcours Académique</h2>
 
-    <div class="academic-item">
-      <strong>Master Import-Export</strong><br><br>
+    <div style="margin-bottom:26px">
+      <strong>Master Import-Export</strong><br>
       KEDGE Business School — Marseille
     </div>
 
-    <div class="academic-item">
-      <strong>Bachelor International Business</strong><br><br>
+    <div style="margin-bottom:26px">
+      <strong>Bachelor International Business</strong><br>
       INSEEC Paris Business School
     </div>
 
-    <div class="academic-item">
-      <strong>BTS Commerce International</strong><br><br>
+    <div style="margin-bottom:26px">
+      <strong>BTS Commerce International</strong><br>
       Lycée Jean Lurçat — Paris
     </div>
 
-    <div class="academic-item">
-      <strong>Licence de Gestion</strong><br><br>
+    <div style="margin-bottom:26px">
+      <strong>Licence de Gestion</strong><br>
       Université Paris 1 Panthéon-Sorbonne
     </div>
 
-    <div class="academic-item">
-      <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br><br>
+    <div>
+      <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
       École Nationale de Commerce — Paris
     </div>
   `,
 
-  /* ========= LOGICIELS ========= */
+  /* ================= LOGICIELS ================= */
   tools: `
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
     <div class="card-list">
 
-      ${toolCard("CRM", "Notion · HubSpot · Salesforce")}
-      ${toolCard("Gestion de projet", "Trello · Google Workspace")}
-      ${toolCard("Analyse", "Google Analytics · Search Console · LinkedIn Sales Navigator · Meta")}
-      ${toolCard("Microsoft", "Azure · Copilot · Microsoft 360")}
-      ${toolCard("Étude de marché", "TradeMap · Kompass · Euromonitor · Statista · World Bank Data")}
-      ${toolCard("Communication", "Mailchimp · Zapier · Make")}
-      ${toolCard("Design", "Canva · Figma · CapCut · Photoshop")}
-      ${toolCard("IA", "ChatGPT · Claude · MidJourney · Gemini")}
-      ${toolCard("Développement Web", "GitHub")}
+      <button class="card-btn" style="color:#9C6BFF">
+        <strong>CRM</strong>
+        <div class="bubble hidden bubble-violet2">
+          Notion · HubSpot · Salesforce
+        </div>
+      </button>
 
-    </div>
-  `,
+      <button class="card-btn" style="color:#9C6BFF">
+        <strong>Gestion de projet</strong>
+        <div class="bubble hidden bubble-violet2">
+          Trello · Google Workspace
+        </div>
+      </button>
 
-  /* ========= RÉSEAUX ========= */
-  socials: `
-    <h2 class="title animate-title">Réseaux sociaux</h2>
+      <button class="card-btn" style="color:#9C6BFF">
+        <strong>Analyse</strong>
+        <div class="bubble hidden bubble-violet2">
+          Google Analytics · Search Console · LinkedIn Sales Navigator · Meta Business Suite
+        </div>
+      </button>
 
-    <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="images/Instagram.PNG" alt="Instagram">
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank">
-        <img src="images/Linkedin.PNG" alt="LinkedIn">
-      </a>
-      <a href="mailto:contact@email.com">
-        <img src="images/Mail.PNG" alt="Email">
-      </a>
+      <button class="card-btn" style="color:#9C6BFF">
+        <strong>IA</strong>
+        <div class="bubble hidden bubble-violet2">
+          ChatGPT · Claude · MidJourney · Gemini
+        </div>
+      </button>
+
     </div>
   `
 };
 
-/* ================= HELPERS ================= */
-function experienceCard(role, company, sector, tasks) {
-  return `
-    <button class="card-btn" style="color:#7C4DFF">
-      ${role}<br>
-      <strong>${company}</strong><br>
-      <em>${sector}</em>
-      <div class="bubble hidden bubble-violet">
-        ${tasks.join("<br>")}
-      </div>
-    </button>
-  `;
-}
-
-function toolCard(title, items) {
-  return `
-    <button class="card-btn" style="color:#9C6BFF">
-      <strong>${title}</strong>
-      <div class="bubble hidden bubble-violet2">${items}</div>
-    </button>
-  `;
-}
-
-/* ================= OUVERTURE BLOCS ================= */
+/* ================= OUVERTURE DES BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
@@ -240,7 +204,6 @@ blocs.forEach(bloc => {
     if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
     if (bloc.classList.contains("violet2")) contentBox.innerHTML = CONTENT.tools;
     if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
-    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
@@ -262,7 +225,6 @@ contentBox.addEventListener("click", e => {
 
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
-    if (!bubble) return;
     bubble.innerHTML = CONTENT.offreSteps[e.target.dataset.step];
     bubble.style.background = "#fff";
     bubble.style.color = "#FF4FD8";
