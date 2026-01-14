@@ -1,25 +1,28 @@
-console.log("SCRIPT JS – PORTFOLIO MULTILANGUE STABLE v2");
+console.log("SCRIPT JS – MULTILANGUE STABLE v3");
 
-/* ================= LANGUE ================= */
-let currentLang = "fr";
+/* ================= LANGUES ================= */
+const LANGS = ["fr", "en", "es", "zh"];
+let currentLangIndex = 0;
+let currentLang = LANGS[currentLangIndex];
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
 const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
+const langBtn = document.getElementById("lang-switch");
 
 /* ================= TEXTES ================= */
 const T = {
   fr: {
-    objectif: `
-      <p>
-        Transformer une idée ou une activité existante en un projet structuré,
-        visible et rentable.<br><br>
-        Si vous cherchez une approche humaine, stratégique et orientée résultats,
-        échangeons.
-      </p>
-    `,
+    labels: {
+      bleu1: "PRÉSENTATION",
+      rose1: "MON OFFRE",
+      violet1: "CV COMPÉTENCES",
+      violet2: "COMPÉTENCES",
+      orange1: "PARCOURS ACADÉMIQUE",
+      jaune1: "RÉSEAUX SOCIAUX"
+    },
 
     presentation: `
       <h2 class="title animate-title">Présentation</h2>
@@ -48,32 +51,37 @@ const T = {
       <button class="primary-btn" id="openObjectif">Mon objectif</button>
     `,
 
+    objectif: `
+      Transformer une idée ou une activité existante en un projet structuré,
+      visible et rentable.<br><br>
+      Si vous cherchez une approche humaine, stratégique et orientée résultats,
+      échangeons.
+    `,
+
     offreTitle: "Processus d’accompagnement stratégique",
     offre: {
       1: `
-        <strong>01 — Diagnostic & Vision</strong>
+        <strong>Diagnostic & Vision</strong>
         <ul class="list-left">
           <li>Vision long terme</li>
-          <li>Marché ou pays cible</li>
+          <li>Marché cible</li>
           <li>Objectifs business</li>
-          <li>Indicateurs de performance</li>
+          <li>KPI</li>
         </ul>
       `,
       2: `
-        <strong>02 — Intelligence marché & stratégie</strong>
+        <strong>Intelligence marché</strong>
         <ul class="list-left">
           <li>Analyse concurrentielle</li>
-          <li>Positionnement stratégique</li>
-          <li>Recommandations produits</li>
-          <li>Plan d’action</li>
+          <li>Positionnement</li>
+          <li>Stratégie commerciale</li>
         </ul>
       `,
       3: `
-        <strong>03 — Déploiement & pilotage</strong>
+        <strong>Déploiement & pilotage</strong>
         <ul class="list-left">
-          <li>Suivi des KPI</li>
+          <li>Suivi des actions</li>
           <li>Ajustements continus</li>
-          <li>Réunions de pilotage</li>
           <li>Croissance durable</li>
         </ul>
       `
@@ -94,26 +102,6 @@ const T = {
         </button>
 
         <button class="card-btn">
-          <strong>Commerciale Marketing</strong><br>
-          Pachamamaï — Cosmétique solide
-          <div class="bubble hidden">
-            • Études de marché<br>
-            • Lancement produit<br>
-            • Prospection
-          </div>
-        </button>
-
-        <button class="card-btn">
-          <strong>CEO & Community Manager</strong><br>
-          PUFFRAP — Média musical
-          <div class="bubble hidden">
-            • Gestion réseaux sociaux<br>
-            • SEO & visibilité<br>
-            • Stratégie éditoriale
-          </div>
-        </button>
-
-        <button class="card-btn">
           <strong>CEO & Développeuse Web</strong><br>
           KIT IN — Formation entrepreneuriale
           <div class="bubble hidden">
@@ -127,46 +115,49 @@ const T = {
 
     skills: `
       <h2 class="title animate-title">Compétences</h2>
-
       <div class="card-list">
-        <button class="card-btn">CRM<div class="bubble hidden">Notion, HubSpot, Salesforce</div></button>
-        <button class="card-btn">Gestion de projet<div class="bubble hidden">Trello, Google Workspace</div></button>
-        <button class="card-btn">Communication<div class="bubble hidden">Mailchimp, Zapier, Make</div></button>
-        <button class="card-btn">IA<div class="bubble hidden">ChatGPT, Claude, Midjourney</div></button>
+        <button class="card-btn">CRM<div class="bubble hidden">Notion, HubSpot</div></button>
+        <button class="card-btn">IA<div class="bubble hidden">ChatGPT, Claude</div></button>
       </div>
     `,
 
     academic: `
       <h2 class="title animate-title">Parcours Académique</h2>
-      <p><strong>Master Import-Export</strong> — KEDGE Business School</p>
-      <p><strong>Bachelor International Business</strong> — INSEEC Paris</p>
-      <p><strong>BTS Commerce International</strong> — Lycée Jean Lurçat</p>
-      <p><strong>Licence de Gestion</strong> — Paris 1 Panthéon-Sorbonne</p>
-      <p><strong>DCG</strong></p>
+      <p><strong>Master Import-Export</strong> — KEDGE</p>
+      <p><strong>Bachelor International Business</strong> — INSEEC</p>
+      <p><strong>Licence de Gestion</strong> — Paris 1</p>
     `,
 
     socials: `
       <h2 class="title animate-title">Réseaux sociaux</h2>
       <p>Instagram · LinkedIn · Email</p>
     `
-  },
-
-  /* ===== Traductions simplifiées (stables) ===== */
-  en: {}, es: {}, zh: {}
+  }
 };
 
-/* fallback langues */
+/* ===== DUPLICATION TEMPORAIRE DES TEXTES POUR AUTRES LANGUES ===== */
 ["en", "es", "zh"].forEach(l => T[l] = T.fr);
+
+/* ================= MAJ DES LABELS ================= */
+function updateLabels() {
+  blocs.forEach(bloc => {
+    const key = [...bloc.classList].find(c => T[currentLang].labels[c]);
+    if (!key) return;
+    bloc.querySelector(".label").textContent = T[currentLang].labels[key];
+  });
+
+  langBtn.textContent = currentLang.toUpperCase();
+}
 
 /* ================= OUVERTURE DES BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
-    blocs.forEach(b => b.classList.remove("active"));
-    bloc.classList.add("active");
+    const cls = [...bloc.classList].find(c => T[currentLang].labels[c]);
+    if (!cls) return;
 
-    if (bloc.classList.contains("bleu1")) contentBox.innerHTML = T[currentLang].presentation;
-    if (bloc.classList.contains("rose1")) {
+    if (cls === "bleu1") contentBox.innerHTML = T[currentLang].presentation;
+    if (cls === "rose1") {
       contentBox.innerHTML = `
         <h2 class="title animate-title">${T[currentLang].offreTitle}</h2>
         <div class="center-buttons">
@@ -177,14 +168,13 @@ blocs.forEach(bloc => {
         <div id="programmeBubble" class="bubble hidden"></div>
       `;
     }
-    if (bloc.classList.contains("violet1")) contentBox.innerHTML = T[currentLang].competences;
-    if (bloc.classList.contains("violet2")) contentBox.innerHTML = T[currentLang].skills;
-    if (bloc.classList.contains("orange1")) contentBox.innerHTML = T[currentLang].academic;
-    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = T[currentLang].socials;
+    if (cls === "violet1") contentBox.innerHTML = T[currentLang].competences;
+    if (cls === "violet2") contentBox.innerHTML = T[currentLang].skills;
+    if (cls === "orange1") contentBox.innerHTML = T[currentLang].academic;
+    if (cls === "jaune1") contentBox.innerHTML = T[currentLang].socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
-    contentBox.scrollTop = 0;
   });
 });
 
@@ -192,7 +182,8 @@ blocs.forEach(bloc => {
 contentBox.addEventListener("click", e => {
 
   if (e.target.id === "openObjectif") {
-    contentBox.insertAdjacentHTML("beforeend",
+    contentBox.insertAdjacentHTML(
+      "beforeend",
       `<div class="bubble">${T[currentLang].objectif}</div>`
     );
   }
@@ -209,7 +200,7 @@ contentBox.addEventListener("click", e => {
     document.querySelectorAll(".card-btn .bubble").forEach(b => {
       if (b !== bubble) b.classList.add("hidden");
     });
-    if (bubble) bubble.classList.toggle("hidden");
+    bubble.classList.toggle("hidden");
   }
 });
 
@@ -217,16 +208,18 @@ contentBox.addEventListener("click", e => {
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
-  blocs.forEach(b => b.classList.remove("active"));
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
 
-/* ================= LANGUES ================= */
-document.querySelectorAll("#lang-switch button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    currentLang = btn.dataset.lang;
-    overlay.classList.remove("active");
-    contentBox.innerHTML = "";
-  });
+/* ================= BOUTON LANGUE UNIQUE ================= */
+langBtn.addEventListener("click", () => {
+  currentLangIndex = (currentLangIndex + 1) % LANGS.length;
+  currentLang = LANGS[currentLangIndex];
+  updateLabels();
+  overlay.classList.remove("active");
+  contentBox.innerHTML = "";
 });
+
+/* ================= INIT ================= */
+updateLabels();
