@@ -186,13 +186,13 @@ const CONTENT = {
 
     <div class="socials">
       <a href="https://www.instagram.com/" target="_blank">
-        <img src="images/Instagram.png" alt="Instagram">
+        <img src="images/Instagram.PNG" alt="Instagram">
       </a>
       <a href="https://www.linkedin.com/" target="_blank">
-        <img src="images/Linkedin.png" alt="LinkedIn">
+        <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
       <a href="mailto:contact@email.com">
-        <img src="images/Mail.png" alt="Email">
+        <img src="images/Mail.PNG" alt="Email">
       </a>
     </div>
   `
