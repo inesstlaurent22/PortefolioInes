@@ -363,7 +363,7 @@ html, body {
 
   /* Conteneur mobile */
   .FondPortefolio {
-    background: url("images/Fondportefolioinmobile.PNG") center / cover no-repeat;
+    background: url("images/portefolioinmobile.PNG") center / cover no-repeat;
   }
 
   /* Cache l’image desktop */
