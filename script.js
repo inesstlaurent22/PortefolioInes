@@ -180,7 +180,67 @@ const CONTENT = {
     <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
        École Nationale de Commerce — Paris</p>
   `,
+  tools: `
+    <h2 class="title animate-title">🧠 Logiciels</h2>
 
+    <div class="card-list">
+
+      <button class="card-btn"><strong>CRM</strong>
+        <div class="bubble hidden bubble-violet2">
+          Notion Hubspot Salesforce
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Gestion de projet</strong>
+        <div class="bubble hidden bubble-violet2">
+          Trello Google Workspace
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Analyse</strong>
+        <div class="bubble hidden bubble-violet2">
+          Google Analytics Google Search Console LinkedIn Sales Navigator Meta Business Suite
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Microsoft</strong>
+        <div class="bubble hidden bubble-violet2">
+          Azure Copilot Microsoft 360
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Étude de marché</strong>
+        <div class="bubble hidden bubble-violet2">
+          TradeMap Kompass Euromonitor Statista World Bank Data
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Communication</strong>
+        <div class="bubble hidden bubble-violet2">
+          Mailchimp Zapier Make
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Design</strong>
+        <div class="bubble hidden bubble-violet2">
+          Canva Figma Capcut Photoshop
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>IA</strong>
+        <div class="bubble hidden bubble-violet2">
+          ChatGPT Claude Manus MidJourney Google Gemini
+        </div>
+      </button>
+
+      <button class="card-btn"><strong>Développement Web</strong>
+        <div class="bubble hidden bubble-violet2">
+          GitHub
+        </div>
+      </button>
+
+    </div>
+  `
   socials: `
     <h2 class="title animate-title">Réseaux sociaux</h2>
 
