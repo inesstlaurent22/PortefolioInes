@@ -26,8 +26,6 @@ if (langBtn && langMenu) {
   langMenu.querySelectorAll("button").forEach(btn => {
     btn.addEventListener("click", () => {
       currentLang = btn.dataset.lang;
-      console.log("Langue active :", currentLang);
-
       langMenu.classList.remove("active");
       overlay.classList.remove("active");
       contentBox.innerHTML = "";
@@ -75,7 +73,7 @@ const CONTENT = {
     <p>
       Suite à <strong>5 années d’expérience</strong> en commerce
       <strong>international et marketing</strong>,
-      j’accompagne les entreprises - de la startup à la grande structure -
+      j’accompagne les entreprises – de la startup à la grande structure –
       dans leurs phases clés de croissance.
     </p>
 
@@ -126,10 +124,11 @@ const CONTENT = {
     </div>
   `,
 
+/* ⬇️ OFFRESTEPS — TEXTES CONSERVÉS ⬇️ */
   offreSteps: {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
-      <strong>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</strong><br>
+      <strong>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</strong><br><br>
       Cette étape permet de définir :<br>
       Vision <strong>long terme</strong><br>
       Marché <strong>cible</strong><br>
@@ -137,8 +136,8 @@ const CONTENT = {
       <strong>Délai et indicateurs de performances</strong>
     `,
     2: `
-      <strong>Intelligence marché & Stratégie</strong><br><br>
-      (10 à 15 jours après le diagnostic)<br>
+      <strong>Intelligence marché & Stratégie</strong><br>
+      <em>(10 à 15 jours après le diagnostic)</em><br><br>
       À l’issue de la phase d’analyse, je vous livre :<br>
       <strong>Études de marché approfondis</strong><br>
       <strong>Analyse concurrentielle et position</strong><br>
@@ -147,13 +146,14 @@ const CONTENT = {
     `,
     3: `
       <strong>Déploiement & Pilotage</strong><br><br>
-      Après validation, la mission est lancée avec un accompagnement structuré et progressif.<br>
+      Après validation, la mission est lancée avec un accompagnement structuré et progressif.<br><br>
       Un point de suivi mensuel est organisé afin de :<br>
       <strong>Analyser les résultats (KPI & performance)</strong><br>
       <strong>Ajustements stratégiques</strong><br>
       <strong>Valider l’évolution par rapport aux objectifs fixés.</strong>
     `
   },
+
 
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
@@ -220,12 +220,12 @@ const CONTENT = {
 
       ${experienceCard(
         "Vendeuse & Ambassadrice de marque",
-        "Galeries Lafayette - Le Paradis du fruit - Le Perchoir",
+        "Galeries Lafayette – Le Paradis du Fruit – Le Perchoir",
         "Restauration & Retail",
         [
           "→ Représentation et valorisation de l’image de marque",
-          "→ Relation client et expérience terrain",
-          "→ Contribution à la notoriété de l’enseigne"
+          "→ Relation client",
+          "→ Expérience terrain"
         ]
       )}
     </div>
@@ -245,6 +245,32 @@ const CONTENT = {
       ${toolCard("Étude de marché", "TradeMap, Kompass, World Bank Data, Statista, Euromonitor")}
       ${toolCard("Microsoft", "Azure, Microsoft 365, Copilot")}
     </div>
+  `,
+
+  academic: `
+    <h2 class="title animate-title">🎓 Parcours académique</h2>
+
+    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+    <p><strong>Bachelor International Business</strong><br>INSEEC — Paris</p>
+    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat - Paris</p>
+    <p><strong>Licence de Gestion</strong><br>Paris 1 Panthéon-Sorbonne</p>
+    <p><strong>Diplôme de Comptabilité et de Gestion</strong><br>École Nationale de Commerce — Paris</p>
+  `,
+
+  socials: `
+    <h2 class="title animate-title">Réseaux sociaux</h2>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="images/Instagram.PNG" alt="Instagram">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="images/Linkedin.PNG" alt="LinkedIn">
+      </a>
+      <a href="mailto:contact@email.com">
+        <img src="images/Mail.PNG" alt="Email">
+      </a>
+    </div>
   `
 };
 
@@ -256,6 +282,8 @@ blocs.forEach(bloc => {
     if (bloc.classList.contains("rose1")) contentBox.innerHTML = CONTENT.offre;
     if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
     if (bloc.classList.contains("violet2")) contentBox.innerHTML = CONTENT.tools;
+    if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
+    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
@@ -283,18 +311,6 @@ contentBox.addEventListener("click", e => {
     bubble.style.background = "#fff";
     bubble.style.color = "#FF4FD8";
     bubble.classList.remove("hidden");
-  }
-
-  const card = e.target.closest(".card-btn");
-  if (card) {
-    const bubble = card.querySelector(".bubble");
-    if (!bubble) return;
-
-    document.querySelectorAll(".card-btn .bubble").forEach(b => {
-      if (b !== bubble) b.classList.add("hidden");
-    });
-
-    bubble.classList.toggle("hidden");
   }
 });
 
