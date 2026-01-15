@@ -206,8 +206,6 @@ const CONTENT = {
     `
   }
 
-};
-
   fr: {
     engagement: `
       <p>
@@ -949,7 +947,7 @@ const CONTENT = {
       </div>
     `
   }
-
+};
 };
 
 /* ================= OUVERTURE BLOCS ================= */
