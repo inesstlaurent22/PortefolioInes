@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (LANG SWITCH FIXED)");
 
 /* ================= SÉLECTEURS ================= */
@@ -124,7 +126,6 @@ const CONTENT = {
     </div>
   `,
 
-  /* ⬇️ OFFRESTEPS — TEXTES CONSERVÉS ⬇️ */
   offreSteps: {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
@@ -303,3 +304,5 @@ overlay.addEventListener("click", () => {
   contentBox.innerHTML = "";
 });
 colorBox.addEventListener("click", e => e.stopPropagation());
+
+});
