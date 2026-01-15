@@ -204,7 +204,7 @@ const CONTENT = {
 
       <button class="primary-btn" id="openEngagement">👉 我的承诺</button>
     `
-  }
+  },
 
   fr: {
     engagement: `
