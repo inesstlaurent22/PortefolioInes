@@ -154,7 +154,7 @@ const CONTENT = {
       <strong>Ajustements stratégiques</strong><br>
       <strong>Valider l’évolution par rapport aux objectifs fixés.</strong>
     `
-  },
+  }
 
 
   experience: `
@@ -794,7 +794,7 @@ zh: {
       <strong>战略调整</strong><br>
       <strong>验证目标达成情况。</strong>
     `
-  },
+  }
 
   experience: `
     <h2 class="title animate-title">💻 职业经历</h2>
