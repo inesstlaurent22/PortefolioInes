@@ -274,7 +274,8 @@ const CONTENT = {
       </a>
     </div>
   `
-};
+}
+    
 en: {
   presentation: `
     <h2 class="title animate-title">Presentation</h2>
@@ -367,7 +368,7 @@ en: {
       <strong>Strategic adjustments</strong><br>
       <strong>Validate progress against defined objectives.</strong>
     `
-  },
+  }
 
   experience: `
     <h2 class="title animate-title">💻 Professional Experience</h2>
@@ -486,7 +487,8 @@ en: {
       </a>
     </div>
   `
-};
+}
+  
 es: {
   presentation: `
     <h2 class="title animate-title">Presentación</h2>
@@ -698,7 +700,8 @@ es: {
       </a>
     </div>
   `
-},
+}
+  
 zh: {
   presentation: `
     <h2 class="title animate-title">个人介绍</h2>
@@ -910,7 +913,7 @@ zh: {
       </a>
     </div>
   `
-},
+};
 
 /* ================= OUVERTURE BLOCS ================= */
 blocs.forEach(bloc => {
