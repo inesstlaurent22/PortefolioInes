@@ -274,8 +274,9 @@ const CONTENT = {
       </a>
     </div>
   `
-}
-    
+},
+                          
+/* ================= EN ================= */  
 en: {
   presentation: `
     <h2 class="title animate-title">Presentation</h2>
@@ -487,8 +488,9 @@ en: {
       </a>
     </div>
   `
-}
-  
+},
+
+  /* ================= ES ================= */
 es: {
   presentation: `
     <h2 class="title animate-title">Presentación</h2>
@@ -700,8 +702,9 @@ es: {
       </a>
     </div>
   `
-}
-  
+},
+
+  /* ================= ZH ================= */
 zh: {
   presentation: `
     <h2 class="title animate-title">个人介绍</h2>
