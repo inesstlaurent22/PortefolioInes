@@ -11,29 +11,22 @@ const langBtn = document.getElementById("lang-current");
 const langMenu = document.getElementById("lang-menu");
 let currentLang = "fr";
 
-/* Sécurité : si le menu existe */
 if (langBtn && langMenu) {
-
-  // Ouvrir / fermer le menu
   langBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     langMenu.classList.toggle("active");
   });
 
-  // Fermer au clic extérieur
   document.addEventListener("click", () => {
     langMenu.classList.remove("active");
   });
 
-  // Sélection langue (préparation multilingue)
   langMenu.querySelectorAll("button").forEach(btn => {
     btn.addEventListener("click", () => {
       currentLang = btn.dataset.lang;
       console.log("Langue active :", currentLang);
 
       langMenu.classList.remove("active");
-
-      // Reset overlay à chaque changement de langue
       overlay.classList.remove("active");
       contentBox.innerHTML = "";
     });
@@ -72,23 +65,31 @@ const CONTENT = {
     <h2 class="title animate-title">Présentation</h2>
 
     <p>
-      Je m’appelle Inès Saint Laurent, freelance spécialisée dans <strong>le développement
-      d’activités commerciales</strong> sur les marchés locaux et internationaux.
+      Je m’appelle Inès Saint Laurent, freelance spécialisée dans
+      <strong>le développement d’activités commerciales</strong>
+      sur les marchés locaux et internationaux.
     </p>
 
     <p>
-      Suite à <strong>5 années d’expérience</strong> en commerce <strong>international et marketing</strong>,
-      j’accompagne les entreprises - de la startup à la grande structure - dans leurs phases clés de croissance.
+      Suite à <strong>5 années d’expérience</strong> en commerce
+      <strong>international et marketing</strong>,
+      j’accompagne les entreprises - de la startup à la grande structure -
+      dans leurs phases clés de croissance.
     </p>
 
     <p>
-      J’interviens sur <strong>le lancement de nouveaux produits, l’implantation sur de nouveaux marchés
+      J’interviens sur <strong>le lancement de nouveaux produits,
+      l’implantation sur de nouveaux marchés
       et le développement de la visibilité et des performances commerciales</strong>.
     </p>
 
-      <p>
-      <strong>Curieuse et polyvalente,</strong> j’ai également développé des compétences en <strong>community management</strong> et <strong>en développement web,</strong> 
-      me permettant d’avoir <strong>une vision globale, stratégique et opérationnelle</strong> des projets que j’accompagne.
+    <p>
+      <strong>Curieuse et polyvalente,</strong> j’ai également développé
+      des compétences en <strong>community management</strong> et
+      <strong>en développement web</strong>,
+      me permettant d’avoir
+      <strong>une vision globale, stratégique et opérationnelle</strong>
+      des projets que j’accompagne.
     </p>
 
     <button class="primary-btn" id="openEngagement">👉 Mon engagement</button>
@@ -118,11 +119,12 @@ const CONTENT = {
     <div style="margin-top:40px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
       <p class="center-text">Accompagnements de 3 à 12 mois selon vos ambitions</p>
-      <p class="center-text"><strong>J +15 </strong>: restitution stratégique et validation du plan d’action</p>
+      <p class="center-text"><strong>J +15</strong> : restitution stratégique et validation du plan d’action</p>
       <p class="center-text"><strong>Pilotage mensuel & ajustements continus</strong></p>
     </div>
   `,
 
+  /* ⬇️ OFFRESTEPS — TEXTES CONSERVÉS ⬇️ */
   offreSteps: {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
@@ -135,7 +137,7 @@ const CONTENT = {
     `,
     2: `
       <strong>Intelligence marché & Stratégie</strong><br><br>
-      (10 à 15 jours après le diagnostic)
+      (10 à 15 jours après le diagnostic)<br>
       À l’issue de la phase d’analyse, je vous livre :<br>
       <strong>Études de marché approfondis</strong><br>
       <strong>Analyse concurrentielle et position</strong><br>
@@ -144,7 +146,7 @@ const CONTENT = {
     `,
     3: `
       <strong>Déploiement & Pilotage</strong><br><br>
-      Après validation, la mission est lancée avec un accompagnement structuré et progressif.
+      Après validation, la mission est lancée avec un accompagnement structuré et progressif.<br>
       Un point de suivi mensuel est organisé afin de :<br>
       <strong>Analyser les résultats (KPI & performance)</strong><br>
       <strong>Ajustements stratégiques</strong><br>
@@ -161,9 +163,9 @@ const CONTENT = {
         "Gearbooker",
         "Audiovisuel & international",
         [
-          "→ Accompagnement d’une entreprise <strong>néerlandaise</strong> dans son implantation sur le marché français"
-          "→ Élaboration de stratégies de développement commercial"
-          "→ Prospection BtoB & BtoC"
+          "→ Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français",
+          "→ Élaboration de stratégies de développement commercial",
+          "→ Prospection BtoB & BtoC",
           "→ Analyse des performances et réunions de pilotage avec les associés"
         ]
       )}
@@ -173,9 +175,9 @@ const CONTENT = {
         "Pachamamaï",
         "Cosmétique & marchés internationaux",
         [
-          "→ Prospection commerciale et lancement de nouveaux produits"
-          "→ Réalisation d’études de marché (Portugal, Espagne, Asie)"
-          "→ Suivi et fidélisation de la clientèle"
+          "→ Prospection commerciale et lancement de nouveaux produits",
+          "→ Réalisation d’études de marché (Portugal, Espagne, Asie)",
+          "→ Suivi et fidélisation de la clientèle",
           "→ Participation à des salons internationaux"
         ]
       )}
@@ -185,9 +187,9 @@ const CONTENT = {
         "PUFFRAP",
         "Média musical",
         [
-          "→ Création et développement du magazine en ligne"
-          "→ Gestion et croissance des réseaux sociaux (Instagram & TikTok)"
-          "→ Optimisation du SEO et de la visibilité digitale"
+          "→ Création et développement du magazine en ligne",
+          "→ Gestion et croissance des réseaux sociaux (Instagram & TikTok)",
+          "→ Optimisation du SEO et de la visibilité digitale",
           "→ Mise en place de partenariats stratégiques"
         ]
       )}
@@ -197,9 +199,9 @@ const CONTENT = {
         "KIT IN",
         "Entrepreneuriat & digital",
         [
-          "→ Conception et développement d’une formation en ligne dédiée à la création d’entreprise"
-          "→ Projet éducatif destiné aux jeunes de 10 à 17 ans"
-          "→ Développement technique en HTML, CSS et JavaScript"
+          "→ Conception et développement d’une formation en ligne dédiée à la création d’entreprise",
+          "→ Projet éducatif destiné aux jeunes de 10 à 17 ans",
+          "→ Développement technique en HTML, CSS et JavaScript",
           "→ Vision globale : produit, pédagogie, business et technologie"
         ]
       )}
@@ -209,10 +211,9 @@ const CONTENT = {
         "Pages Jaunes",
         "Annuaires digitaux",
         [
-          "→ Comptabilité clients et fournisseurs"
-          "→ Compréhension des flux financiers"
+          "→ Comptabilité clients et fournisseurs",
+          "→ Compréhension des flux financiers",
           "→ Rigueur, organisation et vision analytique"
-
         ]
       )}
 
@@ -221,10 +222,9 @@ const CONTENT = {
         "Galeries Lafayette - Le Paradis du fruit - Le Perchoir",
         "Restauration & Retail",
         [
-          "→ Représentation et valorisation de l’image de marque"
-          "→ Relation client et expérience terrain"
+          "→ Représentation et valorisation de l’image de marque",
+          "→ Relation client et expérience terrain",
           "→ Contribution à la notoriété de l’enseigne"
-
         ]
       )}
     </div>
@@ -241,27 +241,8 @@ const CONTENT = {
       ${toolCard("Design", "Canva, Figma, CapCut, Photoshop")}
       ${toolCard("IA", "ChatGPT, Claude, MidJourney, Gemini")}
       ${toolCard("Développement Web", "GitHub")}
-      ${toolCard("Etude de marché", "TradeMap, Kompass, World Bank Data, Statista, Euromonitor")}
-      ${toolCard("Microsoft", "Azur, Microsoft360, Microsoft Copilot")}
-    </div>
-  `,
-
-  academic: `
-    <h2 class="title animate-title">🎓 Parcours Académique</h2>
-
-    <p style="margin-bottom:20px;"><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
-    <p style="margin-bottom:20px;"><strong>Bachelor International Business</strong><br>INSEEC Paris</p>
-    <p style="margin-bottom:20px;"><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat</p>
-    <p style="margin-bottom:20px;"><strong>Licence de Gestion</strong><br>Paris 1 Panthéon-Sorbonne</p>
-    <p style="margin-bottom:10px;"><strong>Diplôme de Comptabilité et de Gestion</strong><br>École Nationale de Commerce — Paris</p>
-  `,
-
-  socials: `
-    <h2 class="title animate-title">Réseaux sociaux</h2>
-    <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram.PNG"></a>
-      <a href="https://www.linkedin.com/" target="_blank"><img src="images/Linkedin.PNG"></a>
-      <a href="mailto:contact@email.com"><img src="images/Mail.PNG"></a>
+      ${toolCard("Étude de marché", "TradeMap, Kompass, World Bank Data, Statista, Euromonitor")}
+      ${toolCard("Microsoft", "Azure, Microsoft 365, Copilot")}
     </div>
   `
 };
@@ -274,8 +255,6 @@ blocs.forEach(bloc => {
     if (bloc.classList.contains("rose1")) contentBox.innerHTML = CONTENT.offre;
     if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
     if (bloc.classList.contains("violet2")) contentBox.innerHTML = CONTENT.tools;
-    if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
-    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
@@ -298,6 +277,7 @@ contentBox.addEventListener("click", e => {
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
     if (!bubble) return;
+
     bubble.innerHTML = CONTENT.offreSteps[e.target.dataset.step];
     bubble.style.background = "#fff";
     bubble.style.color = "#FF4FD8";
@@ -308,9 +288,11 @@ contentBox.addEventListener("click", e => {
   if (card) {
     const bubble = card.querySelector(".bubble");
     if (!bubble) return;
+
     document.querySelectorAll(".card-btn .bubble").forEach(b => {
       if (b !== bubble) b.classList.add("hidden");
     });
+
     bubble.classList.toggle("hidden");
   }
 });
